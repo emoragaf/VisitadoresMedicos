@@ -79,7 +79,11 @@ $this->menu=array(
         <?php foreach ($visitas as $visita): ?>
 	        <div data-role="collapsible">
 	            <h3>Notas Visita <?php echo date('d-m-Y',strtotime($visita->fecha_programada)) ?></h3>
-	            <div><?php echo $visita->notas ?></div>
+	            <div>
+		            <?php $this->beginWidget('CMarkdown');?>
+						<?php echo $visita->notas ?>
+					<?php $this->endWidget();?>
+	            </div>
 	        </div>
         	
         <?php endforeach ?>

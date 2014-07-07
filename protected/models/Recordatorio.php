@@ -60,7 +60,7 @@ class Recordatorio extends CActiveRecord
 			'destinatario_id' => 'Destinatario',
 			'fecha_creacion' => 'Fecha Creacion',
 			'fecha_recordatorio' => 'Fecha Recordatorio',
-			'texto' => 'Texto',
+			'texto' => 'Recordatorio',
 			'leido' => 'Leido',
 		);
 	}

@@ -21,25 +21,12 @@
 
             <?php echo $form->dropDownListControlGroup($model, 'destinatario_id', Chtml::listData(User::model()->findAll(),'id','username'), array('empty' => 'Seleccionar Destinatario...')); ?>
 
-            <label class="control-label required" for="Visita_fecha_recordatorio">Fecha Recordatorio <span class="required">*</span></label>
-            <div class="input-append">
-            <?php $this->widget('yiiwheels.widgets.datepicker.WhDatePicker', array(
-                    'name' => 'Recordatorio[fecha_recordatorio]',
-                    'pluginOptions' => array(
-                        'format' => 'dd-mm-yyyy',
-                        'language'=>'es',
-                    )
-                ));
-            ?>
-                <span class="add-on"><icon class="icon-calendar"></icon></span>
-            </div>
+             <label for="Recordatorio[fecha_recordatorio]">Fecha Recordatorio <span class="required">*</span></label>
+            <input type="date" data-clear-btn="false" name="Recordatorio[fecha_recordatorio]" id="Recordatorio[fecha_recordatorio]" value="">
             <?php echo $form->textAreaControlGroup($model,'texto',array('rows'=>6,'span'=>8)); ?>
 
-        <div class="form-actions">
-        <?php echo TbHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar',array(
-		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
-		    'size'=>TbHtml::BUTTON_SIZE_LARGE,
-		)); ?>
+    <div>
+        <button class="ui-btn ui-btn-inline">Aceptar</button>
     </div>
 
     <?php $this->endWidget(); ?>
