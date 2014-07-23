@@ -40,7 +40,7 @@ class Persona extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre, apellido_p, apellido_m', 'required'),
+			array('nombre, apellido_p', 'required'),
 			array('hijos, situacion_familiar_id, categoria_persona_id', 'numerical', 'integerOnly'=>true),
 			array('nombre, apellido_p, apellido_m', 'length', 'max'=>45),
 			array('cargo, profesion, telefono1, telefono2, telefono3, email, twitter, facebook, estado', 'length', 'max'=>255),
@@ -62,6 +62,9 @@ class Persona extends CActiveRecord
 		);
 	}
 
+	public function getNombreCompleto(){
+		return $this->nombre.' '.$this->apellido_p;
+	}
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */

@@ -27,9 +27,9 @@ return array(
 		'application.modules.user.models.*',
         'application.modules.user.components.*',
         'application.extensions.phpass.*',
-        'bootstrap.helpers.TbHtml',
-        'bootstrap.helpers.TbArray',
-        'bootstrap.behaviors.TbWidget',
+        'bootstrap.helpers.*',
+		'bootstrap.behaviors.*',
+		'bootstrap.widgets.*',
 	),
 
 	'modules'=>array(

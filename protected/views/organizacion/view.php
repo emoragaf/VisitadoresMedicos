@@ -52,7 +52,7 @@ $this->menu=array(
 				'email',
 				array(
 					'name'=>'modo_compra_id',
-					'value'=>$model->modoCompra->nombre,
+					'value'=>isset($model->modoCompra) ?$model->modoCompra->nombre : null,
 					),
 			),
 		)); ?>	
@@ -66,26 +66,34 @@ $this->menu=array(
 		    'attributes'=>array(
 				array(
 					'name'=>'tipo_financiamiento_id',
-					'value'=>$model->tipoFinanciamiento->nombre,
+					'value'=>isset($model->tipoFinanciamiento) ? $model->tipoFinanciamiento->nombre : null,
+					),
+				array(
+					'name'=>'tipo_condicionpago_id',
+					'value'=>isset($model->tipoCondicionpago) ? $model->tipoCondicionpago->nombre : null,
 					),
 				'cantidad_camas',
 			),
 		)); ?>	
 	</div>
 </div>
-
+	<?php if(!empty($visitas)){ ?>
     <div data-role="collapsible-set">
     	<div id="searchFilter" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Buscar Visitas...">
         <?php foreach ($visitas as $visita): ?>
 	        <div data-role="collapsible">
 	            <h3>Notas Visita <?php echo date('d-m-Y',strtotime($visita->fecha_programada)) ?></h3>
 	            <div>
-		            <?php $this->beginWidget('CMarkdown');?>
-						<?php echo $visita->notas ?>
-					<?php $this->endWidget();?>
+	            		<p>Visitado: <b><?php echo $visita->persona->nombre.' '.$visita->persona->apellido_p ; ?></b></p>
+						<?php echo trim($visita->notas); ?>
 	            </div>
 	        </div>
         	
         <?php endforeach ?>
         </div>
     </div>
+    <?php }else{ ?>
+    <div>
+    	<h4>No se han realizado Visitas.</h4>
+    </div>
+    <?php } ?>

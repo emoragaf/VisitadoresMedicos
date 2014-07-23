@@ -22,6 +22,30 @@ class SiteController extends Controller
 		);
 	}
 
+	public function filters() {
+     return array( 
+        //it's important to add site/error, so an unpermitted user will get the error.
+        array('auth.filters.AuthFilter - user/login user/logout site/error'),
+            );
+        }
+
+	public function accessRules()
+	{
+		return array(
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('index','create','update'),
+				'users'=>array('@'),
+			),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete'),
+				'users'=>array('admin'),
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+	}
+
 	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
@@ -40,8 +64,10 @@ class SiteController extends Controller
 		));
 		$orgs = Organizacion::model()->findAll(array('order'=>'categoria_id desc'));
 		$organizaciones = array();
-		foreach ($orgs as $org) {
-			$organizaciones[] = array('label' => $org->nombre.' ('.$org->categoria->nombre.')', 'url' => array('/Organizacion/view','id'=>$org->id));
+		if(!empty($orgs)){
+			foreach ($orgs as $org) {
+				$organizaciones[] = array('label' => $org->nombre.' ('.$org->categoria->nombre.')', 'url' => array('/Organizacion/view','id'=>$org->id));
+			}
 		}
 		$this->render('index',array('organizaciones'=>$organizaciones,'recordatorios'=>$recordatorios));
 	}

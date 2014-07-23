@@ -17,4 +17,4 @@ $this->menu=array(
 
 <h1> <?php echo Yii::t('app','model.Visita.create'); ?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model,'visitados'=>$visitados,'visitas'=>$visitas)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model,'recordatorio'=>$recordatorio,'recordatorios'=>$recordatorios,'visitados'=>$visitados,'visitas'=>$visitas)); ?>

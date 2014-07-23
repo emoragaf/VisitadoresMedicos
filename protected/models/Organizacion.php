@@ -35,7 +35,7 @@ class Organizacion extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre, direccion', 'required'),
+			array('nombre, direccion, categoria_id', 'required'),
 			array('categoria_id, modo_compra_id, tipo_financiamiento_id, cantidad_camas', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>40),
 			array('direccion', 'length', 'max'=>255),
@@ -60,6 +60,7 @@ class Organizacion extends CActiveRecord
 			'visitas' => array(self::HAS_MANY, 'Visita', 'organizacion_id'),
 			'modoCompra' => array(self::BELONGS_TO, 'ModoCompra', 'modo_compra_id'),
 			'tipoFinanciamiento' => array(self::BELONGS_TO, 'TipoFinanciamiento', 'tipo_financiamiento_id'),
+			'tipoCondicionpago' => array(self::BELONGS_TO, 'TipoCondicionpago', 'tipo_condicionpago_id'),
 
 		);
 	}
@@ -144,15 +145,16 @@ class Organizacion extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'nombre' => 'Nombre',
-			'direccion' => 'Direccion',
+			'direccion' => 'Dirección',
 			'comuna' => 'Comuna',
 			'email' => 'Email',
-			'descripcion' => 'Descripcion',
+			'descripcion' => 'Descripción',
 			'created_at' => 'Created At',
 			'updated_at' => 'Updated At',
 			'categoria_id' => 'Categoria',
 			'modo_compra_id' => 'Modo Compra',
 			'tipo_financiamiento_id' => 'Tipo Financiamiento',
+			'tipo_condicionpago_id' => 'Condición Pago',
 			'cantidad_camas' => 'Cantidad de Camas',
 		);
 	}

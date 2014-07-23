@@ -2688,3 +2688,1028 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/vitalis/personas
 ---
+2014/07/18 13:27:27 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(AuthWebUser), 'Usted no se enc...')
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#9 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Visita/create')
+#10 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/vitalis/index.php/Visita/create/4
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Organizacion/4
+---
+2014/07/18 13:27:29 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(AuthWebUser), 'Usted no se enc...')
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#9 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Visita/create')
+#10 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/vitalis/index.php/Visita/create/4
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Organizacion/4
+---
+2014/07/18 13:27:38 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(AuthWebUser), 'Usted no se enc...')
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#9 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Visita/create')
+#10 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/vitalis/index.php/Visita/create/4
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Organizacion/4
+---
+2014/07/18 13:42:11 [error] [php] Undefined index: fecha_recordatorio (/Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php:99)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): VisitaController->runAction()
+#3 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): VisitaController->filterAccessControl()
+#6 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): VisitaController->runActionWithFilters()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): VisitaController->run()
+#10 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/Visita/create/4
+in /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php (99)
+in /Applications/MAMP/htdocs/vitalis/index.php (13)
+2014/07/18 13:43:48 [error] [exception.CException] exception 'CException' with message 'La propiedad "Recordatorio"."save" no se encuentra definida.' in /Applications/MAMP/htdocs/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('save')
+#1 /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php(107): CActiveRecord->__get('save')
+#2 [internal function]: VisitaController->actionCreate('4')
+#3 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(VisitaController), Array)
+#4 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(VisitaController), Object(ReflectionMethod), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Visita/create')
+#15 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/vitalis/index.php/Visita/create/4
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Visita/create/4
+---
+2014/07/18 13:44:04 [error] [exception.CException] exception 'CException' with message 'La propiedad "Recordatorio"."save" no se encuentra definida.' in /Applications/MAMP/htdocs/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('save')
+#1 /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php(107): CActiveRecord->__get('save')
+#2 [internal function]: VisitaController->actionCreate('4')
+#3 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(VisitaController), Array)
+#4 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(VisitaController), Object(ReflectionMethod), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Visita/create')
+#15 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/vitalis/index.php/Visita/create/4
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Visita/create/4
+---
+2014/07/18 13:44:28 [error] [exception.CException] exception 'CException' with message 'La propiedad "Recordatorio"."save" no se encuentra definida.' in /Applications/MAMP/htdocs/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('save')
+#1 /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php(107): CActiveRecord->__get('save')
+#2 [internal function]: VisitaController->actionCreate('4')
+#3 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(VisitaController), Array)
+#4 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(VisitaController), Object(ReflectionMethod), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Visita/create')
+#15 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/vitalis/index.php/Visita/create/4
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Visita/create/4
+---
+2014/07/18 13:56:40 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '::app()->user->getId()' at line 1. La sentencia SQL ejecutada fue: SELECT * FROM `recordatorio` `t` WHERE organizacion_id =  4 AND autor_id = Yii::app()->user->getId().
+in /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php (82)
+in /Applications/MAMP/htdocs/vitalis/index.php (13)
+2014/07/18 13:56:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '::app()->user->getId()' at line 1. The SQL statement executed was: SELECT * FROM `recordatorio` `t` WHERE organizacion_id =  4 AND autor_id = Yii::app()->user->getId()' in /Applications/MAMP/htdocs/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Applications/MAMP/htdocs/yii/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 /Applications/MAMP/htdocs/yii/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php(82): CActiveRecord->findAll(Array)
+#4 [internal function]: VisitaController->actionCreate('4')
+#5 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(VisitaController), Array)
+#6 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(VisitaController), Object(ReflectionMethod), Array)
+#7 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#16 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Visita/create')
+#17 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/vitalis/index.php/Visita/create/4
+---
+2014/07/18 13:57:40 [error] [php] Undefined variable: recordatorios (/Applications/MAMP/htdocs/vitalis/protected/views/visita/_form.php:48)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): VisitaController->renderFile()
+#1 /Applications/MAMP/htdocs/vitalis/protected/views/visita/create.php(20): VisitaController->renderPartial()
+#2 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): VisitaController->renderInternal()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): VisitaController->renderFile()
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): VisitaController->renderPartial()
+#6 /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php(142): VisitaController->render()
+#7 unknown(0): VisitaController->actionCreate()
+#8 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#9 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): VisitaController->runAction()
+#12 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): VisitaController->filterAccessControl()
+#15 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#17 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): VisitaController->runActionWithFilters()
+#18 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): VisitaController->run()
+#19 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/Visita/create/4
+in /Applications/MAMP/htdocs/vitalis/protected/views/visita/_form.php (48)
+in /Applications/MAMP/htdocs/vitalis/protected/views/visita/create.php (20)
+in /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php (142)
+2014/07/18 13:57:43 [error] [php] Undefined variable: recordatorios (/Applications/MAMP/htdocs/vitalis/protected/views/visita/_form.php:48)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): VisitaController->renderFile()
+#1 /Applications/MAMP/htdocs/vitalis/protected/views/visita/create.php(20): VisitaController->renderPartial()
+#2 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): VisitaController->renderInternal()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): VisitaController->renderFile()
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): VisitaController->renderPartial()
+#6 /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php(142): VisitaController->render()
+#7 unknown(0): VisitaController->actionCreate()
+#8 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#9 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): VisitaController->runAction()
+#12 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): VisitaController->filterAccessControl()
+#15 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#17 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): VisitaController->runActionWithFilters()
+#18 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): VisitaController->run()
+#19 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/Visita/create/4
+in /Applications/MAMP/htdocs/vitalis/protected/views/visita/_form.php (48)
+in /Applications/MAMP/htdocs/vitalis/protected/views/visita/create.php (20)
+in /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php (142)
+2014/07/18 14:02:52 [error] [php] Undefined index: texto_recordatorio (/Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php:114)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): VisitaController->runAction()
+#3 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): VisitaController->filterAccessControl()
+#6 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): VisitaController->runActionWithFilters()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): VisitaController->run()
+#10 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/Visita/create/4
+in /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php (114)
+in /Applications/MAMP/htdocs/vitalis/index.php (13)
+2014/07/18 14:08:00 [error] [php] Undefined index: Recordatorio[fecha_recordatorio] (/Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php:107)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): VisitaController->runAction()
+#3 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): VisitaController->filterAccessControl()
+#6 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): VisitaController->runActionWithFilters()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): VisitaController->run()
+#10 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/Visita/create/4
+in /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php (107)
+in /Applications/MAMP/htdocs/vitalis/index.php (13)
+2014/07/18 14:10:45 [error] [php] Undefined index: texto_recordatorio (/Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php:117)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): VisitaController->runAction()
+#3 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): VisitaController->filterAccessControl()
+#6 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): VisitaController->runActionWithFilters()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): VisitaController->run()
+#10 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/Visita/create/4
+in /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php (117)
+in /Applications/MAMP/htdocs/vitalis/index.php (13)
+2014/07/18 14:15:32 [error] [php] Undefined index: fecha_realizada (/Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php:96)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): VisitaController->runAction()
+#3 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): VisitaController->filterAccessControl()
+#6 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): VisitaController->runActionWithFilters()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): VisitaController->run()
+#10 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/Visita/create/4
+in /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php (96)
+in /Applications/MAMP/htdocs/vitalis/index.php (13)
+2014/07/18 14:32:20 [error] [exception.CException] exception 'CException' with message 'CMarkdown y sus behaviors no tienen un método o closure llamado "transorm".' in /Applications/MAMP/htdocs/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php(113): CComponent->__call('transorm', Array)
+#1 /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php(113): CMarkdown->transorm('# Probando????#...')
+#2 [internal function]: VisitaController->actionCreate('4')
+#3 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(VisitaController), Array)
+#4 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(VisitaController), Object(ReflectionMethod), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Visita/create')
+#15 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/vitalis/index.php/Visita/create/4
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Visita/create/4
+---
+2014/07/18 15:04:35 [error] [exception.CException] exception 'CException' with message 'La propiedad "WhDatePicker"."0" no se encuentra definida.' in /Applications/MAMP/htdocs/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CWidgetFactory.php(161): CComponent->__set('0', Array)
+#1 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(VisitaController), 'yiiwheels.widge...', Array)
+#2 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('yiiwheels.widge...', Array)
+#3 /Applications/MAMP/htdocs/vitalis/protected/views/visita/_form.php(36): CBaseController->widget('yiiwheels.widge...', Array)
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require('/Applications/M...')
+#5 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Applications/M...', Array, true)
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): CBaseController->renderFile('/Applications/M...', Array, true)
+#7 /Applications/MAMP/htdocs/vitalis/protected/views/visita/create.php(20): CController->renderPartial('_form', Array)
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require('/Applications/M...')
+#9 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Applications/M...', Array, true)
+#10 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): CBaseController->renderFile('/Applications/M...', Array, true)
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#12 /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php(153): CController->render('create', Array)
+#13 [internal function]: VisitaController->actionCreate('4')
+#14 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(VisitaController), Array)
+#15 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(VisitaController), Object(ReflectionMethod), Array)
+#16 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#23 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Visita/create')
+#26 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#27 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/vitalis/index.php/Visita/create/4
+---
+2014/07/18 15:06:14 [error] [exception.CException] exception 'CException' with message 'La propiedad "WhDatePicker"."0" no se encuentra definida.' in /Applications/MAMP/htdocs/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CWidgetFactory.php(161): CComponent->__set('0', Array)
+#1 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(VisitaController), 'yiiwheels.widge...', Array)
+#2 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('yiiwheels.widge...', Array)
+#3 /Applications/MAMP/htdocs/vitalis/protected/views/visita/_form.php(35): CBaseController->widget('yiiwheels.widge...', Array)
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require('/Applications/M...')
+#5 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Applications/M...', Array, true)
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): CBaseController->renderFile('/Applications/M...', Array, true)
+#7 /Applications/MAMP/htdocs/vitalis/protected/views/visita/create.php(20): CController->renderPartial('_form', Array)
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require('/Applications/M...')
+#9 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Applications/M...', Array, true)
+#10 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): CBaseController->renderFile('/Applications/M...', Array, true)
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#12 /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php(153): CController->render('create', Array)
+#13 [internal function]: VisitaController->actionCreate('4')
+#14 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(VisitaController), Array)
+#15 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(VisitaController), Object(ReflectionMethod), Array)
+#16 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#23 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#25 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Visita/create')
+#26 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#27 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/vitalis/index.php/Visita/create/4
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Organizacion/4
+---
+2014/07/18 15:14:03 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(AuthWebUser), 'Usted no se enc...')
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#9 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Visita/create')
+#10 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/vitalis/index.php/Visita/create/4
+HTTP_REFERER=http://192.168.2.110:8888/vitalis/index.php/Organizacion/4
+---
+2014/07/18 16:23:58 [error] [php] Trying to get property of non-object (/Applications/MAMP/htdocs/vitalis/protected/views/organizacion/view.php:73)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): OrganizacionController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): OrganizacionController->renderPartial()
+#2 /Applications/MAMP/htdocs/vitalis/protected/controllers/OrganizacionController.php(66): OrganizacionController->render()
+#3 unknown(0): OrganizacionController->actionView()
+#4 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): OrganizacionController->runAction()
+#8 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): OrganizacionController->filterAccessControl()
+#11 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): OrganizacionController->runActionWithFilters()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): OrganizacionController->run()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/Organizacion/4
+in /Applications/MAMP/htdocs/vitalis/protected/views/organizacion/view.php (73)
+in /Applications/MAMP/htdocs/vitalis/protected/controllers/OrganizacionController.php (66)
+in /Applications/MAMP/htdocs/vitalis/index.php (13)
+2014/07/18 16:24:09 [error] [php] Trying to get property of non-object (/Applications/MAMP/htdocs/vitalis/protected/views/organizacion/view.php:73)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): OrganizacionController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): OrganizacionController->renderPartial()
+#2 /Applications/MAMP/htdocs/vitalis/protected/controllers/OrganizacionController.php(66): OrganizacionController->render()
+#3 unknown(0): OrganizacionController->actionView()
+#4 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): OrganizacionController->runAction()
+#8 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): OrganizacionController->filterAccessControl()
+#11 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): OrganizacionController->runActionWithFilters()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): OrganizacionController->run()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/Organizacion/4
+in /Applications/MAMP/htdocs/vitalis/protected/views/organizacion/view.php (73)
+in /Applications/MAMP/htdocs/vitalis/protected/controllers/OrganizacionController.php (66)
+in /Applications/MAMP/htdocs/vitalis/index.php (13)
+2014/07/18 16:24:11 [error] [php] Trying to get property of non-object (/Applications/MAMP/htdocs/vitalis/protected/views/organizacion/view.php:73)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): OrganizacionController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): OrganizacionController->renderPartial()
+#2 /Applications/MAMP/htdocs/vitalis/protected/controllers/OrganizacionController.php(66): OrganizacionController->render()
+#3 unknown(0): OrganizacionController->actionView()
+#4 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): OrganizacionController->runAction()
+#8 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): OrganizacionController->filterAccessControl()
+#11 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): OrganizacionController->runActionWithFilters()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): OrganizacionController->run()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/Organizacion/4
+in /Applications/MAMP/htdocs/vitalis/protected/views/organizacion/view.php (73)
+in /Applications/MAMP/htdocs/vitalis/protected/controllers/OrganizacionController.php (66)
+in /Applications/MAMP/htdocs/vitalis/index.php (13)
+2014/07/18 16:24:21 [error] [php] Trying to get property of non-object (/Applications/MAMP/htdocs/vitalis/protected/views/organizacion/view.php:73)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): OrganizacionController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): OrganizacionController->renderPartial()
+#2 /Applications/MAMP/htdocs/vitalis/protected/controllers/OrganizacionController.php(66): OrganizacionController->render()
+#3 unknown(0): OrganizacionController->actionView()
+#4 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): OrganizacionController->runAction()
+#8 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): OrganizacionController->filterAccessControl()
+#11 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): OrganizacionController->runActionWithFilters()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): OrganizacionController->run()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/Organizacion/4
+in /Applications/MAMP/htdocs/vitalis/protected/views/organizacion/view.php (73)
+in /Applications/MAMP/htdocs/vitalis/protected/controllers/OrganizacionController.php (66)
+in /Applications/MAMP/htdocs/vitalis/index.php (13)
+2014/07/18 16:25:23 [error] [php] Trying to get property of non-object (/Applications/MAMP/htdocs/vitalis/protected/views/organizacion/view.php:73)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): OrganizacionController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): OrganizacionController->renderPartial()
+#2 /Applications/MAMP/htdocs/vitalis/protected/controllers/OrganizacionController.php(66): OrganizacionController->render()
+#3 unknown(0): OrganizacionController->actionView()
+#4 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): OrganizacionController->runAction()
+#8 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): OrganizacionController->filterAccessControl()
+#11 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): OrganizacionController->runActionWithFilters()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): OrganizacionController->run()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/Organizacion/4
+in /Applications/MAMP/htdocs/vitalis/protected/views/organizacion/view.php (73)
+in /Applications/MAMP/htdocs/vitalis/protected/controllers/OrganizacionController.php (66)
+in /Applications/MAMP/htdocs/vitalis/index.php (13)
+2014/07/18 16:25:25 [error] [php] Trying to get property of non-object (/Applications/MAMP/htdocs/vitalis/protected/views/organizacion/view.php:73)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): OrganizacionController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): OrganizacionController->renderPartial()
+#2 /Applications/MAMP/htdocs/vitalis/protected/controllers/OrganizacionController.php(66): OrganizacionController->render()
+#3 unknown(0): OrganizacionController->actionView()
+#4 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): OrganizacionController->runAction()
+#8 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): OrganizacionController->filterAccessControl()
+#11 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): OrganizacionController->runActionWithFilters()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): OrganizacionController->run()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/Organizacion/4
+in /Applications/MAMP/htdocs/vitalis/protected/views/organizacion/view.php (73)
+in /Applications/MAMP/htdocs/vitalis/protected/controllers/OrganizacionController.php (66)
+in /Applications/MAMP/htdocs/vitalis/index.php (13)
+2014/07/18 16:39:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "Persona"' in /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Persona')
+#1 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/vitalis/index.php/Persona
+---
+2014/07/18 16:39:51 [error] [php] include(TbDataColumn.php): failed to open stream: No such file or directory (/Applications/MAMP/htdocs/yii/framework/YiiBase.php:427)
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php(96): spl_autoload_call()
+#1 /Applications/MAMP/htdocs/yii/framework/zii/widgets/grid/CGridView.php(383): TbGridView->createDataColumn()
+#2 /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php(79): TbGridView->initColumns()
+#3 /Applications/MAMP/htdocs/yii/framework/zii/widgets/grid/CGridView.php(359): TbGridView->initColumns()
+#4 /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php(48): TbGridView->init()
+#5 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(147): TbGridView->init()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(172): PersonaController->createWidget()
+#7 /Applications/MAMP/htdocs/vitalis/protected/views/persona/admin.php(68): PersonaController->widget()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): PersonaController->renderInternal()
+#10 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): PersonaController->renderFile()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): PersonaController->renderPartial()
+#12 /Applications/MAMP/htdocs/vitalis/protected/controllers/PersonaController.php(150): PersonaController->render()
+#13 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): PersonaController->actionAdmin()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#15 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): PersonaController->runAction()
+#16 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#18 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): PersonaController->filterAccessControl()
+#19 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#20 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#21 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): PersonaController->runActionWithFilters()
+#22 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): PersonaController->run()
+#23 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#24 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/persona/admin
+in /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php (96)
+in /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php (79)
+in /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+2014/07/18 16:39:55 [error] [php] include(TbDataColumn.php): failed to open stream: No such file or directory (/Applications/MAMP/htdocs/yii/framework/YiiBase.php:427)
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php(96): spl_autoload_call()
+#1 /Applications/MAMP/htdocs/yii/framework/zii/widgets/grid/CGridView.php(383): TbGridView->createDataColumn()
+#2 /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php(79): TbGridView->initColumns()
+#3 /Applications/MAMP/htdocs/yii/framework/zii/widgets/grid/CGridView.php(359): TbGridView->initColumns()
+#4 /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php(48): TbGridView->init()
+#5 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(147): TbGridView->init()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(172): PersonaController->createWidget()
+#7 /Applications/MAMP/htdocs/vitalis/protected/views/persona/admin.php(68): PersonaController->widget()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): PersonaController->renderInternal()
+#10 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): PersonaController->renderFile()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): PersonaController->renderPartial()
+#12 /Applications/MAMP/htdocs/vitalis/protected/controllers/PersonaController.php(150): PersonaController->render()
+#13 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): PersonaController->actionAdmin()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#15 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): PersonaController->runAction()
+#16 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#18 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): PersonaController->filterAccessControl()
+#19 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#20 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#21 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): PersonaController->runActionWithFilters()
+#22 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): PersonaController->run()
+#23 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#24 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/persona/admin
+in /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php (96)
+in /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php (79)
+in /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+2014/07/18 16:41:11 [error] [php] include(TbDataColumn.php): failed to open stream: No such file or directory (/Applications/MAMP/htdocs/yii/framework/YiiBase.php:427)
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php(96): spl_autoload_call()
+#1 /Applications/MAMP/htdocs/yii/framework/zii/widgets/grid/CGridView.php(383): TbGridView->createDataColumn()
+#2 /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php(79): TbGridView->initColumns()
+#3 /Applications/MAMP/htdocs/yii/framework/zii/widgets/grid/CGridView.php(359): TbGridView->initColumns()
+#4 /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php(48): TbGridView->init()
+#5 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(147): TbGridView->init()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(172): PersonaController->createWidget()
+#7 /Applications/MAMP/htdocs/vitalis/protected/views/persona/admin.php(67): PersonaController->widget()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): PersonaController->renderInternal()
+#10 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): PersonaController->renderFile()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): PersonaController->renderPartial()
+#12 /Applications/MAMP/htdocs/vitalis/protected/controllers/PersonaController.php(150): PersonaController->render()
+#13 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): PersonaController->actionAdmin()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#15 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): PersonaController->runAction()
+#16 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#18 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): PersonaController->filterAccessControl()
+#19 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#20 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#21 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): PersonaController->runActionWithFilters()
+#22 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): PersonaController->run()
+#23 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#24 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/persona/admin
+in /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php (96)
+in /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php (79)
+in /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+2014/07/18 16:41:16 [error] [php] include(TbDataColumn.php): failed to open stream: No such file or directory (/Applications/MAMP/htdocs/yii/framework/YiiBase.php:427)
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php(96): spl_autoload_call()
+#1 /Applications/MAMP/htdocs/yii/framework/zii/widgets/grid/CGridView.php(383): TbGridView->createDataColumn()
+#2 /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php(79): TbGridView->initColumns()
+#3 /Applications/MAMP/htdocs/yii/framework/zii/widgets/grid/CGridView.php(359): TbGridView->initColumns()
+#4 /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php(48): TbGridView->init()
+#5 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(147): TbGridView->init()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(172): PersonaController->createWidget()
+#7 /Applications/MAMP/htdocs/vitalis/protected/views/persona/admin.php(67): PersonaController->widget()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): PersonaController->renderInternal()
+#10 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): PersonaController->renderFile()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): PersonaController->renderPartial()
+#12 /Applications/MAMP/htdocs/vitalis/protected/controllers/PersonaController.php(150): PersonaController->render()
+#13 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): PersonaController->actionAdmin()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#15 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): PersonaController->runAction()
+#16 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#18 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): PersonaController->filterAccessControl()
+#19 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#20 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#21 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): PersonaController->runActionWithFilters()
+#22 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): PersonaController->run()
+#23 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#24 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/persona/admin
+in /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php (96)
+in /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php (79)
+in /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+2014/07/18 16:45:36 [error] [php] include(organizacion_id.php): failed to open stream: No such file or directory (/Applications/MAMP/htdocs/yii/framework/YiiBase.php:427)
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/views/personaOrganizacion/_form.php(24): spl_autoload_call()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#2 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): PersonaOrganizacionController->renderInternal()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): PersonaOrganizacionController->renderFile()
+#4 /Applications/MAMP/htdocs/vitalis/protected/views/personaOrganizacion/create.php(20): PersonaOrganizacionController->renderPartial()
+#5 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): PersonaOrganizacionController->renderInternal()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): PersonaOrganizacionController->renderFile()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): PersonaOrganizacionController->renderPartial()
+#9 /Applications/MAMP/htdocs/vitalis/protected/controllers/PersonaOrganizacionController.php(79): PersonaOrganizacionController->render()
+#10 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): PersonaOrganizacionController->actionCreate()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): PersonaOrganizacionController->runAction()
+#13 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#15 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): PersonaOrganizacionController->filterAccessControl()
+#16 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#17 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#18 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): PersonaOrganizacionController->runActionWithFilters()
+#19 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): PersonaOrganizacionController->run()
+#20 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/personaOrganizacion/create
+in /Applications/MAMP/htdocs/vitalis/protected/views/personaOrganizacion/_form.php (24)
+in /Applications/MAMP/htdocs/vitalis/protected/views/personaOrganizacion/create.php (20)
+in /Applications/MAMP/htdocs/vitalis/protected/controllers/PersonaOrganizacionController.php (79)
+2014/07/21 10:25:17 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(AuthWebUser), 'Usted no se enc...')
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Organizacion/vi...')
+#10 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/vitalis/index.php/Organizacion/4
+HTTP_REFERER=http://localhost:8888/vitalis/
+---
+2014/07/21 10:30:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "autj"' in /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('autj')
+#1 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/vitalis/autj
+---
+2014/07/21 10:34:17 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/user/login
+---
+2014/07/21 10:34:18 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/user/login
+---
+2014/07/21 10:34:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/user/login
+---
+2014/07/21 10:34:24 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Recordatorio/index
+---
+2014/07/21 10:34:26 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Recordatorio/index
+---
+2014/07/21 10:35:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Recordatorio/index
+---
+2014/07/21 10:35:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Recordatorio/index
+---
+2014/07/21 10:35:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Recordatorio/index
+---
+2014/07/21 10:35:10 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Recordatorio/index
+---
+2014/07/21 10:35:40 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/user/login
+---
+2014/07/21 10:36:43 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Recordatorio/in...')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php/Recordatorio/index
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/user/login
+---
+2014/07/21 10:36:43 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Recordatorio/in...')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php/Recordatorio/index
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/user/login
+---
+2014/07/21 10:38:23 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/user/login
+---
+2014/07/21 10:38:25 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Recordatorio/in...')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php/Recordatorio/index
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/user/login
+---
+2014/07/21 10:38:29 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Recordatorio/in...')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php/Recordatorio/index
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/user/login
+---
+2014/07/21 10:41:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "auth/item/index"' in /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('auth/item/index')
+#1 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/vitalis/index.php/auth/item/index
+---
+2014/07/21 10:41:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "auth/item"' in /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('auth/item')
+#1 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/vitalis/index.php/auth/item
+---
+2014/07/21 10:47:29 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/user/login
+---
+2014/07/21 18:41:57 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/user/login
+---
+2014/07/21 18:41:58 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/user/login
+---

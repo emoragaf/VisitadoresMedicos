@@ -1,6 +1,6 @@
 <?php
 
-class OrganizacionController extends Controller
+class TipoCondicionpagoController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -28,7 +28,7 @@ class OrganizacionController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
-				'users'=>array('@'),
+				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
@@ -50,10 +50,8 @@ class OrganizacionController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$visitas = Visita::model()->findAll(array("condition"=>"organizacion_id =  $id"));
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
-			'visitas'=>$visitas,
 		));
 	}
 
@@ -63,13 +61,13 @@ class OrganizacionController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Organizacion;
+		$model=new TipoCondicionpago;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['Organizacion'])) {
-			$model->attributes=$_POST['Organizacion'];
+		if (isset($_POST['TipoCondicionpago'])) {
+			$model->attributes=$_POST['TipoCondicionpago'];
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -92,8 +90,8 @@ class OrganizacionController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['Organizacion'])) {
-			$model->attributes=$_POST['Organizacion'];
+		if (isset($_POST['TipoCondicionpago'])) {
+			$model->attributes=$_POST['TipoCondicionpago'];
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -129,7 +127,7 @@ class OrganizacionController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Organizacion');
+		$dataProvider=new CActiveDataProvider('TipoCondicionpago');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -140,10 +138,10 @@ class OrganizacionController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Organizacion('search');
+		$model=new TipoCondicionpago('search');
 		$model->unsetAttributes();  // clear any default values
-		if (isset($_GET['Organizacion'])) {
-			$model->attributes=$_GET['Organizacion'];
+		if (isset($_GET['TipoCondicionpago'])) {
+			$model->attributes=$_GET['TipoCondicionpago'];
 		}
 
 		$this->render('admin',array(
@@ -155,12 +153,12 @@ class OrganizacionController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Organizacion the loaded model
+	 * @return TipoCondicionpago the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Organizacion::model()->findByPk($id);
+		$model=TipoCondicionpago::model()->findByPk($id);
 		if ($model===null) {
 			throw new CHttpException(404,'The requested page does not exist.');
 		}
@@ -169,11 +167,11 @@ class OrganizacionController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Organizacion $model the model to be validated
+	 * @param TipoCondicionpago $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if (isset($_POST['ajax']) && $_POST['ajax']==='organizacion-form') {
+		if (isset($_POST['ajax']) && $_POST['ajax']==='tipo-condicionpago-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}

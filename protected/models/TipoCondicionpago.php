@@ -1,28 +1,20 @@
 <?php
 
 /**
- * This is the model class for table "visita".
+ * This is the model class for table "tipo_condicionpago".
  *
- * The followings are the available columns in table 'visita':
+ * The followings are the available columns in table 'tipo_condicionpago':
  * @property integer $id
- * @property integer $organizacion_id
- * @property integer $visitador_id
- * @property integer $visitado_id
- * @property string $fecha_programada
- * @property string $fecha_realizada
- * @property string $notas
+ * @property string $nombre
  */
-class Visita extends CActiveRecord
+class TipoCondicionpago extends CActiveRecord
 {
-	public $maxFecha = 0;
-	public $minFecha = 0;
-	public $cantidad = 0;
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'visita';
+		return 'tipo_condicionpago';
 	}
 
 	/**
@@ -33,12 +25,11 @@ class Visita extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('visitado_id, fecha_programada', 'required'),
-			array('organizacion_id, visitador_id, visitado_id', 'numerical', 'integerOnly'=>true),
-			array('fecha_realizada, notas, cargo_visitado', 'safe'),
+			array('nombre', 'required'),
+			array('nombre', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, organizacion_id, visitador_id, visitado_id, fecha_programada, fecha_realizada, notas', 'safe', 'on'=>'search'),
+			array('id, nombre', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -50,9 +41,7 @@ class Visita extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'organizacion' => array(self::BELONGS_TO, 'Organizacion', 'organizacion_id'),
-			'user' => array(self::BELONGS_TO, 'User', 'visitador_id'),
-			'persona' => array(self::BELONGS_TO, 'Persona', 'visitado_id'),
+			'Organizaciones' => array(self::HAS_MANY, 'Organizacion', 'tipo_condicionpago_id'),
 		);
 	}
 
@@ -63,12 +52,7 @@ class Visita extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'organizacion_id' => 'Organizacion',
-			'visitador_id' => 'Visitador',
-			'visitado_id' => 'Visitado',
-			'fecha_programada' => 'Fecha Programada',
-			'fecha_realizada' => 'Fecha Realizada',
-			'notas' => 'Notas',
+			'nombre' => 'Nombre',
 		);
 	}
 
@@ -91,12 +75,7 @@ class Visita extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('organizacion_id',$this->organizacion_id);
-		$criteria->compare('visitador_id',$this->visitador_id);
-		$criteria->compare('visitado_id',$this->visitado_id);
-		$criteria->compare('fecha_programada',$this->fecha_programada,true);
-		$criteria->compare('fecha_realizada',$this->fecha_realizada,true);
-		$criteria->compare('notas',$this->notas,true);
+		$criteria->compare('nombre',$this->nombre,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -107,7 +86,7 @@ class Visita extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Visita the static model class
+	 * @return TipoCondicionpago the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

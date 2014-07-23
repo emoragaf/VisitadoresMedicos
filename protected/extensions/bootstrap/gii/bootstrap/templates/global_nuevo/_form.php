@@ -36,11 +36,8 @@
     <?php
     }
     ?>
-    <div class="form-actions">
-        <?php echo "<?php echo TbHtml::submitButton(\$model->isNewRecord ? 'Crear' : 'Guardar',array(
-		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
-		    'size'=>TbHtml::BUTTON_SIZE_LARGE,
-		)); ?>\n"; ?>
+    <div>
+        <button class="ui-btn ui-btn-inline">Guardar</button>
     </div>
 
     <?php echo "<?php \$this->endWidget(); ?>\n"; ?>

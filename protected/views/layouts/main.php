@@ -30,7 +30,7 @@
 	        array(
 	            'class' => 'bootstrap.widgets.TbNav',
 	            'items' => array(
-	                array('label' => 'Recordatorios', 'url' =>array('/Recordatorio/index')),
+	                array('label' => 'Recordatorios', 'url' =>array('/Recordatorio/index'), 'visible'=>Yii::app()->user->checkAccess('Recordatorio.*')),
 	                array('label'=>'Login', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
 					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)
 	                //array('label' => 'Link', 'url' => '#'),

@@ -8,7 +8,7 @@ return array(
     'Login' => 'Inicio de Sesión',
     'Logout' => 'Cerrar sesión',
     'username' => "Nombre de Usuario",
-    'username or email' => "Nombre de Usuario o Email",
+    'username or email' => "Nombre de Usuario",
     'password' => 'Contraseña',
     'Remember me next time' => 'Recordarme más tarde',
     'Username is incorrect.' => "El nombre de usuario es incorrecto.",
