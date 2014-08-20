@@ -42,7 +42,7 @@
         <div class="span3">
             <h4>Recordatorios Anteriores</h4>
             <div data-role="collapsible-set">
-                <div id="recordatoriosFilter" data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Buscar Recordatorios...">
+                <div id="recordatoriosFilter" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Buscar Recordatorios...">
                 <?php foreach ($recordatorios as $r): ?>
                     <div data-role="collapsible">
                         <h3>Recordatorio <?php echo date('d-m-Y',strtotime($r->fecha_recordatorio)) ?></h3>
@@ -61,7 +61,7 @@
     <div class="row">
     <div class="span8">
             <h4>Notas Anteriores</h4>
-            <?php echo TbHtml::dropDownList('personas_notas', '', $visitados, array('empty' => 'Filtrar Visitado')); ?>
+            <?php //echo TbHtml::dropDownList('personas_notas', '', $visitados, array('empty' => 'Filtrar Visitado')); ?>
             <div data-role="collapsible-set">
                 <div id="searchFilter" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Buscar Notas...">
                 <?php foreach ($visitas as $visita): ?>
@@ -80,7 +80,7 @@
     <div class="span4">
         <label for="fecha_recordatorio">Fecha Recordatorio</label>
         <input type="datetime-local" data-clear-btn="false" name="Recordatorio[fecha_recordatorio]" id="Recordatorio[fecha_recordatorio]" value="">
-
+        <?php echo $form->dropDownListControlGroup($recordatorio, 'importancia', Recordatorio::model()->getImportancia(true), array('empty' => 'Importancia Recordatorio')); ?>
          <?php echo $form->textAreaControlGroup($recordatorio,'texto',array('rows'=>8,'span'=>12,'placeholder'=>'Recordatorio')); ?>
     </div>
     </div>

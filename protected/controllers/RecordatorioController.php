@@ -62,14 +62,15 @@ class RecordatorioController extends Controller
 	public function actionCreate()
 	{
 		$model=new Recordatorio;
-
+		$model->autor_id = Yii::app()->user->getId();
+		$model->fecha_creacion = date('c');
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Recordatorio'])) {
 			$model->attributes=$_POST['Recordatorio'];
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('index'));
 			}
 		}
 
@@ -130,7 +131,7 @@ class RecordatorioController extends Controller
 		$user_id = Yii::app()->user->getId();
 		$dataProvider=new CActiveDataProvider('Recordatorio', array(
 		            'criteria'=>array(
-		                'condition'=>'t.destinatario_id=:id',
+		                'condition'=>'t.destinatario_id=:id AND leido = 0',
 		                'order'=>'fecha_recordatorio',
 		                'params'=>array(':id'=>$user_id),
 		            ),
@@ -138,6 +139,22 @@ class RecordatorioController extends Controller
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
+	}
+
+	public function actionAceptar($id,$rurl= 'index'){
+		$url = str_replace('-', '/', $rurl);
+		$recordatorio = $this->loadModel($id);
+		$recordatorio->leido = 1;
+		$recordatorio->save();
+		$this->redirect(array($url));
+	}
+
+	public function actionPosponer($id){
+		$recordatorio = $this->loadModel($id);
+		$recordatorio->posponer = 1;
+		$recordatorio->fecha_posponer = date('c',strtotime('+1 day'));
+		$recordatorio->save();
+		$this->redirect(array('site/index'));
 	}
 
 	/**

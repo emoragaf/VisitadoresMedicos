@@ -24,5 +24,13 @@ return array(
     'model.Recordatorio.index'=>'Listar Recordatorios',
     'model.Recordatorio.view'=>'Detalle Recordatorio',
     'model.Recordatorio.delete'=>'Eliminar Recordatorio',
+    //Agenda
+    'model.Agenda'=>'Horario',
+    'model.Agenda.create'=>'Nuevo Item Horario',
+    'model.Agenda.update'=>'Actualizar Item Horario',
+    'model.Agenda.admin'=>'Administrar Horario',
+    'model.Agenda.index'=>'Ver Horario',
+    'model.Agenda.view'=>'Detalle Horario',
+    'model.Agenda.delete'=>'Eliminar Horario',
 
 );

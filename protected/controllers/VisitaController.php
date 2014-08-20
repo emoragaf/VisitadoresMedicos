@@ -81,7 +81,7 @@ class VisitaController extends Controller
 		));
 		$visitas->pagination->pageSize=5;*/
 		$visitas = Visita::model()->findAll(array("condition"=>"organizacion_id =  $model->organizacion_id"));
-		$recordatorios = Recordatorio::model()->findAll(array("condition"=>"organizacion_id =  $model->organizacion_id AND autor_id = $user_id"));
+		$recordatorios = Recordatorio::model()->findAll(array("condition"=>"organizacion_id = ".$model->organizacion_id." AND autor_id = ".$user_id));
 
 		foreach ($p as $value) {
 			//print_r($value);

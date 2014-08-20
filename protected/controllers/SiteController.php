@@ -55,11 +55,12 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$user_id = Yii::app()->user->getId();
+		$fecha_max = date('y-m-d',strtotime('+ 7 day'));
 		$recordatorios=new CActiveDataProvider('Recordatorio', array(
 		            'criteria'=>array(
-		                'condition'=>'t.destinatario_id=:id',
+		                'condition'=>'t.destinatario_id=:id AND leido = 0 AND fecha_recordatorio < :fecha_max OR (t.destinatario_id=:id AND importancia = 1 AND leido = 0)',
 		                'order'=>'fecha_recordatorio',
-		                'params'=>array(':id'=>$user_id),
+		                'params'=>array(':id'=>$user_id,':fecha_max'=>$fecha_max),
 		            ),
 		));
 		$orgs = Organizacion::model()->findAll(array('order'=>'categoria_id desc'));

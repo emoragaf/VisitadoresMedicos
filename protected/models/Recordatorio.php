@@ -14,12 +14,22 @@
  */
 class Recordatorio extends CActiveRecord
 {
+	private $nombreImportancia = array('0'=>'Normal','1'=>'Importante');
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
 		return 'recordatorio';
+	}
+
+	public function getImportancia($array = false){
+		
+		if($array){
+			return $this->nombreImportancia;
+		}
+		else
+			return $this->nombreImportancia[$this->importancia];
 	}
 
 	/**
@@ -31,7 +41,7 @@ class Recordatorio extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('autor_id, destinatario_id, fecha_creacion, fecha_recordatorio, texto', 'required'),
-			array('autor_id, destinatario_id, persona_organizacion, organizacion_id, visita_id, leido', 'numerical', 'integerOnly'=>true),
+			array('autor_id, importancia ,destinatario_id, persona_organizacion, organizacion_id, visita_id, leido', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, autor_id, destinatario_id, fecha_creacion, fecha_recordatorio, texto, leido', 'safe', 'on'=>'search'),
