@@ -5,3 +5,13 @@
 html, body {
   height: 100%;
 }
+.roboto{
+	font-family: 'Roboto', sans-serif;
+}
+.arvo{
+	font-family: 'Arvo', serif;
+}
+.texto{
+	font-family: 'Arvo', serif;
+	font-size: 12;
+}

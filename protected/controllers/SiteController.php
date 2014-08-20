@@ -59,7 +59,7 @@ class SiteController extends Controller
 		$recordatorios=new CActiveDataProvider('Recordatorio', array(
 		            'criteria'=>array(
 		                'condition'=>'t.destinatario_id=:id AND leido = 0 AND fecha_recordatorio < :fecha_max OR (t.destinatario_id=:id AND importancia = 1 AND leido = 0)',
-		                'order'=>'fecha_recordatorio',
+		                'order'=>'importancia DESC, fecha_recordatorio',
 		                'params'=>array(':id'=>$user_id,':fecha_max'=>$fecha_max),
 		            ),
 		));

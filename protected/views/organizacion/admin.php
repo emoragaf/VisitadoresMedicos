@@ -4,8 +4,8 @@
 
 
 $this->breadcrumbs=array(
-	'Yii::t('app','model.Organizacion')
-'=>array('index'),
+	Yii::t('app','model.Organizacion')
+=>array('index'),
 	'Manage',
 );
 
@@ -13,41 +13,39 @@ $this->menu=array(
 	array('label'=>Yii::t('app','model.Organizacion.index'),'url'=>array('index')),
 	array('label'=>Yii::t('app','model.Organizacion.create'),'url'=>array('create')),
 );
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#organizacion-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
 <h1><?php echo Yii::t('app','model.Organizacion.admin'); ?></h1>
-
-<?php echo CHtml::link(Yii::t('app','Advanced Search'),'#',array('class'=>'search-button btn')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
 
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'organizacion-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
 		'nombre',
+		array(
+			'name'=>'categoria_id',
+			'value'=>'isset($data->categoria) ? $data->categoria->nombre : null',
+			'filter'=>Chtml::listData(CategoriaOrganizacion::model()->findAll(),'id','nombre')
+			),
+		array(
+			'name'=>'modo_compra_id',
+			'value'=>'isset($data->modoCompra) ?$data->modoCompra->nombre : null',
+			'filter'=>Chtml::listData(ModoCompra::model()->findAll(),'id','nombre')
+			),
+		array(
+			'name'=>'tipo_financiamiento_id',
+			'value'=>'isset($data->tipoFinanciamiento) ? $data->tipoFinanciamiento->nombre : null',
+			'filter'=>Chtml::listData(TipoFinanciamiento::model()->findAll(),'id','nombre')
+			),
+		array(
+			'name'=>'tipo_condicionpago_id',
+			'value'=>'isset($data->tipoCondicionpago) ? $data->tipoCondicionpago->nombre : null',
+			'filter'=>Chtml::listData(TipoCondicionPago::model()->findAll(),'id','nombre')
+			),
 		'direccion',
 		'comuna',
 		'email',
-		'descripcion',
 		/*
 		'created_at',
 		'updated_at',

@@ -36,9 +36,9 @@ class Organizacion extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('nombre, direccion, categoria_id', 'required'),
-			array('categoria_id, modo_compra_id, tipo_financiamiento_id, cantidad_camas', 'numerical', 'integerOnly'=>true),
+			array('categoria_id, modo_compra_id, tipo_financiamiento_id, cantidad_camas, cirugias_year', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>40),
-			array('direccion', 'length', 'max'=>255),
+			array('direccion, telefono1, telefono2, telefono3, web', 'length', 'max'=>255),
 			array('email, comuna', 'length', 'max'=>128),
 			array('email', 'email'),
 			array('descripcion', 'safe'),
@@ -156,6 +156,10 @@ class Organizacion extends CActiveRecord
 			'tipo_financiamiento_id' => 'Tipo Financiamiento',
 			'tipo_condicionpago_id' => 'Condición Pago',
 			'cantidad_camas' => 'Cantidad de Camas',
+			'cirugias_year' => 'Cirugías al Año',
+			'telefono3' => 'Teléfono 3',
+			'telefono2' => 'Teléfono 2',
+			'telefono1' => 'Teléfono 1',
 		);
 	}
 

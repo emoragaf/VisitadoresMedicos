@@ -7,8 +7,9 @@
 		<div class="ui-bar ui-bar-b">
 				    <?php if(strtotime('now')>strtotime($data->fecha_recordatorio)) echo '<h3 style="color:orange">'; else echo '<h3>'; ?>
 				    <?php echo'Recordatorio '.date('d-m-Y',strtotime($data->fecha_recordatorio)) ?>
+				    <?php if($data->importancia ==1) echo TbHtml::icon(TbHtml::ICON_FLAG,array('color'=>'white')); ?>
 				    </h3>
-				    <div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right">
+				    <div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right" style="margin-top:4px;">
 				        <?php echo CHtml::link('Aceptar',array('recordatorio/aceptar',
                                          'id'=>$data->id),array('class'=>'ui-btn ui-mini ui-icon-check ui-btn-icon-notext')); ?>
 				    </div>	

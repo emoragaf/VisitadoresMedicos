@@ -50,10 +50,10 @@ $this->menu=array(
 					'value'=>$model->direccion.' '.$model->comuna,
 					),
 				'email',
-				array(
-					'name'=>'modo_compra_id',
-					'value'=>isset($model->modoCompra) ?$model->modoCompra->nombre : null,
-					),
+				'web',
+				'telefono1',
+				'telefono2',
+				'telefono3',
 			),
 		)); ?>	
 	</div>
@@ -64,6 +64,10 @@ $this->menu=array(
 		    ),
 		    'data'=>$model,
 		    'attributes'=>array(
+		    	array(
+					'name'=>'modo_compra_id',
+					'value'=>isset($model->modoCompra) ?$model->modoCompra->nombre : null,
+					),
 				array(
 					'name'=>'tipo_financiamiento_id',
 					'value'=>isset($model->tipoFinanciamiento) ? $model->tipoFinanciamiento->nombre : null,
@@ -73,6 +77,7 @@ $this->menu=array(
 					'value'=>isset($model->tipoCondicionpago) ? $model->tipoCondicionpago->nombre : null,
 					),
 				'cantidad_camas',
+				'cirugias_year',
 			),
 		)); ?>	
 	</div>

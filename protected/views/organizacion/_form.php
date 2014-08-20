@@ -27,7 +27,17 @@
 
             <?php echo $form->textFieldControlGroup($model,'email',array('span'=>5,'maxlength'=>128)); ?>
 
+            <?php echo $form->textFieldControlGroup($model,'web',array('span'=>5,'maxlength'=>255)); ?>
+
+            <?php echo $form->textFieldControlGroup($model,'telefono1',array('span'=>5,'maxlength'=>255)); ?>
+
+            <?php echo $form->textFieldControlGroup($model,'telefono2',array('span'=>5,'maxlength'=>255)); ?>
+
+            <?php echo $form->textFieldControlGroup($model,'telefono3',array('span'=>5,'maxlength'=>255)); ?>
+
             <?php echo $form->textAreaControlGroup($model,'descripcion',array('rows'=>6,'span'=>8)); ?>
+
+            <?php echo $form->textFieldControlGroup($model,'cirugias_year',array('span'=>5,'maxlength'=>255)); ?>
 
             <?php echo $form->textFieldControlGroup($model,'cantidad_camas',array('span'=>5,'maxlength'=>30)); ?>
             

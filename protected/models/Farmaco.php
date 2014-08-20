@@ -1,35 +1,22 @@
 <?php
 
 /**
- * This is the model class for table "recordatorio".
+ * This is the model class for table "farmaco".
  *
- * The followings are the available columns in table 'recordatorio':
+ * The followings are the available columns in table 'farmaco':
  * @property integer $id
- * @property integer $autor_id
- * @property integer $destinatario_id
- * @property string $fecha_creacion
- * @property string $fecha_recordatorio
- * @property string $texto
- * @property integer $leido
+ * @property string $nombre
+ * @property string $presentacion
+ * @property integer $clase_terapeutica_id
  */
-class Recordatorio extends CActiveRecord
+class Farmaco extends CActiveRecord
 {
-	private $nombreImportancia = array('0'=>'Normal','1'=>'Importante');
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'recordatorio';
-	}
-
-	public function getImportancia($array = false){
-		
-		if($array){
-			return $this->nombreImportancia;
-		}
-		else
-			return $this->nombreImportancia[$this->importancia];
+		return 'farmaco';
 	}
 
 	/**
@@ -40,11 +27,12 @@ class Recordatorio extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('autor_id, destinatario_id, fecha_creacion, fecha_recordatorio, texto', 'required'),
-			array('autor_id, importancia ,destinatario_id, persona_organizacion, organizacion_id, visita_id, leido', 'numerical', 'integerOnly'=>true),
+			array('nombre', 'required'),
+			array('clase_terapeutica_id', 'numerical', 'integerOnly'=>true),
+			array('nombre, presentacion', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, autor_id, destinatario_id, fecha_creacion, fecha_recordatorio, texto, leido', 'safe', 'on'=>'search'),
+			array('id, nombre, presentacion, clase_terapeutica_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,8 +44,6 @@ class Recordatorio extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'organizacion' => array(self::BELONGS_TO, 'Organizacion', 'organizacion_id'),
-			'autor' => array(self::BELONGS_TO, 'User', 'autor_id'),
 		);
 	}
 
@@ -68,12 +54,9 @@ class Recordatorio extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'autor_id' => 'Autor',
-			'destinatario_id' => 'Destinatario',
-			'fecha_creacion' => 'Fecha Creacion',
-			'fecha_recordatorio' => 'Fecha Recordatorio',
-			'texto' => 'Recordatorio',
-			'leido' => 'Leido',
+			'nombre' => 'Nombre',
+			'presentacion' => 'Presentacion',
+			'clase_terapeutica_id' => 'Clase Terapeutica',
 		);
 	}
 
@@ -96,12 +79,9 @@ class Recordatorio extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('autor_id',$this->autor_id);
-		$criteria->compare('destinatario_id',$this->destinatario_id);
-		$criteria->compare('fecha_creacion',$this->fecha_creacion,true);
-		$criteria->compare('fecha_recordatorio',$this->fecha_recordatorio,true);
-		$criteria->compare('texto',$this->texto,true);
-		$criteria->compare('leido',$this->leido);
+		$criteria->compare('nombre',$this->nombre,true);
+		$criteria->compare('presentacion',$this->presentacion,true);
+		$criteria->compare('clase_terapeutica_id',$this->clase_terapeutica_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -112,7 +92,7 @@ class Recordatorio extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Recordatorio the static model class
+	 * @return Farmaco the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

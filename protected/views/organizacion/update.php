@@ -15,6 +15,7 @@ $this->menu=array(
 	array('label'=>Yii::t('app','model.Organizacion.create'),'url'=>array('create')),
 	array('label'=>Yii::t('app','model.Organizacion.view'),'url'=>array('view','id'=>$model->id)),
 	array('label'=>Yii::t('app','model.Organizacion.admin'),'url'=>array('admin')),
+
 );
 ?>
 

@@ -26,7 +26,7 @@ return array(
     'model.Recordatorio.delete'=>'Eliminar Recordatorio',
     //Agenda
     'model.Agenda'=>'Horario',
-    'model.Agenda.create'=>'Nuevo Item Horario',
+    'model.Agenda.create'=>'Agregar Item a Horario',
     'model.Agenda.update'=>'Actualizar Item Horario',
     'model.Agenda.admin'=>'Administrar Horario',
     'model.Agenda.index'=>'Ver Horario',

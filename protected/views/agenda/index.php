@@ -19,14 +19,14 @@ $this->menu=array(
 ;?></h1>
 <table class="table table-bordered table-striped">
 	<tr>
-		<th>Bloque</th>
+		<th class="span1">Bloque</th>
 		<?php foreach ($semana as $key => $value) {?>
-			<th><?php echo ucfirst(strftime('%A',strtotime($key))) ?></th>
+			<th class="span2"><?php echo ucfirst(strftime('%A',strtotime($key))) ?></th>
 		<?php } ?>
 	</tr>
-	<?php for($i = 0;$i<7;$i++){ ?>
+	<?php for($i = 0;$i<6;$i++){ ?>
 	<tr>
-		<td><?php echo $i ?></td>
+		<td style="text-align: center; vertical-align:middle;"><?php echo $i+1 ?></td>
 		<?php foreach ($semana as $key => $value) {?>
 			<td>
 				<?php 
@@ -41,6 +41,9 @@ $this->menu=array(
 
 		<?php } ?>
 	</tr>
+	<?php if ($i == 1 || $i == 3): ?>
+		<tr><td colspan="8"></td></tr>
+	<?php endif ?>
 	<?php } ?>
 	
 </table>
