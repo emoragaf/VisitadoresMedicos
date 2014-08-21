@@ -19,5 +19,4 @@ $this->menu=array(
 ?>
 
 <h1> <?php echo Yii::t('app','model.Visita.update'); ?></h1>
-
-<?php $this->renderPartial('_form', array('model'=>$model,'visitados'=>$visitados)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model,'recordatorio'=>$recordatorio,'recordatorios'=>$recordatorios,'visitados'=>$visitados,'visitas'=>$visitas)); ?>

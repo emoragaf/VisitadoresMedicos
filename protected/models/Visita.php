@@ -51,6 +51,7 @@ class Visita extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'organizacion' => array(self::BELONGS_TO, 'Organizacion', 'organizacion_id'),
+			'recordatorio' => array(self::HAS_ONE, 'recordatorio', 'visita_id'),
 			'user' => array(self::BELONGS_TO, 'User', 'visitador_id'),
 			'persona' => array(self::BELONGS_TO, 'Persona', 'visitado_id'),
 		);

@@ -16,6 +16,12 @@
 		</div>
 	</div>
 	<div class="ui-body ui-body-a">
+		<?php if($data->organizacion_id) 
+			echo '<p><b>Institución: </b>'.$data->organizacion->nombre.'</p>';
+		?>
+		<?php if($data->autor_id != $data->destinatario_id) 
+			echo '<p><b>De: </b>'.$data->autor->username.'</p>';
+		?>
 		<p><?php echo $data->texto ?></p>
 	</div>
 </div>

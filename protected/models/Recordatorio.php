@@ -41,7 +41,7 @@ class Recordatorio extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('autor_id, destinatario_id, fecha_creacion, fecha_recordatorio, texto', 'required'),
-			array('autor_id, importancia ,destinatario_id, persona_organizacion, organizacion_id, visita_id, leido', 'numerical', 'integerOnly'=>true),
+			array('autor_id, visita_id, importancia ,destinatario_id, persona_organizacion, organizacion_id, visita_id, leido', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, autor_id, destinatario_id, fecha_creacion, fecha_recordatorio, texto, leido', 'safe', 'on'=>'search'),

@@ -21,7 +21,7 @@
 		<?php if($data->organizacion_id) 
 			echo '<p><b>Institución: </b>'.$data->organizacion->nombre.'</p>';
 		?>
-		<?php if($data->autor_id != $data->destinatario_id || true) 
+		<?php if($data->autor_id != $data->destinatario_id) 
 			echo '<p><b>De: </b>'.$data->autor->username.'</p>';
 		?>
 		<div class="texto"><?php echo $data->texto ?></div>

@@ -91,6 +91,8 @@ $this->menu=array(
 	            <div>
 	            		<p>Visitado: <b><?php echo $visita->persona->nombre.' '.$visita->persona->apellido_p ; ?></b></p>
 						<?php echo trim($visita->notas); ?>
+						<br>
+						<?php echo TbHtml::icon(TbHtml::ICON_PENCIL,array('color'=>'blue')).' '.Chtml::link('Editar',array('visita/update','id'=>$visita->id)); ?>
 	            </div>
 	        </div>
         	

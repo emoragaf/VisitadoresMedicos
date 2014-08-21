@@ -68,8 +68,6 @@ class VisitaController extends Controller
 		$model->visitador_id = Yii::app()->user->getId();
 		$model->organizacion_id = $id;
 		$model->created_at = date('c');
-		$markdown = new CMarkdown;
-		$model->notas = $markdown->transform(trim($model->notas));
 		$p = PersonaOrganizacion::model()->findAll(array("condition"=>"organizacion_id =  $model->organizacion_id"));
 		$personas = array();
 		/*$visitas=new CActiveDataProvider('Visita', array(
@@ -80,8 +78,8 @@ class VisitaController extends Controller
 		            ),
 		));
 		$visitas->pagination->pageSize=5;*/
-		$visitas = Visita::model()->findAll(array("condition"=>"organizacion_id =  $model->organizacion_id"));
-		$recordatorios = Recordatorio::model()->findAll(array("condition"=>"organizacion_id = ".$model->organizacion_id." AND autor_id = ".$user_id));
+		$visitas = Visita::model()->findAll(array("condition"=>"organizacion_id =  $model->organizacion_id",'order'=>'fecha_programada DESC'));
+		$recordatorios = Recordatorio::model()->findAll(array("condition"=>"organizacion_id = ".$model->organizacion_id." AND autor_id = ".$user_id,'order'=>'importancia DESC,fecha_recordatorio DESC'));
 
 		foreach ($p as $value) {
 			//print_r($value);
@@ -124,6 +122,8 @@ class VisitaController extends Controller
 					$recordatorio->fecha_recordatorio = null;
 
 				if ($model->save() && $recordatorio->save()) {
+					$recordatorio->visita_id = $model->id;
+					$recordatorio->save();
 					$this->redirect(array('/Organizacion/view','id'=>$model->organizacion_id));
 				}
 			}
@@ -140,6 +140,7 @@ class VisitaController extends Controller
 
 				if ($model->save() && $recordatorio->save()) {
 					$recordatorio->visita_id = $model->id;
+					$recordatorio->save();
 					$this->redirect(array('/Organizacion/view','id'=>$model->organizacion_id));
 				}
 			}
@@ -169,42 +170,117 @@ class VisitaController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+		$model->notas = strip_tags($model->notas);
+
+		$this->layout='//layouts/column1';
+		$user_id =Yii::app()->user->getId();
+		if($model->recordatorio){
+			$recordatorio = $model->recordatorio;
+			$recordatorio->texto = strip_tags($recordatorio->texto);
+		}
+		else
+		{
+			$recordatorio = new Recordatorio;
+			$recordatorio->fecha_creacion = date('Y-m-d H:i');	
+		}
+		$markdown = new CMarkdown;
 		$p = PersonaOrganizacion::model()->findAll(array("condition"=>"organizacion_id =  $model->organizacion_id"));
 		$personas = array();
-		$visitas=new CActiveDataProvider('Visita', array(
+		/*$visitas=new CActiveDataProvider('Visita', array(
 		            'criteria'=>array(
 		                'condition'=>'t.organizacion_id=:id',
 		                'order'=>'fecha_programada',
 		                'params'=>array(':id'=>$model->organizacion_id),
 		            ),
 		));
-		$visitas->pagination->pageSize=5;
+		$visitas->pagination->pageSize=5;*/
+		$visitas = Visita::model()->findAll(array("condition"=>"organizacion_id =  $model->organizacion_id",'order'=>'fecha_programada DESC'));
+		$recordatorios = Recordatorio::model()->findAll(array("condition"=>"organizacion_id = ".$model->organizacion_id." AND autor_id = ".$user_id,'order'=>'importancia DESC,fecha_recordatorio DESC'));
 
 		foreach ($p as $value) {
 			//print_r($value);
 			$foo = Persona::model()->findByPk($value->persona_id);
 			$personas[$foo->id] = $foo->nombre.' '.$foo->apellido_p;
 		}
-
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Visita'])) {
 			$model->attributes=$_POST['Visita'];
+
+			$persona_org = PersonaOrganizacion::model()->find(array("condition"=>"organizacion_id =  $model->organizacion_id AND persona_id = $model->visitado_id"));
+			if($persona_org)
+				$model->cargo_visitado = $persona_org->cargo;
+			
+			$model->updated_at = date('c');
+			$markdown = new CMarkdown;
+				$model->notas = $markdown->transform($model->notas);
 			if(!empty($model->fecha_realizada)){
-				$model->fecha_realizada = date('Y-m-d',strtotime($model->fecha_realizada));
+				$model->fecha_realizada = date('Y-m-d');
 			}
-			$model->fecha_programada = date('Y-m-d',strtotime($model->fecha_programada));
-			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+			if( $_POST['Visita']['fecha_programada'] != '')
+				$model->fecha_programada = date('Y-m-d',strtotime($model->fecha_programada));
+			else
+				$model->fecha_programada = null;
+
+			if(isset($_POST['Recordatorio']) && isset($_POST['recordatorio']) && $_POST['recordatorio'] == 1){
+				$recordatorio->attributes=$_POST['Recordatorio'];
+				$recordatorio->persona_organizacion = $model->visitado_id;
+				$recordatorio->organizacion_id = $model->organizacion_id;
+				$recordatorio->autor_id = Yii::app()->user->getId();
+				$recordatorio->destinatario_id = Yii::app()->user->getId();
+				$markdown = new CMarkdown;
+				$recordatorio->texto = $markdown->transform($model->notas);
+				if( $_POST['Recordatorio']['fecha_recordatorio'] != '')
+					$recordatorio->fecha_recordatorio = date('Y-m-d H:i',strtotime($recordatorio->fecha_recordatorio));
+				else
+					$recordatorio->fecha_recordatorio = null;
+
+				if ($model->save() && $recordatorio->save()) {
+					$recordatorio->visita_id = $model->id;
+					$recordatorio->save();
+
+					$this->redirect(array('/Organizacion/view','id'=>$model->organizacion_id));
+				}
 			}
+			else if(!isset($_POST['recordatorio']) && $_POST['Recordatorio']['texto'] != ''){
+				$recordatorio->attributes=$_POST['Recordatorio'];
+				$recordatorio->persona_organizacion = $model->visitado_id;
+				$recordatorio->organizacion_id = $model->organizacion_id;
+				$recordatorio->autor_id = Yii::app()->user->getId();
+				$markdown = new CMarkdown;
+				$recordatorio->texto = $markdown->transform($recordatorio->texto);
+				$recordatorio->destinatario_id = Yii::app()->user->getId();
+				
+				if( $_POST['Recordatorio']['fecha_recordatorio'] != '')
+					$recordatorio->fecha_recordatorio = date('Y-m-d H:i',strtotime($recordatorio->fecha_recordatorio));
+				else
+					$recordatorio->fecha_recordatorio = null;
+
+				if ($model->save() && $recordatorio->save()) {
+					$recordatorio->visita_id = $model->id;
+					$recordatorio->save();
+
+					$this->redirect(array('/Organizacion/view','id'=>$model->organizacion_id));
+				}
+			}
+
+			else if($model->save()){
+				$this->redirect(array('/Organizacion/view','id'=>$model->organizacion_id));
+			}
+
+			
 		}
 
+		//print_r($personas);
 		$this->render('update',array(
 			'model'=>$model,
+			'recordatorios'=>$recordatorios,
+			'recordatorio'=>$recordatorio,
 			'visitados'=>$personas,
 			'visitas'=>$visitas,
 		));
+
 	}
 
 	/**

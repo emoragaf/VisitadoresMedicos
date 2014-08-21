@@ -50,7 +50,7 @@ class OrganizacionController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$visitas = Visita::model()->findAll(array("condition"=>"organizacion_id =  $id"));
+		$visitas = Visita::model()->findAll(array("condition"=>"organizacion_id =  $id",'order'=>'fecha_programada DESC'));
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 			'visitas'=>$visitas,

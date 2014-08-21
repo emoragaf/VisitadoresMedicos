@@ -132,7 +132,7 @@ class RecordatorioController extends Controller
 		$dataProvider=new CActiveDataProvider('Recordatorio', array(
 		            'criteria'=>array(
 		                'condition'=>'t.destinatario_id=:id AND leido = 0',
-		                'order'=>'fecha_recordatorio',
+		                'order'=>'importancia DESC,fecha_recordatorio',
 		                'params'=>array(':id'=>$user_id),
 		            ),
 		));

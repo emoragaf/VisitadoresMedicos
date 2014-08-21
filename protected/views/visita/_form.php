@@ -25,7 +25,7 @@
         </div>
         <div class="span3">
             <label for="Visita[fecha_programada]">Fecha Programada <span class="required">*</span></label>
-            <input type="date" data-clear-btn="false" name="Visita[fecha_programada]" id="Visita[fecha_programada]" value="">
+            <input type="date" data-clear-btn="false" name="Visita[fecha_programada]" id="Visita[fecha_programada]" value="<?php echo isset($model->fecha_programada)?date('Y-m-d',strtotime($model->fecha_programada)):null; ?>">
         </div>
     </div>
     <div class="row">
@@ -79,7 +79,7 @@
     </div>
     <div class="span4">
         <label for="fecha_recordatorio">Fecha Recordatorio</label>
-        <input type="datetime-local" data-clear-btn="false" name="Recordatorio[fecha_recordatorio]" id="Recordatorio[fecha_recordatorio]" value="">
+        <input type="datetime-local" data-clear-btn="false" name="Recordatorio[fecha_recordatorio]" id="Recordatorio[fecha_recordatorio]" value="<?php echo isset($recordatorio->fecha_recordatorio) ?date('Y-m-d\Th:i',strtotime($recordatorio->fecha_recordatorio)) :null; ?>">
         <?php echo $form->dropDownListControlGroup($recordatorio, 'importancia', Recordatorio::model()->getImportancia(true), array('empty' => 'Importancia Recordatorio')); ?>
          <?php echo $form->textAreaControlGroup($recordatorio,'texto',array('rows'=>8,'span'=>12,'placeholder'=>'Recordatorio')); ?>
     </div>
