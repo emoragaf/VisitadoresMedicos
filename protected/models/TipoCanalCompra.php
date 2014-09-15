@@ -7,14 +7,14 @@
  * @property integer $id
  * @property string $nombre
  */
-class TipoFinanciamiento extends CActiveRecord
+class TipoCanalCompra extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'tipo_financiamiento';
+		return 'tipo_canal_compra';
 	}
 
 	/**

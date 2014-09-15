@@ -62,17 +62,22 @@ class AgendaController extends Controller
 	 */
 	public function actionCreate()
 	{
-		setlocale(LC_TIME, 'es_ES');
+		setlocale(LC_TIME, 'es_ES.UTF-8');
 
 		$model=new Agenda;
 		$model->user_id = Yii::app()->user->getId();
 		$fechas = array();
 		for($i=0; $i<7; $i++){
-			if ($i == 0)
-				$fechas[date('Y-m-d',strtotime('now'))] = ucfirst(strftime('%A',strtotime('now'))).' '.date('d-m-Y',strtotime('now'));
-			else
-				$fechas[date('Y-m-d',strtotime($i.' day'))] = ucfirst(strftime('%A',strtotime($i.' day'))).' '.date('d-m-Y',strtotime($i.' day'));
-
+			if ($i == 0){
+				if(date('N',strtotime('now')) != 6 && date('N',strtotime('now')) != 7){
+					$fechas[date('Y-m-d',strtotime('now'))] = ucfirst(strftime('%A',strtotime('now'))).' '.date('d-m-Y',strtotime('now'));
+				}
+			}
+			else{
+				if(date('N',strtotime($i.' day')) != 6 && date('N',strtotime($i.' day')) != 7){
+					$fechas[date('Y-m-d',strtotime($i.' day'))] = ucfirst(strftime('%A',strtotime($i.' day'))).' '.date('d-m-Y',strtotime($i.' day'));
+				}
+			}
 		}
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -80,7 +85,7 @@ class AgendaController extends Controller
 		if (isset($_POST['Agenda'])) {
 			$model->attributes=$_POST['Agenda'];
 			if ($model->save()) {
-				$this->redirect(array('index'));
+				$this->redirect(array('agenda/index'));
 			}
 		}
 

@@ -1,7 +1,8 @@
+
 <?php
 /* @var $this AgendaController */
 /* @var $dataProvider CActiveDataProvider */
-setlocale(LC_TIME, 'es_ES');
+setlocale(LC_TIME, 'es_ES.UTF-8');
 ?>
 
 <?php
@@ -21,24 +22,29 @@ $this->menu=array(
 	<tr>
 		<th class="span1">Bloque</th>
 		<?php foreach ($semana as $key => $value) {?>
-			<th class="span2"><?php echo ucfirst(strftime('%A',strtotime($key))) ?></th>
+			<?php if (date('N',strtotime($key)) != 7 && date('N',strtotime($key)) != 6): ?>
+				<th class="span2"><?php echo strftime('%A %d de %B',strtotime($key)) ?></th>
+			<?php endif ?>
 		<?php } ?>
 	</tr>
 	<?php for($i = 0;$i<6;$i++){ ?>
 	<tr>
 		<td style="text-align: center; vertical-align:middle;"><?php echo $i+1 ?></td>
 		<?php foreach ($semana as $key => $value) {?>
-			<td>
-				<?php 
-					if(!empty($value)){
-						foreach ($value as $item) {
-							if($item->bloque == $i)
-								echo $item->texto;
+			<?php if (date('N',strtotime($key)) != 7 && date('N',strtotime($key)) != 6): ?>
+				<td>
+					<?php 
+						if(!empty($value)){
+							echo '<ul>';
+							foreach ($value as $item) {
+								if($item->bloque == $i)
+									echo '<li>'.$item->texto.'</li>';
+							}
+							echo '</ul>';
 						}
-					}
-				?>
-			</td>
-
+					?>
+				</td>
+			<?php endif ?>
 		<?php } ?>
 	</tr>
 	<?php if ($i == 1 || $i == 3): ?>

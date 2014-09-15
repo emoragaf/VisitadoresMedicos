@@ -10,6 +10,7 @@ return array(
 	'timeZone' => 'America/Santiago',
 	'language'=>'es', // Este es el lenguaje en el que querés que muestre las cosas
 	'sourceLanguage'=>'en', 
+	'charset' => 'utf-8',
 	//'defaultController' => 'Visita/index',
 	// preloading 'log' component
 	'preload'=>array(

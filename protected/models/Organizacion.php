@@ -36,9 +36,9 @@ class Organizacion extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('nombre, direccion, categoria_id', 'required'),
-			array('categoria_id, modo_compra_id, tipo_financiamiento_id, cantidad_camas, cirugias_year', 'numerical', 'integerOnly'=>true),
+			array('categoria_id, modo_compra_id, tipo_canalcompra_id, cantidad_camas,cantidad_camas_maternidad,cantidad_camas_quirurgicos,cantidad_camas_pediatria,cantidad_camas_criticas, cirugias_year', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>40),
-			array('direccion, telefono1, telefono2, telefono3, web', 'length', 'max'=>255),
+			array('direccion, telefono1, telefono2, telefono3, web, horario_abastecimiento, horario_farmacia', 'length', 'max'=>255),
 			array('email, comuna', 'length', 'max'=>128),
 			array('email', 'email'),
 			array('descripcion', 'safe'),
@@ -59,7 +59,7 @@ class Organizacion extends CActiveRecord
 			'categoria' => array(self::BELONGS_TO, 'CategoriaOrganizacion', 'categoria_id'),
 			'visitas' => array(self::HAS_MANY, 'Visita', 'organizacion_id'),
 			'modoCompra' => array(self::BELONGS_TO, 'ModoCompra', 'modo_compra_id'),
-			'tipoFinanciamiento' => array(self::BELONGS_TO, 'TipoFinanciamiento', 'tipo_financiamiento_id'),
+			'tipoCanalCompra' => array(self::BELONGS_TO, 'TipoCanalCompra', 'tipo_canalcompra_id'),
 			'tipoCondicionpago' => array(self::BELONGS_TO, 'TipoCondicionpago', 'tipo_condicionpago_id'),
 
 		);
@@ -153,9 +153,13 @@ class Organizacion extends CActiveRecord
 			'updated_at' => 'Updated At',
 			'categoria_id' => 'Categoria',
 			'modo_compra_id' => 'Modo Compra',
-			'tipo_financiamiento_id' => 'Tipo Financiamiento',
+			'tipo_canalcompra_id' => 'Tipo Canal de Compra',
 			'tipo_condicionpago_id' => 'Condición Pago',
-			'cantidad_camas' => 'Cantidad de Camas',
+			'cantidad_camas' => 'Total Camas ',
+			'cant_camas_maternidad' => 'Cantidad de Camas Maternidad',
+			'cant_camas_quirurgicos' => 'Cantidad de Camas Quirurgico',
+			'cant_camas_pediatria' => 'Cantidad de Camas Pediatria',
+			'cant_camas_criticas' => 'Cantidad de Camas Criticas',
 			'cirugias_year' => 'Cirugías al Año',
 			'telefono3' => 'Teléfono 3',
 			'telefono2' => 'Teléfono 2',

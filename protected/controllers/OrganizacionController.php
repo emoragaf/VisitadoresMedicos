@@ -94,6 +94,7 @@ class OrganizacionController extends Controller
 
 		if (isset($_POST['Organizacion'])) {
 			$model->attributes=$_POST['Organizacion'];
+			$model->cantidad_camas = $model->cant_camas_maternidad + $model->cant_camas_quirurgico +$model->cant_camas_pediatria + $model->cant_camas_criticas;
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}

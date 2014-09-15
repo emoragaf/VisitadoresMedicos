@@ -35,17 +35,24 @@
 
             <?php echo $form->textFieldControlGroup($model,'telefono3',array('span'=>5,'maxlength'=>255)); ?>
 
+            <?php echo $form->textFieldControlGroup($model,'horario_abastecimiento',array('span'=>5,'maxlength'=>255)); ?>
+
+            <?php echo $form->textFieldControlGroup($model,'horario_farmacia',array('span'=>5,'maxlength'=>255)); ?>
+
             <?php echo $form->textAreaControlGroup($model,'descripcion',array('rows'=>6,'span'=>8)); ?>
 
             <?php echo $form->textFieldControlGroup($model,'cirugias_year',array('span'=>5,'maxlength'=>255)); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'cantidad_camas',array('span'=>5,'maxlength'=>30)); ?>
+            <?php echo $form->textFieldControlGroup($model,'cant_camas_maternidad',array('span'=>5,'maxlength'=>30)); ?>
+             <?php echo $form->textFieldControlGroup($model,'cant_camas_quirurgicos',array('span'=>5,'maxlength'=>30)); ?>
+              <?php echo $form->textFieldControlGroup($model,'cant_camas_pediatria',array('span'=>5,'maxlength'=>30)); ?>
+               <?php echo $form->textFieldControlGroup($model,'cant_camas_criticas',array('span'=>5,'maxlength'=>30)); ?>
             
             <?php echo $form->dropDownListControlGroup($model, 'categoria_id', Chtml::listData(CategoriaOrganizacion::model()->findAll(),'id','nombre'), array('empty' => 'Seleccionar...')); ?>
             
             <?php echo $form->dropDownListControlGroup($model, 'modo_compra_id', Chtml::listData(ModoCompra::model()->findAll(),'id','nombre'), array('empty' => 'Seleccionar...')); ?>
             
-            <?php echo $form->dropDownListControlGroup($model, 'tipo_financiamiento_id', Chtml::listData(TipoFinanciamiento::model()->findAll(),'id','nombre'), array('empty' => 'Seleccionar...')); ?>
+            <?php echo $form->dropDownListControlGroup($model, 'tipo_canalcompra_id', Chtml::listData(TipoCanalCompra::model()->findAll(),'id','nombre'), array('empty' => 'Seleccionar...')); ?>
 
     <div>
         <button class="ui-btn ui-btn-inline">Guardar</button>

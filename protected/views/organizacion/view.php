@@ -54,6 +54,8 @@ $this->menu=array(
 				'telefono1',
 				'telefono2',
 				'telefono3',
+				'horario_abastecimiento',
+				'horario_farmacia',
 			),
 		)); ?>	
 	</div>
@@ -69,14 +71,18 @@ $this->menu=array(
 					'value'=>isset($model->modoCompra) ?$model->modoCompra->nombre : null,
 					),
 				array(
-					'name'=>'tipo_financiamiento_id',
-					'value'=>isset($model->tipoFinanciamiento) ? $model->tipoFinanciamiento->nombre : null,
+					'name'=>'tipo_canalcompra_id',
+					'value'=>isset($model->tipoCanalCompra) ? $model->tipoCanalCompra->nombre : null,
 					),
 				array(
 					'name'=>'tipo_condicionpago_id',
 					'value'=>isset($model->tipoCondicionpago) ? $model->tipoCondicionpago->nombre : null,
 					),
 				'cantidad_camas',
+				'cant_camas_quirurgicos',
+				'cant_camas_pediatria',
+				'cant_camas_maternidad',
+				'cant_camas_criticas',
 				'cirugias_year',
 			),
 		)); ?>	
