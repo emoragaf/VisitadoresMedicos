@@ -10,8 +10,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','model.FarmacoActualOrganizacion.index'),'url'=>array('index')),
-	array('label'=>Yii::t('app','model.FarmacoActualOrganizacion.admin'),'url'=>array('admin')),
+	array('label'=>Yii::t('app','model.Farmaco.admin'),'url'=>array('Farmaco/Admin')),
+	//array('label'=>Yii::t('app','model.FarmacoActualOrganizacion.index'),'url'=>array('index')),
+	//array('label'=>Yii::t('app','model.FarmacoActualOrganizacion.admin'),'url'=>array('admin')),
 );
 ?>
 

@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','model.Farmaco.index'),'url'=>array('index')),
+	//array('label'=>Yii::t('app','model.Farmaco.index'),'url'=>array('index')),
 	array('label'=>Yii::t('app','model.Farmaco.admin'),'url'=>array('admin')),
 );
 ?>

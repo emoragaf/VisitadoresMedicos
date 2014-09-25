@@ -33,4 +33,24 @@ return array(
     'model.Agenda.view'=>'Detalle Planificación Semanal',
     'model.Agenda.delete'=>'Eliminar Horario',
 
+    'model.FarmacoPotencialOrganizacion'=>'Farmacos Potenciales',
+    'model.FarmacoPotencialOrganizacion.create'=>'Agregar Farmaco Potencial',
+    'model.FarmacoPotencialOrganizacion.view'=>'Detalle Farmaco Potencial',
+    'model.FarmacoActualOrganizacion'=>'Farmacos Actuales',
+    'model.FarmacoActualOrganizacion.create'=>'Agregar Farmaco Actual',
+    'model.FarmacoActualOrganizacion.view'=>'Detalle Farmaco Actual',
+
+    'model.Farmaco'=>'Farmacos',
+    'model.Farmaco.create'=>'Agregar Fármaco',
+    'model.Farmaco.view'=>'Detalles Fármaco',
+    'model.Farmaco.delete'=>'Elminar Fármaco',
+    'model.Farmaco.admin'=>'Administrar Fármacos',
+
+    'model.ClaseTerapeutica'=>'Clases Terapeuticas',
+    'model.ClaseTerapeutica.create'=>'Agregar Clase Terapeutica',
+    'model.ClaseTerapeutica.view'=>'Detalles Clase Terapeutica',
+    'model.ClaseTerapeutica.delete'=>'Elminar Clase Terapeutica',
+    'model.ClaseTerapeutica.admin'=>'Administrar Clases Terapeuticas',
+
+
 );

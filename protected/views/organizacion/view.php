@@ -24,6 +24,9 @@ $this->menu=array(
 	array('label'=>Yii::t('app','model.Organizacion.index'),'url'=>array('/')),
 	array('label'=>Yii::t('app','model.Organizacion.create'),'url'=>array('create')),
 	array('label'=>Yii::t('app','model.Organizacion.update'),'url'=>array('update','id'=>$model->id)),
+	array('label'=>'Fármacos'),
+	array('label'=>'Agregar Fármaco Actual','url'=>array('FarmacoPotencialOrganizacion/create','id'=>$model->id)),
+	array('label'=>'Agregar Fármaco Potencial','url'=>array('FarmacoPotencialOrganizacion/create','id'=>$model->id)),
 );
 ?>
 <h1><?php echo $model->nombre.' ('.$model->categoria->nombre.')';?></h1>
@@ -110,3 +113,23 @@ $this->menu=array(
     	<h4>No se han realizado Visitas.</h4>
     </div>
     <?php } ?>
+    <?php if(!empty($farmacosActuales)){ ?>
+    	<h4>Farmacos Actuales.</h4>
+     	<ul data-role="listview" id="lista" data-filter="true" data-inset="true" data-filter-placeholder="Buscar...">
+	    <?php foreach($farmacosActuales as $farmacoActual){?>
+	      <li>
+	      <?php echo CHtml::link($farmacoActual->farmaco->nombre.' '.$farmacoActual->farmaco->presentacion,$organizacion,array('Farmaco/view'.'id'=>$farmacoActual->farmaco_id)); ?> 
+	      </li>
+	      <?php }?>
+	    </ul>
+    <?php }?>
+    <?php if(!empty($farmacosPotenciales)){ ?>
+    	<h4>Farmacos Potenciales.</h4>
+	    <ul data-role="listview" id="lista" data-filter="true" data-inset="true" data-filter-placeholder="Buscar...">
+		    <?php foreach($farmacosActuales as $farmacoActual){?>
+		      <li>
+		      <?php echo CHtml::link($farmacoActual->farmaco->nombre.' '.$farmacoActual->farmaco->presentacion,$organizacion,array('Farmaco/view'.'id'=>$farmacoActual->farmaco_id)); ?> 
+		      </li>
+		      <?php }?>
+		    </ul>
+	    <?php } ?>

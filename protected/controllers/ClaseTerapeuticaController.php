@@ -1,6 +1,6 @@
 <?php
 
-class FarmacoController extends Controller
+class ClaseTerapeuticaController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -32,7 +32,7 @@ class FarmacoController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','Adjunto'),
+				'actions'=>array('create','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -51,12 +51,8 @@ class FarmacoController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$model = $this->loadModel($id);
-		$uploads = $model->uploads;
-
 		$this->render('view',array(
-			'uploads'=>$uploads,
-			'model'=>$model,
+			'model'=>$this->loadModel($id),
 		));
 	}
 
@@ -66,36 +62,21 @@ class FarmacoController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Farmaco;
+		$model=new ClaseTerapeutica;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['Farmaco'])) {
-			$model->attributes=$_POST['Farmaco'];
+		if (isset($_POST['ClaseTerapeutica'])) {
+			$model->attributes=$_POST['ClaseTerapeutica'];
 			if ($model->save()) {
-				$this->redirect(array('admin'));
+				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
 		));
-	}
-
-		public function actionAdjunto($id)
-	{
-		$upload = Upload::model()->findByPk($id);
-		if($upload){
-				$path = $upload->path.'/'.$upload->id.'.'.$upload->extension;
-				if(file_exists($path))
-				  {
-				    return Yii::app()->getRequest()->sendFile($upload->nombre.'.'.$upload->extension, @file_get_contents($path));
-				  }
-				else
-                        throw new CHttpException(404, 'No existe el archivo buscado.');
-			}
-		return 
 	}
 
 	/**
@@ -110,8 +91,8 @@ class FarmacoController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['Farmaco'])) {
-			$model->attributes=$_POST['Farmaco'];
+		if (isset($_POST['ClaseTerapeutica'])) {
+			$model->attributes=$_POST['ClaseTerapeutica'];
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -147,7 +128,7 @@ class FarmacoController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Farmaco');
+		$dataProvider=new CActiveDataProvider('ClaseTerapeutica');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -158,10 +139,10 @@ class FarmacoController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Farmaco('search');
+		$model=new ClaseTerapeutica('search');
 		$model->unsetAttributes();  // clear any default values
-		if (isset($_GET['Farmaco'])) {
-			$model->attributes=$_GET['Farmaco'];
+		if (isset($_GET['ClaseTerapeutica'])) {
+			$model->attributes=$_GET['ClaseTerapeutica'];
 		}
 
 		$this->render('admin',array(
@@ -173,12 +154,12 @@ class FarmacoController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Farmaco the loaded model
+	 * @return ClaseTerapeutica the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Farmaco::model()->findByPk($id);
+		$model=ClaseTerapeutica::model()->findByPk($id);
 		if ($model===null) {
 			throw new CHttpException(404,'The requested page does not exist.');
 		}
@@ -187,11 +168,11 @@ class FarmacoController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Farmaco $model the model to be validated
+	 * @param ClaseTerapeutica $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if (isset($_POST['ajax']) && $_POST['ajax']==='farmaco-form') {
+		if (isset($_POST['ajax']) && $_POST['ajax']==='clase-terapeutica-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}

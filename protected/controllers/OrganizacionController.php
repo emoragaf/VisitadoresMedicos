@@ -51,7 +51,12 @@ class OrganizacionController extends Controller
 	public function actionView($id)
 	{
 		$visitas = Visita::model()->findAll(array("condition"=>"organizacion_id =  $id",'order'=>'fecha_programada DESC'));
+		$farmacosActuales = FarmacoActualOrganizacion::model()->findAll(array('condition'=>'organizacion_id ='.$id));
+		$farmacosPotenciales = FarmacoPotencialOrganizacion::model()->findAll(array('condition'=>'organizacion_id ='.$id));
+
 		$this->render('view',array(
+			'farmacosPotenciales'=>$farmacosPotenciales,
+			'farmacosActuales'=>$farmacosActuales,
 			'model'=>$this->loadModel($id),
 			'visitas'=>$visitas,
 		));

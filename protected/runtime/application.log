@@ -5024,3 +5024,34 @@ Stack trace:
 REQUEST_URI=/vitalis/index.php/Visita/create/2
 HTTP_REFERER=http://localhost:8888/vitalis/index.php/Visita/create/2
 ---
+2014/09/25 15:07:35 [error] [php] Trying to get property of non-object (/Applications/MAMP/htdocs/vitalis/protected/views/farmaco/admin.php:49)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): FarmacoController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): FarmacoController->renderPartial()
+#2 /Applications/MAMP/htdocs/vitalis/protected/controllers/FarmacoController.php(150): FarmacoController->render()
+#3 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): FarmacoController->actionAdmin()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): FarmacoController->runAction()
+#6 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): FarmacoController->filterAccessControl()
+#9 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): FarmacoController->runActionWithFilters()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): FarmacoController->run()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/Farmaco/Admin
+in /Applications/MAMP/htdocs/vitalis/protected/views/farmaco/admin.php (49)
+in /Applications/MAMP/htdocs/vitalis/protected/controllers/FarmacoController.php (150)
+in /Applications/MAMP/htdocs/vitalis/index.php (13)
+2014/09/25 15:16:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "ClaseTerapeutica/Admin"' in /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('ClaseTerapeutic...')
+#1 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/vitalis/index.php/ClaseTerapeutica/Admin
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Farmaco/Admin
+---

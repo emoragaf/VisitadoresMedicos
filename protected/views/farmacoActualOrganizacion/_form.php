@@ -18,10 +18,7 @@
     <p class="help-block"><?php echo Yii::t('app','Fields with * are required.'); ?></p>
 
     <?php echo $form->errorSummary($model); ?>
-
-            <?php echo $form->textFieldControlGroup($model,'farmaco_id',array('span'=>5)); ?>
-
-            <?php echo $form->textFieldControlGroup($model,'organizacion_id',array('span'=>5)); ?>
+            <?php echo $form->dropDownListControlGroup($model, 'farmaco_id', CHtml::listData(Farmaco::model()->findAll(),'id','Descripcion'), array('empty' => 'Seleccionar...')); ?>
 
         <div>
         <button class="ui-btn ui-btn-inline">Guardar</button>

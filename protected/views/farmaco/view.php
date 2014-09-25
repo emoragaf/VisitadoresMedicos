@@ -32,3 +32,14 @@ $this->menu=array(
 		'clase_terapeutica_id',
 	),
 )); ?>
+
+<?php if(!empty($farmacosPotenciales)){ ?>
+    	<h4>Adjuntos.</h4>
+	    <ul data-role="listview" id="lista" data-filter="true" data-inset="true" data-filter-placeholder="Buscar...">
+		    <?php foreach($uploads as $upload){?>
+		      <li>
+		      <?php echo CHtml::link($upload->nombre.'.'.$upload->extension,$organizacion,array('farmaco/adjunto'.'id'=>$upload->id)); ?> 
+		      </li>
+		      <?php }?>
+		    </ul>
+	    <?php } ?>

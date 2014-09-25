@@ -1,21 +1,20 @@
 <?php
 
 /**
- * This is the model class for table "farmaco_potencial_organizacion".
+ * This is the model class for table "categoria_upload".
  *
- * The followings are the available columns in table 'farmaco_potencial_organizacion':
+ * The followings are the available columns in table 'categoria_upload':
  * @property integer $id
- * @property integer $farmaco_id
- * @property integer $organizacion_id
+ * @property integer $nombre
  */
-class FarmacoPotencialOrganizacion extends CActiveRecord
+class CategoriaUpload extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'farmaco_potencial_organizacion';
+		return 'categoria_upload';
 	}
 
 	/**
@@ -26,11 +25,11 @@ class FarmacoPotencialOrganizacion extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('farmaco_id, organizacion_id', 'required'),
-			array('farmaco_id, organizacion_id', 'numerical', 'integerOnly'=>true),
+			array('nombre', 'required'),
+			array('nombre', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, farmaco_id, organizacion_id', 'safe', 'on'=>'search'),
+			array('id, nombre', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -42,8 +41,6 @@ class FarmacoPotencialOrganizacion extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'farmaco' => array(self::BELONGS_TO, 'Farmaco', 'farmaco_id'),
-			'organizacion' => array(self::BELONGS_TO, 'Organizacion', 'organizacion_id'),
 		);
 	}
 
@@ -54,8 +51,7 @@ class FarmacoPotencialOrganizacion extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'farmaco_id' => 'Farmaco',
-			'organizacion_id' => 'Organizacion',
+			'nombre' => 'Nombre',
 		);
 	}
 
@@ -78,8 +74,7 @@ class FarmacoPotencialOrganizacion extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('farmaco_id',$this->farmaco_id);
-		$criteria->compare('organizacion_id',$this->organizacion_id);
+		$criteria->compare('nombre',$this->nombre);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -90,7 +85,7 @@ class FarmacoPotencialOrganizacion extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return FarmacoPotencialOrganizacion the static model class
+	 * @return CategoriaUpload the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
