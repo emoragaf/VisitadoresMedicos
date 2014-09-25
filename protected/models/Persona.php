@@ -73,8 +73,8 @@ class Persona extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'nombre' => 'Nombre',
-			'apellido_p' => 'Apellido P',
-			'apellido_m' => 'Apellido M',
+			'apellido_p' => 'Apellido Paterno',
+			'apellido_m' => 'Apellido Materno',
 			'fecha_nacimiento' => 'Fecha Nacimiento',
 			'cargo' => 'Cargo',
 			'profesion' => 'Profesion',

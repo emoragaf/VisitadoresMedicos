@@ -24,6 +24,61 @@
             <?php echo $form->dropDownListControlGroup($model, 'visitado_id', $visitados, array('empty' => 'Seleccionar...')); ?>
         </div>
         <div class="span3">
+            <br>
+            <?php echo CHtml::link('Agregar Persona', "",  // the link for open the dialog
+                array(
+                    'class'=>'ui-btn',
+                    'style'=>'cursor: pointer;',
+                    'onclick'=>"{addPersonaOrg(); $('#dialogPersona').dialog('open');}"));?>
+        <?php
+            $this->beginWidget('zii.widgets.jui.CJuiDialog', array( // the dialog
+                'id'=>'dialogPersona',
+                'options'=>array(
+                    'title'=>'Agregar Persona',
+                    'autoOpen'=>false,
+                    'modal'=>true,
+                    'width'=>550,
+                    'height'=>550,
+                    'background'=>'#FFF',
+                ),
+            ));?>
+            <div class="divForForm"></div>
+             
+            <?php $this->endWidget();?>
+             
+            <script type="text/javascript">
+            // here is the magic
+            function addPersonaOrg()
+            {
+                <?php echo CHtml::ajax(array(
+                        'url'=>array('PersonaOrganizacion/AddNew','id'=>$model->organizacion_id),
+                        'data'=> "js:$(this).serialize()",
+                        'type'=>'post',
+                        'dataType'=>'json',
+                        'success'=>"function(data)
+                        {
+                            if (data.status == 'failure')
+                            {
+                                $('#dialogPersona div.divForForm').html(data.div);
+                                      // Here is the trick: on submit-> once again this function!
+                                $('#dialogPersona div.divForForm form').submit(addPersonaOrg);
+                            }
+                            else
+                            {
+                                $('#Visita_visitdo_id').append(data.div);
+                                $('#dialogPersona').dialog('close')
+                                //setTimeout(\"$('#dialogMueblePunto').dialog('close') \",1500);
+                            }
+             
+                        } ",
+                        ))?>;
+                return false; 
+             
+            }
+             
+            </script>
+        </div>
+        <div class="span3">
             <label for="Visita[fecha_programada]">Fecha Programada <span class="required">*</span></label>
             <input type="date" data-clear-btn="false" name="Visita[fecha_programada]" id="Visita[fecha_programada]" value="<?php echo isset($model->fecha_programada)?date('Y-m-d',strtotime($model->fecha_programada)):null; ?>">
         </div>

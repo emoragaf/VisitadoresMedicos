@@ -1,22 +1,20 @@
 <?php
 
 /**
- * This is the model class for table "persona_organizacion".
+ * This is the model class for table "clase_terapeutica".
  *
- * The followings are the available columns in table 'persona_organizacion':
+ * The followings are the available columns in table 'clase_terapeutica':
  * @property integer $id
- * @property integer $persona_id
- * @property integer $organizacion_id
- * @property string $cargo
+ * @property string $nombre
  */
-class PersonaOrganizacion extends CActiveRecord
+class ClaseTerapeutica extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'persona_organizacion';
+		return 'clase_terapeutica';
 	}
 
 	/**
@@ -27,12 +25,11 @@ class PersonaOrganizacion extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('persona_id, organizacion_id', 'required'),
-			array('persona_id, organizacion_id', 'numerical', 'integerOnly'=>true),
-			array('cargo', 'length', 'max'=>255),
+			array('nombre', 'required'),
+			array('nombre', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, persona_id, organizacion_id, cargo', 'safe', 'on'=>'search'),
+			array('id, nombre', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -44,7 +41,6 @@ class PersonaOrganizacion extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'Persona' => array(self::BELONGS_TO, 'Persona', 'persona_id'),
 		);
 	}
 
@@ -55,9 +51,7 @@ class PersonaOrganizacion extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'persona_id' => 'Persona',
-			'organizacion_id' => 'Organizacion',
-			'cargo' => 'Cargo',
+			'nombre' => 'Nombre',
 		);
 	}
 
@@ -80,9 +74,7 @@ class PersonaOrganizacion extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('persona_id',$this->persona_id);
-		$criteria->compare('organizacion_id',$this->organizacion_id);
-		$criteria->compare('cargo',$this->cargo,true);
+		$criteria->compare('nombre',$this->nombre,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -93,7 +85,7 @@ class PersonaOrganizacion extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return PersonaOrganizacion the static model class
+	 * @return ClaseTerapeutica the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

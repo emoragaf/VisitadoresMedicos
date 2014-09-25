@@ -11,7 +11,9 @@ $this->pageTitle=Yii::app()->name;
 	      </li>
 	      <?php }?>
 	    </ul>
+	    <?php echo CHtml::link('Nueva Institución',array('Organizacion/create'),array('class'=>'ui-btn')); ?>
 	</div>
+
 
 	<div class="span5 sidebar">
 		<?php $this->widget('bootstrap.widgets.TbListView',array(

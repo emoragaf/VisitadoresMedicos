@@ -1,6 +1,6 @@
 <?php
 
-class PersonaOrganizacionController extends Controller
+class FarmacoPotencialOrganizacionController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -11,12 +11,13 @@ class PersonaOrganizacionController extends Controller
 	/**
 	 * @return array action filters
 	 */
-	public function filters() {
-     return array( 
-        //it's important to add site/error, so an unpermitted user will get the error.
-        array('auth.filters.AuthFilter - user/login user/logout site/error'),
-            );
-        }
+	public function filters()
+	{
+		return array(
+			'accessControl', // perform access control for CRUD operations
+			'postOnly + delete', // we only allow deletion via POST request
+		);
+	}
 
 	/**
 	 * Specifies the access control rules.
@@ -31,7 +32,7 @@ class PersonaOrganizacionController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','AddNew'),
+				'actions'=>array('create','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -61,13 +62,13 @@ class PersonaOrganizacionController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new PersonaOrganizacion;
+		$model=new FarmacoPotencialOrganizacion;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['PersonaOrganizacion'])) {
-			$model->attributes=$_POST['PersonaOrganizacion'];
+		if (isset($_POST['FarmacoPotencialOrganizacion'])) {
+			$model->attributes=$_POST['FarmacoPotencialOrganizacion'];
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -76,47 +77,6 @@ class PersonaOrganizacionController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 		));
-	}
-
-	public function actionAddNew($id)
-	{
-		$model=new PersonaOrganizacion;
-		$model->organizacion_id = $id;
-		$persona = new Persona;
-
-
-		if(isset($_POST['Persona']))
-        {
-            $persona->attributes=$_POST['Persona'];
-            if($persona->save())
-            {
-            	$model->persona_id = $persona->id;
-            	$model->save();
-                if (Yii::app()->request->isAjaxRequest)
-                {
-                	//echo CHtml::tag('li',array(),CHtml::tag('a',array('href'=>'javascript:void(0)',CHtml::tag('label',array('class'=>'checkbox'),CHtml::tag('input',array('type'=>'checkbox', 'value'=>$model->id),CHtml::encode($model->codigo),true),true),true),true),true);
-                    echo CJSON::encode(array(
-                        'status'=>'success', 
-                        'div'=>'<option value='.$model->id.'>'.CHtml::encode($model->Persona->nombre).' '.CHtml::encode($model->Persona->apellido_p).'</input></label></a></li>'
-                        ));
-                    exit;               
-                }
-                else
-                    $this->redirect(array('/Organizacion/view','id'=>$model->organizacion_id));
-            }
-        }
- 
-        if (Yii::app()->request->isAjaxRequest)
-        {
-            echo CJSON::encode(array(
-                'status'=>'failure', 
-                'div'=>$this->renderPartial('/Persona/_formDialog', array('model'=>$persona), true)));
-            exit;               
-        }
-        else
-            $this->render('/Persona/create',array('model'=>$persona,));
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
 	}
 
 	/**
@@ -131,8 +91,8 @@ class PersonaOrganizacionController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['PersonaOrganizacion'])) {
-			$model->attributes=$_POST['PersonaOrganizacion'];
+		if (isset($_POST['FarmacoPotencialOrganizacion'])) {
+			$model->attributes=$_POST['FarmacoPotencialOrganizacion'];
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -168,7 +128,7 @@ class PersonaOrganizacionController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('PersonaOrganizacion');
+		$dataProvider=new CActiveDataProvider('FarmacoPotencialOrganizacion');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -179,10 +139,10 @@ class PersonaOrganizacionController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new PersonaOrganizacion('search');
+		$model=new FarmacoPotencialOrganizacion('search');
 		$model->unsetAttributes();  // clear any default values
-		if (isset($_GET['PersonaOrganizacion'])) {
-			$model->attributes=$_GET['PersonaOrganizacion'];
+		if (isset($_GET['FarmacoPotencialOrganizacion'])) {
+			$model->attributes=$_GET['FarmacoPotencialOrganizacion'];
 		}
 
 		$this->render('admin',array(
@@ -194,12 +154,12 @@ class PersonaOrganizacionController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return PersonaOrganizacion the loaded model
+	 * @return FarmacoPotencialOrganizacion the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=PersonaOrganizacion::model()->findByPk($id);
+		$model=FarmacoPotencialOrganizacion::model()->findByPk($id);
 		if ($model===null) {
 			throw new CHttpException(404,'The requested page does not exist.');
 		}
@@ -208,11 +168,11 @@ class PersonaOrganizacionController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param PersonaOrganizacion $model the model to be validated
+	 * @param FarmacoPotencialOrganizacion $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if (isset($_POST['ajax']) && $_POST['ajax']==='persona-organizacion-form') {
+		if (isset($_POST['ajax']) && $_POST['ajax']==='farmaco-potencial-organizacion-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
