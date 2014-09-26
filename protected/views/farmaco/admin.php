@@ -39,9 +39,8 @@ $('.search-form form').submit(function(){
 		'presentacion',
 		array(
 			'name'=>'clase_terapeutica_id',
-			'value'=>$model->claseterapeutica != null ? $model->claseterapeutica->nombre : '',
-			),
-		
+			'value'=>'$data->NombreClaseTerapeutica',
+		),		
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),

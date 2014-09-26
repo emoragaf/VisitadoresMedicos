@@ -46,6 +46,12 @@ class FarmacoActualOrganizacion extends CActiveRecord
 			'organizacion' => array(self::BELONGS_TO, 'Organizacion', 'organizacion_id'),
 		);
 	}
+	public function getDescripcion(){
+		if($this->farmaco)
+			return $this->farmaco->Descripcion;
+		else
+			return false;
+	}
 
 	/**
 	 * @return array customized attribute labels (name=>label)

@@ -27,7 +27,7 @@ class Farmaco extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre', 'required'),
+			array('nombre, clase_terapeutica_id', 'required'),
 			array('clase_terapeutica_id', 'numerical', 'integerOnly'=>true),
 			array('nombre, presentacion', 'length', 'max'=>255),
 			// The following rule is used by search().
@@ -44,7 +44,7 @@ class Farmaco extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'claseterapeutica' => array(self::BELONGS_TO, 'ClaseTerapeutica', 'clase_terapeutica_id'),
+			'claseTerapeutica' => array(self::BELONGS_TO, 'ClaseTerapeutica', 'clase_terapeutica_id'),
 			'uploads' => array(self::HAS_MANY, 'Uploads', 'item_id'),
 
 		);
@@ -52,6 +52,14 @@ class Farmaco extends CActiveRecord
 
 	public function getDescripcion(){
 		return $this->nombre.' '.$this->presentacion;
+	}
+
+	public function getNombreClaseTerapeutica(){
+		$ct = ClaseTerapeutica::model()->findByPk($this->clase_terapeutica_id);
+		if($ct)
+			return $ct->nombre;
+		else
+			return '';
 	}
 
 	/**

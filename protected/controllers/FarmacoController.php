@@ -95,7 +95,7 @@ class FarmacoController extends Controller
 				else
                         throw new CHttpException(404, 'No existe el archivo buscado.');
 			}
-		return 
+		return false;
 	}
 
 	/**

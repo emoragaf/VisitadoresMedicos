@@ -59,6 +59,13 @@ class FarmacoPotencialOrganizacion extends CActiveRecord
 		);
 	}
 
+	public function getDescripcion(){
+		if($this->farmaco)
+			return $this->farmaco->Descripcion;
+		else
+			return false;
+	}
+
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *

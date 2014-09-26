@@ -62,20 +62,34 @@ class FarmacoPotencialOrganizacionController extends Controller
 	 */
 	public function actionCreate($id)
 	{
-		$model=new FarmacoPotencialOrganizacion;
-		$model->organizacion_id = $id;
+		$org = Organizacion::model()->findByPk($id);
+
+		$selected = CHtml::listData($org->farmacosPotenciales,'id','Descripcion');
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['FarmacoPotencialOrganizacion'])) {
-			$model->attributes=$_POST['FarmacoPotencialOrganizacion'];
-			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+		if (isset($_POST['Farmaco'])) {
+			$farmacos=$_POST['Farmaco'];
+			foreach ($farmacos as $key => $value) {
+				if(!array_key_exists($key, $selected)){
+					$model=new FarmacoPotencialOrganizacion;
+					$model->organizacion_id = $id;
+					$model->farmaco_id = $key;
+					$model->save();
+				}
 			}
+			foreach ($selected as $key => $value) {
+				if(!array_key_exists($key, $farmacos)){
+					$model= FarmacoPotencialOrganizacion::model()->find(array('condition'=>'organizacion_id ='.$id.' AND farmaco_id ='.$key));
+					if($model)
+						$model->delete();
+				}
+			}
+			$this->redirect(array('Organizacion/view','id'=>$id));
 		}
 
 		$this->render('create',array(
-			'model'=>$model,
+			'selected'=>$selected,
 		));
 	}
 

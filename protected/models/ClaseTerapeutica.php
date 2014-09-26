@@ -27,6 +27,7 @@ class ClaseTerapeutica extends CActiveRecord
 		return array(
 			array('nombre', 'required'),
 			array('nombre', 'length', 'max'=>255),
+			array('id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, nombre', 'safe', 'on'=>'search'),

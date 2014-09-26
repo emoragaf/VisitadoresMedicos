@@ -12,6 +12,8 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	//array('label'=>Yii::t('app','model.ClaseTerapeutica.index'),'url'=>array('index')),
 	array('label'=>Yii::t('app','model.ClaseTerapeutica.create'),'url'=>array('create')),
+	array('label'=>Yii::t('app','model.Farmaco.admin'),'url'=>array('Farmaco/admin')),
+
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -38,6 +40,7 @@ $('.search-form form').submit(function(){
 		'nombre',
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
+			'template'=>'{update}{delete}',
 		),
 	),
 )); ?>

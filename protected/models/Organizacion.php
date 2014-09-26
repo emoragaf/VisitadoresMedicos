@@ -58,6 +58,8 @@ class Organizacion extends CActiveRecord
 		return array(
 			'categoria' => array(self::BELONGS_TO, 'CategoriaOrganizacion', 'categoria_id'),
 			'visitas' => array(self::HAS_MANY, 'Visita', 'organizacion_id'),
+			'farmacosActuales' => array(self::HAS_MANY, 'FarmacoActualOrganizacion', 'organizacion_id'),
+			'farmacosPotenciales' => array(self::HAS_MANY, 'FarmacoPotencialOrganizacion', 'organizacion_id'),
 			'modoCompra' => array(self::BELONGS_TO, 'ModoCompra', 'modo_compra_id'),
 			'tipoCanalCompra' => array(self::BELONGS_TO, 'TipoCanalCompra', 'tipo_canalcompra_id'),
 			'tipoCondicionpago' => array(self::BELONGS_TO, 'TipoCondicionpago', 'tipo_condicionpago_id'),

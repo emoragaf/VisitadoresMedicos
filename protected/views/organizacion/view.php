@@ -25,7 +25,7 @@ $this->menu=array(
 	array('label'=>Yii::t('app','model.Organizacion.create'),'url'=>array('create')),
 	array('label'=>Yii::t('app','model.Organizacion.update'),'url'=>array('update','id'=>$model->id)),
 	array('label'=>'Fármacos'),
-	array('label'=>'Agregar Fármaco Actual','url'=>array('FarmacoPotencialOrganizacion/create','id'=>$model->id)),
+	array('label'=>'Agregar Fármaco Actual','url'=>array('FarmacoActualOrganizacion/create','id'=>$model->id)),
 	array('label'=>'Agregar Fármaco Potencial','url'=>array('FarmacoPotencialOrganizacion/create','id'=>$model->id)),
 );
 ?>
@@ -93,7 +93,7 @@ $this->menu=array(
 </div>
 	<?php if(!empty($visitas)){ ?>
     <div data-role="collapsible-set">
-    	<div id="searchFilter" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Buscar Visitas...">
+    	<div id="searchFilter" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Buscar Visitas..." data-scroll="true" style=" width:90%;height:300px; overflow:scroll;">
         <?php foreach ($visitas as $visita): ?>
 	        <div data-role="collapsible">
 	            <h3>Notas Visita <?php echo date('d-m-Y',strtotime($visita->fecha_programada)) ?></h3>
@@ -115,21 +115,25 @@ $this->menu=array(
     <?php } ?>
     <?php if(!empty($farmacosActuales)){ ?>
     	<h4>Farmacos Actuales.</h4>
-     	<ul data-role="listview" id="lista" data-filter="true" data-inset="true" data-filter-placeholder="Buscar...">
-	    <?php foreach($farmacosActuales as $farmacoActual){?>
-	      <li>
-	      <?php echo CHtml::link($farmacoActual->farmaco->nombre.' '.$farmacoActual->farmaco->presentacion,$organizacion,array('Farmaco/view'.'id'=>$farmacoActual->farmaco_id)); ?> 
-	      </li>
-	      <?php }?>
-	    </ul>
+    	<div data-scroll="true" style=" width:90%;height:200px; overflow:scroll;">
+	     	<ul data-role="listview" id="listaFarmacosActuales" data-filter="true" data-inset="true" data-filter-placeholder="Buscar...">
+			    <?php foreach($farmacosActuales as $farmacoActual){?>
+				<li>
+				<?php echo CHtml::link($farmacoActual->farmaco->nombre.' '.$farmacoActual->farmaco->presentacion,array('/Farmaco/view','id'=>$farmacoActual->farmaco_id)); ?> 
+				</li>
+				<?php }?>
+		    </ul>		
+    	</div>
     <?php }?>
     <?php if(!empty($farmacosPotenciales)){ ?>
     	<h4>Farmacos Potenciales.</h4>
-	    <ul data-role="listview" id="lista" data-filter="true" data-inset="true" data-filter-placeholder="Buscar...">
-		    <?php foreach($farmacosActuales as $farmacoActual){?>
-		      <li>
-		      <?php echo CHtml::link($farmacoActual->farmaco->nombre.' '.$farmacoActual->farmaco->presentacion,$organizacion,array('Farmaco/view'.'id'=>$farmacoActual->farmaco_id)); ?> 
-		      </li>
-		      <?php }?>
+    	<div data-scroll="true" style=" width:90%;height:200px; overflow:scroll;">
+		    <ul data-role="listview" id="listaFarmacosPotenciales" data-filter="true" data-inset="true" data-filter-placeholder="Buscar...">
+			    <?php foreach($farmacosPotenciales as $farmacoPotencial){?>
+				<li>
+				<?php echo CHtml::link($farmacoPotencial->farmaco->nombre.' '.$farmacoPotencial->farmaco->presentacion,array('/Farmaco/view','id'=>$farmacoPotencial->farmaco_id)); ?> 
+				</li>
+				<?php }?>
 		    </ul>
+		</div>
 	    <?php } ?>

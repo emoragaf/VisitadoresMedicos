@@ -42,6 +42,7 @@ return array(
 
     'model.Farmaco'=>'Farmacos',
     'model.Farmaco.create'=>'Agregar Fármaco',
+    'model.Farmaco.update'=>'Actualizar Fármaco',
     'model.Farmaco.view'=>'Detalles Fármaco',
     'model.Farmaco.delete'=>'Elminar Fármaco',
     'model.Farmaco.admin'=>'Administrar Fármacos',

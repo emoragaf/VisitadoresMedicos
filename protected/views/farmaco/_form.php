@@ -22,8 +22,8 @@
             <?php echo $form->textFieldControlGroup($model,'nombre',array('span'=>5,'maxlength'=>255)); ?>
 
             <?php echo $form->textFieldControlGroup($model,'presentacion',array('span'=>5,'maxlength'=>255)); ?>
-
-            <?php echo $form->textFieldControlGroup($model,'clase_terapeutica_id',array('span'=>5)); ?>
+            
+            <?php echo $form->dropDownListControlGroup($model, 'clase_terapeutica_id',CHtml::listData(ClaseTerapeutica::model()->findAll(),'id','nombre'), array('empty' => 'Seleccionar...')); ?>
 
         <div>
         <button class="ui-btn ui-btn-inline">Guardar</button>

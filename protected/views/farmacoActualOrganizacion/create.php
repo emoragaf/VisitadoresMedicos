@@ -18,4 +18,4 @@ $this->menu=array(
 
 <h1> <?php echo Yii::t('app','model.FarmacoActualOrganizacion.create'); ?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('selected'=>$selected)); ?>

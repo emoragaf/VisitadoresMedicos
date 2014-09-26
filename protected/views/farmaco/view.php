@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','model.Farmaco.index'),'url'=>array('index')),
+	//array('label'=>Yii::t('app','model.Farmaco.index'),'url'=>array('index')),
 	array('label'=>Yii::t('app','model.Farmaco.create'),'url'=>array('create')),
 	array('label'=>Yii::t('app','model.Farmaco.update'),'url'=>array('update','id'=>$model->id)),
 	array('label'=>Yii::t('app','model.Farmaco.delete'),'url'=>'#','linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
@@ -26,14 +26,14 @@ $this->menu=array(
     ),
     'data'=>$model,
     'attributes'=>array(
-		'id',
-		'nombre',
-		'presentacion',
-		'clase_terapeutica_id',
+		'Descripcion',
+		array(
+			'name'=>'clase_terapeutica_id',
+			'value'=>$model->claseTerapeutica->nombre,
+		),
 	),
 )); ?>
-
-<?php if(!empty($farmacosPotenciales)){ ?>
+<?php if(!empty($uploads)){ ?>
     	<h4>Adjuntos.</h4>
 	    <ul data-role="listview" id="lista" data-filter="true" data-inset="true" data-filter-placeholder="Buscar...">
 		    <?php foreach($uploads as $upload){?>

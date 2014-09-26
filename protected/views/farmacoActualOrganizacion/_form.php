@@ -16,10 +16,21 @@
 )); ?>
 
     <p class="help-block"><?php echo Yii::t('app','Fields with * are required.'); ?></p>
-
-    <?php echo $form->errorSummary($model); ?>
-            <?php echo $form->dropDownListControlGroup($model, 'farmaco_id', CHtml::listData(Farmaco::model()->findAll(),'id','Descripcion'), array('empty' => 'Seleccionar...')); ?>
-
+            <?php $farmacos = CHtml::listData(Farmaco::model()->findAll(),'id','Descripcion'); ?>
+            <?php if (true): ?>
+                <table class="table table-bordered table-condensed">
+                    <tr>
+                        <th>Fármacos</th>
+                    </tr>
+                    <?php foreach ($farmacos as $key=>$farmaco): ?>
+                        <tr>
+                            <td>
+                                <?php echo TbHtml::checkBox('Farmaco['.$key.']', array_key_exists($key, $selected) ? true : false, array('label' =>$farmaco)); ?>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+                </table>
+            <?php endif ?>
         <div>
         <button class="ui-btn ui-btn-inline">Guardar</button>
     </div>

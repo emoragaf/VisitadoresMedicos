@@ -94,7 +94,7 @@ class ClaseTerapeuticaController extends Controller
 		if (isset($_POST['ClaseTerapeutica'])) {
 			$model->attributes=$_POST['ClaseTerapeutica'];
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin'));
 			}
 		}
 
