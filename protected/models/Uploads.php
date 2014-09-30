@@ -32,7 +32,7 @@ class Uploads extends CActiveRecord
 		return array(
 			array('path, extension, nombre', 'required'),
 			array('path, categoria_id, item_id', 'numerical', 'integerOnly'=>true),
-			array('extension, nombre', 'length', 'max'=>255),
+			array('extension, nombre, descripcion', 'length', 'max'=>255),
 			array('fecha_creacion', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -48,6 +48,7 @@ class Uploads extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'categoria' => array(self::BELONGS_TO, 'CategoriaUpload', 'categoria_id'),
 		);
 	}
 

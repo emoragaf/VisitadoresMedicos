@@ -36,7 +36,7 @@ class Organizacion extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('nombre, direccion, categoria_id', 'required'),
-			array('categoria_id, modo_compra_id, tipo_canalcompra_id, cantidad_camas,cantidad_camas_maternidad,cantidad_camas_quirurgicos,cantidad_camas_pediatria,cantidad_camas_criticas, cirugias_year', 'numerical', 'integerOnly'=>true),
+			array('categoria_id, modo_compra_id, tipo_canalcompra_id, cantidad_camas,cant_camas_maternidad,cant_camas_quirurgicos,cant_camas_pediatria,cant_camas_criticas, cirugias_year', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>40),
 			array('direccion, telefono1, telefono2, telefono3, web, horario_abastecimiento, horario_farmacia', 'length', 'max'=>255),
 			array('email, comuna', 'length', 'max'=>128),

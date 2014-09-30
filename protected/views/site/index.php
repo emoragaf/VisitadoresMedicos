@@ -16,6 +16,7 @@ $this->pageTitle=Yii::app()->name;
 
 
 	<div class="span5 sidebar">
+	<h4>Recordatorios Próximos</h4>
 		<?php $this->widget('bootstrap.widgets.TbListView',array(
 		'dataProvider'=>$recordatorios,
 		'itemView'=>'_viewRecordatorio',

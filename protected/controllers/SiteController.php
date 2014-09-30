@@ -37,13 +37,59 @@ class SiteController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','loadData','loadData2'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
 		);
+	}
+
+	public function actionloadData(){
+		ini_set('auto_detect_line_endings',true);
+		set_time_limit(0);
+		$path = Yii::getPathOfAlias('webroot').'/uploads/farmacos.txt';
+		$file = fopen($path, "r");
+		
+		while (!feof($file)) {
+			$line = fgets($file); //lo guarda en la linea
+			$data = explode(';', $line);
+			print_r($data);
+			$ct = ClaseTerapeutica::model()->find(array('condition'=>'nombre = "'.$data[0].'"'));
+			echo 'Buscando '.$data[0];
+			echo '<br>';
+			if($ct){
+				echo 'Encontrado '.$data[0];
+				echo '<br>';
+				echo '<br>';
+				$f = new Farmaco;
+				$f->nombre = $data[1];
+				$f->clase_terapeutica_id = $ct->id;
+				$f->presentacion = $data[2].' '.$data[3];
+				$f->save();
+				
+			}
+		}
+		fclose($file);
+		echo 'Finalizada Carga';
+	}
+
+	public function actionloadData2(){
+		set_time_limit(0);
+		$path = Yii::getPathOfAlias('webroot').'/uploads/clases_terapeuticas.txt';
+		$file = fopen($path, "r");
+		
+		while (!feof($file)) {
+			$line = fgets($file); //lo guarda en la linea
+			//$data = explode(';', $line);
+			$line = str_replace("\n", '', $line); // remove new lines
+			$line = str_replace("\r", '', $line); // remove 
+			$ct = new ClaseTerapeutica;	
+			$ct->nombre = $line;
+			$ct->save();
+		}
+		echo 'Finalizada Carga';
 	}
 
 	/**

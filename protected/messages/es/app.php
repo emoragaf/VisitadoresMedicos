@@ -46,6 +46,7 @@ return array(
     'model.Farmaco.view'=>'Detalles Fármaco',
     'model.Farmaco.delete'=>'Elminar Fármaco',
     'model.Farmaco.admin'=>'Administrar Fármacos',
+    'model.Farmaco.upload'=>'Adjuntar Documento',
 
     'model.ClaseTerapeutica'=>'Clases Terapeuticas',
     'model.ClaseTerapeutica.create'=>'Agregar Clase Terapeutica',
@@ -53,5 +54,16 @@ return array(
     'model.ClaseTerapeutica.delete'=>'Elminar Clase Terapeutica',
     'model.ClaseTerapeutica.admin'=>'Administrar Clases Terapeuticas',
 
+    'model.Uploads'=>'Documentos',
+    'model.Uploads.admin'=>'Administrar Documentos',
+    'model.Uploads.create'=>'Agregar Documento',
+    'model.Uploads.delete'=>'Eliminar Documento',
+    'model.Uploads.view'=>'Ver Documento',
+
+    'model.CategoriaUpload'=>' Categoría Documentos',
+    'model.CategoriaUpload.admin'=>'Administrar Categorías Documentos',
+    'model.CategoriaUpload.create'=>'Agregar Categoría Documento',
+    'model.CategoriaUpload.delete'=>'Eliminar Categoría Documento',
+    'model.CategoriaUpload.view'=>'Ver Categoría Documento',
 
 );

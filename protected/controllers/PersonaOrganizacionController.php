@@ -110,11 +110,11 @@ class PersonaOrganizacionController extends Controller
         {
             echo CJSON::encode(array(
                 'status'=>'failure', 
-                'div'=>$this->renderPartial('/Persona/_formDialog', array('model'=>$persona), true)));
+                'div'=>$this->renderPartial('/persona/_formDialog', array('model'=>$persona), true)));
             exit;               
         }
         else
-            $this->render('/Persona/create',array('model'=>$persona,));
+            $this->render('/persona/create',array('model'=>$persona,));
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 	}

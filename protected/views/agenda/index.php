@@ -12,12 +12,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','model.Agenda.create'),'url'=>array('create')),
+	array('label'=>Yii::t('app','model.Agenda.create'),'url'=>array('create','fecha'=>$fechaMin)),
 );
 ?>
-
+<?php //print_r($semana) ?>
 <h1><?php echo Yii::t('app','model.Agenda')
 ;?></h1>
+<div class="row">
+<?php echo CHtml::link('< Anterior ',array('Agenda/semana','fecha'=>date('d-m-Y',strtotime('-1 week',strtotime($fechaMin)))),array('class'=>'btn')); ?><?php echo CHtml::link('Siguiente >',array('Agenda/semana','fecha'=>date('d-m-Y',strtotime('+1 week',strtotime($fechaMin)))),array('class'=>'btn')); ?>	
+</div>
 <table class="table table-bordered table-striped">
 	<tr>
 		<th class="span1">Bloque</th>

@@ -1,0 +1,20 @@
+.sidebar
+{
+	margin-top: 20px;
+}
+html, body {
+  height: 100%;
+}
+.roboto{
+	font-family: 'Roboto', sans-serif;
+}
+.arvo{
+	font-family: 'Arvo', serif;
+}
+.texto{
+	font-family: 'Arvo', serif;
+	font-size: 12;
+}
+.ui-dialog .ui-dialog-content{
+	background: #fff; !important
+}

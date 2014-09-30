@@ -11,9 +11,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','model.CategoriaUpload.index'),'url'=>array('index')),
+	//array('label'=>Yii::t('app','model.CategoriaUpload.index'),'url'=>array('index')),
 	array('label'=>Yii::t('app','model.CategoriaUpload.create'),'url'=>array('create')),
-	array('label'=>Yii::t('app','model.CategoriaUpload.view'),'url'=>array('view','id'=>$model->id)),
+	//array('label'=>Yii::t('app','model.CategoriaUpload.view'),'url'=>array('view','id'=>$model->id)),
 	array('label'=>Yii::t('app','model.CategoriaUpload.admin'),'url'=>array('admin')),
 );
 ?>

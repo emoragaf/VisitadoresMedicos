@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','model.CategoriaUpload.index'),'url'=>array('index')),
+	//array('label'=>Yii::t('app','model.CategoriaUpload.index'),'url'=>array('index')),
 	array('label'=>Yii::t('app','model.CategoriaUpload.admin'),'url'=>array('admin')),
 );
 ?>

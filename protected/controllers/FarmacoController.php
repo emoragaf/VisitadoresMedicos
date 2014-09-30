@@ -14,6 +14,7 @@ class FarmacoController extends Controller
 	public function filters()
 	{
 		return array(
+			array(  'COutputCache+admin',   'duration' => 600,'varyByParam'=>array('sort','page'),     ),
 			'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
@@ -32,7 +33,7 @@ class FarmacoController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','Adjunto'),
+				'actions'=>array('create','update','Adjunto','Upload'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -60,6 +61,52 @@ class FarmacoController extends Controller
 		));
 	}
 
+	public function actionUpload($id){
+		$model= $this->loadModel($id);
+
+		if (isset($_POST['Upload'])) {	
+			$Docs = CUploadedFile::getInstancesByName('Documento');
+
+			if (isset($Docs) && count($Docs) > 0) {
+	            // go through each uploaded image
+	            foreach ($Docs as $d => $doc) {
+	            	if(!is_dir(Yii::getPathOfAlias('webroot').'/uploads/')) {
+				   		mkdir(Yii::getPathOfAlias('webroot').'/uploads/');
+			   			chmod(Yii::getPathOfAlias('webroot').'/uploads/', 0775); 
+			   		}
+		   			if(!is_dir(Yii::getPathOfAlias('webroot').'/uploads/farmacos/')) {
+		   				mkdir(Yii::getPathOfAlias('webroot').'/uploads/farmacos/');
+		   				chmod(Yii::getPathOfAlias('webroot').'/uploads/farmacos/', 0775);
+		   			}
+   					if(!is_dir(Yii::getPathOfAlias('webroot').'/uploads/farmacos/'.$id.'/')) {
+		   				mkdir(Yii::getPathOfAlias('webroot').'/uploads/farmacos/'.$id.'/');
+		   				chmod(Yii::getPathOfAlias('webroot').'/uploads/farmacos/'.$id.'/', 0775);
+		   			} 
+						   
+                    $farmacoUpload = new FarmacoUpload;
+                    $upload = new Uploads;
+					$upload->descripcion = $_POST['Descripcion'];
+					$upload->fecha_creacion = date('c');
+                    $upload->nombre = $doc->name; //it might be $img_add->name for you, filename is just what I chose to call it in my model
+                    $upload->path = Yii::getPathOfAlias('webroot').'/uploads/visitas/'.$id.'/';
+                    $upload->extension = $doc->extensionName;
+                    if($upload->save()){
+                    	$farmacoUpload->farmaco_id = $id;
+                    	$farmacoUpload->upload_id = $upload->id;
+                    	$farmacoUpload->save();
+	                	$doc->saveAs($upload->path.$upload->id.'.'.$upload->extension);
+	                	$this->redirect(array('view','id'=>$model->id));
+                    }
+                    else{
+                		print_r($upload->errors);
+                    }
+		        }
+		    }
+		}
+		$this->render('upload',array(
+			'model'=>$model,
+		));
+	}
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.

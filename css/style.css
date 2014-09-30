@@ -12,9 +12,9 @@ html, body {
 	font-family: 'Arvo', serif;
 }
 .texto{
-	font-family: 'Arvo', serif;
+/*	font-family: 'Arvo', serif;
+*/	font-family:Verdana, Geneva, sans-serif;
 	font-size: 12;
-}
-.ui-dialog .ui-dialog-content{
-	background: #fff; !important
+	color:#666;
+	
 }

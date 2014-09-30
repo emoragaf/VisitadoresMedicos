@@ -32,7 +32,7 @@ class AgendaController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','semana'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -60,22 +60,38 @@ class AgendaController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($fecha = null)
 	{
 		setlocale(LC_TIME, 'es_ES.UTF-8');
 
 		$model=new Agenda;
 		$model->user_id = Yii::app()->user->getId();
 		$fechas = array();
-		for($i=0; $i<7; $i++){
-			if ($i == 0){
-				if(date('N',strtotime('now')) != 6 && date('N',strtotime('now')) != 7){
-					$fechas[date('Y-m-d',strtotime('now'))] = ucfirst(strftime('%A',strtotime('now'))).' '.date('d-m-Y',strtotime('now'));
+		if(!$fecha){
+			for($i=0; $i<7; $i++){
+				if ($i == 0){
+					if(date('N',strtotime('now')) != 6 && date('N',strtotime('now')) != 7){
+						$fechas[date('Y-m-d',strtotime('now'))] = ucfirst(strftime('%A',strtotime('now'))).' '.date('d-m-Y',strtotime('now'));
+					}
+				}
+				else{
+					if(date('N',strtotime($i.' day')) != 6 && date('N',strtotime($i.' day')) != 7){
+						$fechas[date('Y-m-d',strtotime($i.' day'))] = ucfirst(strftime('%A',strtotime($i.' day'))).' '.date('d-m-Y',strtotime($i.' day'));
+					}
 				}
 			}
-			else{
-				if(date('N',strtotime($i.' day')) != 6 && date('N',strtotime($i.' day')) != 7){
-					$fechas[date('Y-m-d',strtotime($i.' day'))] = ucfirst(strftime('%A',strtotime($i.' day'))).' '.date('d-m-Y',strtotime($i.' day'));
+		}
+		if($fecha){
+			for($i=0; $i<7; $i++){
+				if ($i == 0){
+					if(date('N',strtotime($fecha)) != 6 && date('N',strtotime($fecha)) != 7){
+						$fechas[date('Y-m-d',strtotime($fecha))] = ucfirst(strftime('%A',strtotime($fecha))).' '.date('d-m-Y',strtotime($fecha));
+					}
+				}
+				else{
+					if(date('N',strtotime($i.' day',strtotime($fecha))) != 6 && date('N',strtotime($i.' day',strtotime($fecha))) != 7){
+						$fechas[date('Y-m-d',strtotime($i.' day',strtotime($fecha)))] = ucfirst(strftime('%A',strtotime($i.' day',strtotime($fecha)))).' '.date('d-m-Y',strtotime($i.' day',strtotime($fecha)));
+					}
 				}
 			}
 		}
@@ -147,15 +163,31 @@ class AgendaController extends Controller
 
 
 		//$dataProvider=new CActiveDataProvider('Agenda');
-		$fecha_min = date('Y-m-d',strtotime('now'));
-		$fecha_max = date('Y-m-d',strtotime('+7 day'));
+		$hoy = date('N',strtotime('now'));
+
+		$offsetLunes = $hoy - 1;
+		$offsetViernes = 5 - $hoy;
+		
+		if($offsetLunes == 0)
+			$fecha_min = date('Y-m-d',strtotime('now'));
+		else
+			$fecha_min = date('Y-m-d',strtotime('-'.$offsetLunes.' day'));
+
+		if($hoy == 6)
+			$fecha_max = date('Y-m-d',strtotime('-1 day'));
+		if($hoy == 7)
+			$fecha_max = date('Y-m-d',strtotime('-2 day'));
+		if($offsetViernes == 0)
+			$fecha_max = date('Y-m-d',strtotime('now'));
+		else
+			$fecha_max = date('Y-m-d',strtotime('+'.$offsetViernes.' day'));
 
 		$semana = array();
 		for($i=0; $i<7; $i++){
 			if ($i == 0)
-				$semana[date('Y-m-d',strtotime('now'))] = array();
+				$semana[date('Y-m-d',strtotime($fecha_min))] = array();
 			else
-				$semana[date('Y-m-d',strtotime($i.' day'))] = array();
+				$semana[date('Y-m-d',strtotime($i.' day',strtotime($fecha_min)))] = array();
 		}
 
 		$criteria = new CDbCriteria;
@@ -170,6 +202,58 @@ class AgendaController extends Controller
         }
 		  
 		$this->render('index',array(
+			'fechaMin'=>$fecha_min,
+			'fechaMax'=>$fecha_max,
+			'semana'=>$semana,
+		));
+	}
+
+	public function actionSemana($fecha)
+	{
+
+
+		//$dataProvider=new CActiveDataProvider('Agenda');
+		$hoy = date('N',strtotime($fecha));
+
+		$offsetLunes = $hoy - 1;
+		$offsetViernes = 5 - $hoy;
+		
+		if($offsetLunes == 0)
+			$fecha_min = date('Y-m-d',strtotime($fecha));
+		else
+			$fecha_min = date('Y-m-d',strtotime('-'.$offsetLunes.' day'));
+
+		if($hoy == 6)
+			$fecha_max = date('Y-m-d',strtotime('-1 day'));
+		if($hoy == 7)
+			$fecha_max = date('Y-m-d',strtotime('-2 day'));
+		if($offsetViernes == 0)
+			$fecha_max = date('Y-m-d',strtotime($fecha));
+		else
+			$fecha_max = date('Y-m-d',strtotime('+'.$offsetViernes.' day'));
+
+		$semana = array();
+		for($i=0; $i<7; $i++){
+			if ($i == 0)
+				$semana[date('Y-m-d',strtotime($fecha_min))] = array();
+			else
+				$semana[date('Y-m-d',strtotime($i.' day',strtotime($fecha_min)))] = array();
+		}
+
+		$criteria = new CDbCriteria;
+		$criteria->condition ='user_id='.Yii::app()->user->getId();
+		$criteria->addBetweenCondition('fecha',$fecha_min,$fecha_max); 
+		$criteria->order='fecha';
+
+        $agenda = Agenda::model()->findAll($criteria);
+        foreach ($agenda as $key => $value) {
+        	$semana[$value->fecha][] = $value;
+
+        }
+		  
+		$this->render('index',array(
+			'fechaMin'=>$fecha_min,
+			'fechaMax'=>$fecha_max,
 			'semana'=>$semana,
 		));
 	}
@@ -186,6 +270,8 @@ class AgendaController extends Controller
 		}
 
 		$this->render('admin',array(
+			'fechaMin'=>$fecha_min,
+			'fechaMax'=>$fecha_max,
 			'model'=>$model,
 		));
 	}

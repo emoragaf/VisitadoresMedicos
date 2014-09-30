@@ -40,6 +40,7 @@ $('.search-form form').submit(function(){
 		array(
 			'name'=>'clase_terapeutica_id',
 			'value'=>'$data->NombreClaseTerapeutica',
+			'filter'=>CHtml::ListData(ClaseTerapeutica::model()->findAll(array('order'=>'nombre')),'id','nombre')
 		),		
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
