@@ -53,6 +53,7 @@ return array(
     'model.ClaseTerapeutica.view'=>'Detalles Clase Terapeutica',
     'model.ClaseTerapeutica.delete'=>'Elminar Clase Terapeutica',
     'model.ClaseTerapeutica.admin'=>'Administrar Clases Terapeuticas',
+    'model.ClaseTerapeutica.update'=>'Editar Clase Terapeutica',
 
     'model.Uploads'=>'Documentos',
     'model.Uploads.admin'=>'Administrar Documentos',

@@ -6,7 +6,7 @@
 <div>
 	<div data-role="header">
 		<div class="ui-bar ui-bar-b">
-				    <?php if(strtotime('now')>strtotime($data->fecha_recordatorio)) echo '<h3 style="color:orange">'; else echo '<h3>'; ?>
+				    <?php if(strtotime('now')>strtotime($data->fecha_recordatorio)) echo '<h3>'; else echo '<h3>'; ?>
 				    <?php echo 'Recordatorio '.date('d-m-Y',strtotime($data->fecha_recordatorio)) ?>
 				    <?php if($data->importancia ==1) echo TbHtml::icon(TbHtml::ICON_FLAG,array('color'=>'white')); ?>
 				    </h3>

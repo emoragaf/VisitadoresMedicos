@@ -14,7 +14,6 @@ class FarmacoController extends Controller
 	public function filters()
 	{
 		return array(
-			array(  'COutputCache+admin',   'duration' => 600,'varyByParam'=>array('sort','page'),     ),
 			'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);

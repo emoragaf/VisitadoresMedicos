@@ -8,7 +8,8 @@
 	<?php Yii::app()->bootstrap->register(); ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/styles.css"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/jquery.mobile-1.4.3.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/jquery.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css"/>
 	<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/css_002.css" rel="stylesheet" type="text/css">
 	<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/css.css" rel="stylesheet" type="text/css">
 
@@ -22,7 +23,6 @@
 	<!--<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>-->
 	<!--<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.mobile-1.4.3.js"></script>-->
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css"/>
 </head>
 
 <body>

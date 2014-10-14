@@ -97,7 +97,7 @@ class PersonaOrganizacionController extends Controller
                 	//echo CHtml::tag('li',array(),CHtml::tag('a',array('href'=>'javascript:void(0)',CHtml::tag('label',array('class'=>'checkbox'),CHtml::tag('input',array('type'=>'checkbox', 'value'=>$model->id),CHtml::encode($model->codigo),true),true),true),true),true);
                     echo CJSON::encode(array(
                         'status'=>'success', 
-                        'div'=>'<option value='.$model->id.'>'.CHtml::encode($model->Persona->nombre).' '.CHtml::encode($model->Persona->apellido_p).'</input></label></a></li>'
+                        'div'=>'<option value='.$model->id.'>'.CHtml::encode($model->Persona->nombre).' '.CHtml::encode($model->Persona->apellido_p).'</option>'
                         ));
                     exit;               
                 }
@@ -110,7 +110,7 @@ class PersonaOrganizacionController extends Controller
         {
             echo CJSON::encode(array(
                 'status'=>'failure', 
-                'div'=>$this->renderPartial('/persona/_formDialog', array('model'=>$persona), true)));
+                'div'=>$this->renderPartial('/persona/_formDialog', array('model'=>$persona),true, true)));
             exit;               
         }
         else

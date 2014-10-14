@@ -11,6 +11,7 @@
 		    'type' => TbHtml::NAV_TYPE_TABS,
 		    'stacked' => true,
 		    'items'=>$this->menu,
+		    'encodeLabel'=>false,
 		));
 	?>
 </div>

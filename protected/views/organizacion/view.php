@@ -19,24 +19,24 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>Yii::t('app','model.Visita')),
-	array('label'=>Yii::t('app','model.Visita.create'),'url'=>array('/Visita/create','id'=>$model->id)),
+	array('label'=>CHtml::image(Yii::app()->baseUrl.'/css/images/add.png','Agregar Visita',array('width'=>20,'heigth'=>20,'border'=>'0')).' '.Yii::t('app','model.Visita.create'),'url'=>array('/Visita/create','id'=>$model->id)),
 	array('label'=>Yii::t('app','model.Organizacion')),
-	array('label'=>Yii::t('app','model.Organizacion.index'),'url'=>array('/')),
-	array('label'=>Yii::t('app','model.Organizacion.create'),'url'=>array('create')),
-	array('label'=>Yii::t('app','model.Organizacion.update'),'url'=>array('update','id'=>$model->id)),
+	array('label'=>CHtml::image(Yii::app()->baseUrl.'/css/images/list2.png','Listar Instituciones',array('width'=>20,'heigth'=>20,'border'=>'0')).' '.Yii::t('app','model.Organizacion.index'),'url'=>array('/')),
+	array('label'=>CHtml::image(Yii::app()->baseUrl.'/css/images/add.png','Agregar Institución',array('width'=>20,'heigth'=>20,'border'=>'0')).' '.Yii::t('app','model.Organizacion.create'),'url'=>array('create')),
+	array('label'=>CHtml::image(Yii::app()->baseUrl.'/css/images/edit.png','Editar Institución',array('width'=>20,'heigth'=>20,'border'=>'0')).' '.Yii::t('app','model.Organizacion.update'),'url'=>array('update','id'=>$model->id)),
 	array('label'=>'Fármacos'),
-	array('label'=>'Agregar Fármaco Actual','url'=>array('FarmacoActualOrganizacion/create','id'=>$model->id)),
-	array('label'=>'Agregar Fármaco Potencial','url'=>array('FarmacoPotencialOrganizacion/create','id'=>$model->id)),
+	array('label'=>CHtml::image(Yii::app()->baseUrl.'/css/images/add.png','Agregar Fármaco Actual',array('width'=>20,'heigth'=>20,'border'=>'0')).' '.'Agregar Fármaco Actual','url'=>array('FarmacoActualOrganizacion/create','id'=>$model->id)),
+	array('label'=>CHtml::image(Yii::app()->baseUrl.'/css/images/add.png','Agregar Fármaco Potencial',array('width'=>20,'heigth'=>20,'border'=>'0')).' '.'Agregar Fármaco Potencial','url'=>array('FarmacoPotencialOrganizacion/create','id'=>$model->id)),
 );
 ?>
-<h1><?php echo $model->nombre.' ('.$model->categoria->nombre.')';?></h1>
+<h1 style="font-size:30px; color:#00b3af;"><?php echo $model->nombre.' ('.$model->categoria->nombre.')';?></h1>
 <table class="table table-condensed">
 	<tr>
 		<td>
-			<h4>Última Visita:</h4> <?php echo TbHtml::em($model->getUltimaVisita(), array('color' => $model->colorUltimaVisita())); ?>
+			<h4 style="color:#005b97;">Última Visita:</h4> <?php echo TbHtml::em($model->getUltimaVisita(), array('color' => $model->colorUltimaVisita())); ?>
 		</td>
 		<td>
-			<h4>Frecuencia:</h4> <?php echo TbHtml::em($model->getFrecuencia().' Visita/Semana', array('color' => $model->colorFrecuencia())); ?>
+			<h4 style="color:#005b97;">Frecuencia:</h4> <?php echo TbHtml::em($model->getFrecuencia().' Visita/Semana', array('color' => $model->colorFrecuencia())); ?>
 		</td>
 	</tr>
 </table>

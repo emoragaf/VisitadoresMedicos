@@ -12,14 +12,19 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','model.Agenda.create'),'url'=>array('create','fecha'=>$fechaMin)),
+	array('label'=>CHtml::image(Yii::app()->baseUrl.'/css/images/add.png','Agregar Item a Planificación',array('width'=>20,'heigth'=>20,'border'=>'0')).' '.Yii::t('app','model.Agenda.create'),'url'=>array('create','fecha'=>$fechaMin)),
 );
 ?>
 <?php //print_r($semana) ?>
-<h1><?php echo Yii::t('app','model.Agenda')
+<h1 style="font-size:30px; color:#00b3af;"><img src="<?php echo Yii::app()->baseUrl.'/css/images/calendar1.png'  ?>" width="34" height="30" border="0" alt="Planificación semanal"><?php echo Yii::t('app','model.Agenda')
 ;?></h1>
 <div class="row">
-<?php echo CHtml::link('< Anterior ',array('Agenda/semana','fecha'=>date('d-m-Y',strtotime('-1 week',strtotime($fechaMin)))),array('class'=>'btn')); ?><?php echo CHtml::link('Siguiente >',array('Agenda/semana','fecha'=>date('d-m-Y',strtotime('+1 week',strtotime($fechaMin)))),array('class'=>'btn')); ?>	
+<div class="span2">
+	<?php echo CHtml::link('< Anterior ',array('Agenda/semana','fecha'=>date('d-m-Y',strtotime('-1 week',strtotime($fechaMin)))),array('class'=>'ui-btn ui-mini')); ?>
+</div>
+<div class="span2">
+	<?php echo CHtml::link('Siguiente >',array('Agenda/semana','fecha'=>date('d-m-Y',strtotime('+1 week',strtotime($fechaMin)))),array('class'=>'ui-btn ui-mini')); ?>	
+</div>
 </div>
 <table class="table table-bordered table-striped">
 	<tr>

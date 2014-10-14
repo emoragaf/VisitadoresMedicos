@@ -18,6 +18,6 @@ $this->menu=array(
 );
 ?>
 
-<h1> <?php echo Yii::t('app','model.Recordatorio.update'); ?></h1>
+<h1 style="font-size:30px; color:#00b3af;"> <img src="<?php echo Yii::app()->baseUrl.'/css/images/postit.png'  ?>" width="34" height="30" border="0" alt="agregar recordatorio"><?php echo Yii::t('app','model.Recordatorio.update'); ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
