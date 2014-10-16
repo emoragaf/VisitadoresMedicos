@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/styles.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/jquery.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/jquery-ui.css"/>
 	<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/css_002.css" rel="stylesheet" type="text/css">
 	<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/css.css" rel="stylesheet" type="text/css">
 
@@ -42,6 +43,10 @@
 	                array('label' => 'Recordatorios', 'url' =>array('/Recordatorio/index'), 'visible'=>Yii::app()->user->checkAccess('Recordatorio.*')),
     	            array('label' => 'Planificacion Semanal', 'url' =>array('/agenda/index'), 'visible'=>Yii::app()->user->checkAccess('Agenda.*')),
     	            array('label' => 'Fármacos', 'url' =>array('/Farmaco/admin'), 'visible'=>Yii::app()->user->checkAccess('Farmaco.*')),
+    	            array('label'=>'Administracion','items'=>array(
+	                	array('label' => 'Personas Institución', 'url' =>array('/PersonaOrganizacion/index')),
+	                	array('label' => 'Personas ', 'url' =>array('/Persona/index')),
+	                	), 'visible'=>Yii::app()->user->checkAccess('Persona.*','PersonaOrganizacion.*')),
 	                array('label'=>'Login', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
 					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)
 	                //array('label' => 'Link', 'url' => '#'),

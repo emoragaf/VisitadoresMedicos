@@ -87,7 +87,7 @@ class FarmacoController extends Controller
 					$upload->descripcion = $_POST['Descripcion'];
 					$upload->fecha_creacion = date('c');
                     $upload->nombre = $doc->name; //it might be $img_add->name for you, filename is just what I chose to call it in my model
-                    $upload->path = Yii::getPathOfAlias('webroot').'/uploads/visitas/'.$id.'/';
+                    $upload->path = '/uploads/farmacos/'.$id.'/';
                     $upload->extension = $doc->extensionName;
                     if($upload->save()){
                     	$farmacoUpload->farmaco_id = $id;
@@ -131,18 +131,27 @@ class FarmacoController extends Controller
 
 		public function actionAdjunto($id)
 	{
-		$upload = Upload::model()->findByPk($id);
+		$upload = Uploads::model()->findByPk($id);
 		if($upload){
-				$path = $upload->path.'/'.$upload->id.'.'.$upload->extension;
-				if(file_exists($path))
-				  {
-				    return Yii::app()->getRequest()->sendFile($upload->nombre.'.'.$upload->extension, @file_get_contents($path));
-				  }
-				else
-                        throw new CHttpException(404, 'No existe el archivo buscado.');
-			}
-		return false;
+				$path = Yii::getPathOfAlias('webroot').$upload->path.$upload->id.'.'.$upload->extension;
+				$filename = $upload->nombre.'.'.$upload->extension;
+				if(file_exists($path)) {
+                    /*$filecontent=file_get_contents($path);
+					header("Content-Type: text/plain");
+					header("Content-disposition: attachment; filename=$filename");
+					header("Pragma: no-cache");
+					echo $filecontent;*/
+
+					return Yii::app()->getRequest()->sendFile($filename, @file_get_contents($path));
+
+					//$this->redirect(array('admin'));
+                } else {
+                        header("HTTP/1.0 404 Not Found");
+                        exit;
+                }
+		}
 	}
+	
 
 	/**
 	 * Updates a particular model.

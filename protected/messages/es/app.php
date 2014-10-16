@@ -16,6 +16,22 @@ return array(
     'model.Organizacion.index'=>'Listar Instituciones',
     'model.Organizacion.view'=>'Detalle Institución',
     'model.Organizacion.delete'=>'Eliminar Institución',
+    //Persona
+    'model.Persona'=>'Personas',
+    'model.Persona.create'=>'Nueva Persona',
+    'model.Persona.update'=>'Editar Persona',
+    'model.Persona.admin'=>'Administrar Personas',
+    'model.Persona.index'=>'Listar Personas',
+    'model.Persona.view'=>'Detalle Persona',
+    'model.Persona.delete'=>'Eliminar Persona',
+    //PersonaOrganización
+    'model.PersonaOrganizacion'=>'Personas Institución',
+    'model.PersonaOrganizacion.create'=>'Agregar Persona a Institución',
+    'model.PersonaOrganizacion.update'=>'Editar Persona Institución',
+    'model.PersonaOrganizacion.admin'=>'Administrar Personas Institución',
+    'model.PersonaOrganizacion.index'=>'Listar Personas',
+    'model.PersonaOrganizacion.view'=>'Detalle Persona Institución',
+    'model.PersonaOrganizacion.delete'=>'Eliminar Persona Institución',
     //Recordatorios
     'model.Recordatorio'=>'Recordatorios',
     'model.Recordatorio.create'=>'Nuevo Recordatorio',

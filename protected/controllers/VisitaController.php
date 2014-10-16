@@ -114,8 +114,7 @@ class VisitaController extends Controller
 				$recordatorio->autor_id = Yii::app()->user->getId();
 				$recordatorio->destinatario_id = Yii::app()->user->getId();
 				$recordatorio->fecha_creacion = date('Y-m-d H:i');
-				$markdown = new CMarkdown;
-				$recordatorio->texto = $markdown->transform($model->notas);
+				$recordatorio->texto = $model->notas;
 				if( $_POST['Recordatorio']['fecha_recordatorio'] != '')
 					$recordatorio->fecha_recordatorio = date('Y-m-d H:i',strtotime($recordatorio->fecha_recordatorio));
 				else
@@ -132,11 +131,13 @@ class VisitaController extends Controller
 				$recordatorio->persona_organizacion = $model->visitado_id;
 				$recordatorio->organizacion_id = $model->organizacion_id;
 				$recordatorio->autor_id = Yii::app()->user->getId();
-				$markdown = new CMarkdown;
-				$recordatorio->texto = $markdown->transform($recordatorio->texto);
+				$recordatorio->texto = $recordatorio->texto;
 				$recordatorio->destinatario_id = Yii::app()->user->getId();
 				$recordatorio->fecha_creacion = date('Y-m-d H:i');
-				$recordatorio->fecha_recordatorio = date('Y-m-d H:i',strtotime($recordatorio->fecha_recordatorio));
+				if( $_POST['Recordatorio']['fecha_recordatorio'] != '')
+					$recordatorio->fecha_recordatorio = date('Y-m-d H:i',strtotime($recordatorio->fecha_recordatorio));
+				else
+					$recordatorio->fecha_recordatorio = null;
 
 				if ($model->save() && $recordatorio->save()) {
 					$recordatorio->visita_id = $model->id;
@@ -229,8 +230,7 @@ class VisitaController extends Controller
 				$recordatorio->organizacion_id = $model->organizacion_id;
 				$recordatorio->autor_id = Yii::app()->user->getId();
 				$recordatorio->destinatario_id = Yii::app()->user->getId();
-				$markdown = new CMarkdown;
-				$recordatorio->texto = $markdown->transform($model->notas);
+				$recordatorio->texto = $model->notas;
 				if( $_POST['Recordatorio']['fecha_recordatorio'] != '')
 					$recordatorio->fecha_recordatorio = date('Y-m-d H:i',strtotime($recordatorio->fecha_recordatorio));
 				else
@@ -248,8 +248,7 @@ class VisitaController extends Controller
 				$recordatorio->persona_organizacion = $model->visitado_id;
 				$recordatorio->organizacion_id = $model->organizacion_id;
 				$recordatorio->autor_id = Yii::app()->user->getId();
-				$markdown = new CMarkdown;
-				$recordatorio->texto = $markdown->transform($recordatorio->texto);
+				$recordatorio->texto = $recordatorio->texto;
 				$recordatorio->destinatario_id = Yii::app()->user->getId();
 				
 				if( $_POST['Recordatorio']['fecha_recordatorio'] != '')

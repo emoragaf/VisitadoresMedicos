@@ -10,31 +10,14 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','model.PersonaOrganizacion.index'),'url'=>array('index')),
+	//array('label'=>Yii::t('app','model.PersonaOrganizacion.index'),'url'=>array('index')),
 	array('label'=>Yii::t('app','model.PersonaOrganizacion.create'),'url'=>array('create')),
 );
 
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#persona-organizacion-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
 <h1><?php echo Yii::t('app','model.PersonaOrganizacion.admin'); ?></h1>
 
-<?php echo CHtml::link(Yii::t('app','Advanced Search'),'#',array('class'=>'search-button btn')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
 </div><!-- search-form -->
 
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
@@ -42,9 +25,15 @@ $('.search-form form').submit(function(){
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
-		'persona_id',
-		'organizacion_id',
+		array(
+			'header'=>'Persona',
+			'value'=>'$data->Persona != null ? $data->Persona->NombreCompleto : ""',
+		),
+		array(
+			'name'=>'organizacion_id',
+			'value'=>'$data->Organizacion != null ? $data->Organizacion->nombre: ""',
+			'filter'=>CHtml::listData(Organizacion::model()->findAll(),'id','nombre'),
+		),
 		'cargo',
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',

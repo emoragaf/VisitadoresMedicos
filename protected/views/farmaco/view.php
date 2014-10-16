@@ -34,12 +34,13 @@ $this->menu=array(
 		),
 	),
 )); ?>
+<iframe src="" style="display:none" name="helperFrame"></iframe>
 <?php if(!empty($uploads)){ ?>
     	<h4>Adjuntos.</h4>
 	    <ul data-role="listview" id="lista" data-filter="true" data-inset="true" data-filter-placeholder="Buscar...">
 		    <?php foreach($uploads as $upload){?>
 		      <li>
-		      <?php echo CHtml::link($upload->nombre.'.'.$upload->extension,$organizacion,array('farmaco/adjunto'.'id'=>$upload->id)); ?> 
+		      <?php echo CHtml::link($upload->file->nombre.'.'.$upload->file->extension,array('farmaco/adjunto','id'=>$upload->file->id),array('target'=>'helperFrame')); ?> 
 		      </li>
 		      <?php }?>
 		    </ul>

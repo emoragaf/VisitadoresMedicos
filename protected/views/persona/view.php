@@ -10,11 +10,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','model.Persona.index'),'url'=>array('index')),
+	//array('label'=>Yii::t('app','model.Persona.index'),'url'=>array('index')),
+	array('label'=>Yii::t('app','model.Persona.admin'),'url'=>array('admin')),
 	array('label'=>Yii::t('app','model.Persona.create'),'url'=>array('create')),
 	array('label'=>Yii::t('app','model.Persona.update'),'url'=>array('update','id'=>$model->id)),
 	array('label'=>Yii::t('app','model.Persona.delete'),'url'=>'#','linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>Yii::t('app','model.Persona.admin'),'url'=>array('admin')),
 );
 ?>
 

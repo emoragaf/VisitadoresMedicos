@@ -45,7 +45,7 @@ class Farmaco extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'claseTerapeutica' => array(self::BELONGS_TO, 'ClaseTerapeutica', 'clase_terapeutica_id'),
-			'uploads' => array(self::HAS_MANY, 'Uploads', 'item_id'),
+			'uploads' => array(self::HAS_MANY, 'FarmacoUpload', 'farmaco_id'),
 
 		);
 	}

@@ -99,7 +99,12 @@ $this->menu=array(
 	            <h3>Notas Visita <?php echo date('d-m-Y',strtotime($visita->fecha_programada)) ?></h3>
 	            <div>
 	            		<p>Visitado: <b><?php echo $visita->persona->nombre.' '.$visita->persona->apellido_p ; ?></b></p>
-						<?php echo trim($visita->notas); ?>
+	            		<br>
+						<?php 
+							$this->beginWidget('CMarkdown', array('purifyOutput'=>true));
+								echo $visita->notas;
+							$this->endWidget();
+						 ?>
 						<br>
 						<?php echo TbHtml::icon(TbHtml::ICON_PENCIL,array('color'=>'blue')).' '.Chtml::link('Editar',array('visita/update','id'=>$visita->id)); ?>
 	            </div>

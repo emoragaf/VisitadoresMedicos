@@ -20,11 +20,12 @@
     <?php echo $form->errorSummary($model); ?>
 
             <?php echo $form->dropDownListControlGroup($model, 'destinatario_id', Chtml::listData(User::model()->findAll(),'id','username'), array('empty' => 'Seleccionar Destinatario...')); ?>
-
-             <label for="Recordatorio[fecha_recordatorio]">Fecha Recordatorio <span class="required">*</span></label>
-            <input type="date" data-clear-btn="false" name="Recordatorio[fecha_recordatorio]" id="Recordatorio[fecha_recordatorio]" value="">
-            <?php echo $form->textAreaControlGroup($model,'texto',array('rows'=>6,'span'=>8)); ?>
-
+             <label for="fecha_recordatorio">Fecha Recordatorio</label>
+                <input type="datetime-local" data-clear-btn="false" name="Recordatorio[fecha_recordatorio]" id="Recordatorio[fecha_recordatorio]" value="<?php echo isset($recordatorio->fecha_recordatorio) ?date('Y-m-d\Th:i',strtotime($recordatorio->fecha_recordatorio)) :null; ?>">
+                <?php echo $form->dropDownListControlGroup($model, 'importancia', Recordatorio::model()->getImportancia(true), array('empty' => 'Importancia Recordatorio')); ?>
+                 
+            <?php echo $form->textAreaControlGroup($model,'texto',array('rows'=>8,'span'=>12,'placeholder'=>'Recordatorio')); ?>
+    
     <div>
         <button class="ui-btn ui-btn-inline">Aceptar</button>
     </div>

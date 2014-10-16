@@ -84,7 +84,7 @@ class UploadsController extends Controller
 				$upload->categoria_id = $model->categoria_id;
 				$upload->fecha_creacion = date('c');
                 $upload->nombre = $doc->name; //it might be $img_add->name for you, filename is just what I chose to call it in my model
-                $upload->path = Yii::getPathOfAlias('webroot').'/uploads/';
+                $upload->path = '/uploads/';
                 $upload->extension = $doc->extensionName;
                 if($upload->save()){
                 	$doc->saveAs($upload->path.$upload->id.'.'.$upload->extension);

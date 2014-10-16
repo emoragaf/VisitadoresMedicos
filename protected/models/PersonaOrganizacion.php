@@ -45,6 +45,7 @@ class PersonaOrganizacion extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'Persona' => array(self::BELONGS_TO, 'Persona', 'persona_id'),
+			'Organizacion' => array(self::BELONGS_TO, 'Organizacion', 'organizacion_id'),
 		);
 	}
 

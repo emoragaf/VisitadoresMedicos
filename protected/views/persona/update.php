@@ -11,7 +11,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','model.Persona.index'),'url'=>array('index')),
+	//array('label'=>Yii::t('app','model.Persona.index'),'url'=>array('index')),
 	array('label'=>Yii::t('app','model.Persona.create'),'url'=>array('create')),
 	array('label'=>Yii::t('app','model.Persona.view'),'url'=>array('view','id'=>$model->id)),
 	array('label'=>Yii::t('app','model.Persona.admin'),'url'=>array('admin')),
