@@ -24,6 +24,8 @@
  */
 class Persona extends CActiveRecord
 {
+	public $organizacion;
+	public $org_cargo;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -50,7 +52,16 @@ class Persona extends CActiveRecord
 			array('id, nombre, apellido_p, apellido_m, fecha_nacimiento, cargo, profesion, telefono1, telefono2, telefono3, email, twitter, facebook, hijos, estado, situacion_familiar_id, categoria_persona_id', 'safe', 'on'=>'search'),
 		);
 	}
-
+	public function getorganizacion(){
+		if($this->pOrganizacion){
+			return $this->pOrganizacion->organizacion_id;
+		}
+		else
+			return null;
+	}
+	public function setorganizacion($value){
+		$this->organizacion = $value;
+	}
 	/**
 	 * @return array relational rules.
 	 */
@@ -59,6 +70,7 @@ class Persona extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'pOrganizacion'=>array(self::HAS_ONE,'PersonaOrganizacion','persona_id'),
 		);
 	}
 
@@ -77,17 +89,19 @@ class Persona extends CActiveRecord
 			'apellido_m' => 'Apellido Materno',
 			'fecha_nacimiento' => 'Fecha Nacimiento',
 			'cargo' => 'Cargo',
-			'profesion' => 'Profesion',
-			'telefono1' => 'Telefono1',
-			'telefono2' => 'Telefono2',
-			'telefono3' => 'Telefono3',
+			'profesion' => 'Profesión',
+			'telefono1' => 'Telefono 1',
+			'telefono2' => 'Telefono 2',
+			'telefono3' => 'Telefono 3',
 			'email' => 'Email',
 			'twitter' => 'Twitter',
 			'facebook' => 'Facebook',
 			'hijos' => 'Hijos',
 			'estado' => 'Estado',
 			'situacion_familiar_id' => 'Situacion Familiar',
-			'categoria_persona_id' => 'Categoria Persona',
+			'categoria_persona_id' => 'Categoria Contacto',
+			'organizacion'=>'Institución',
+			'org_cargo'=>'Cargo',
 		);
 	}
 
@@ -108,7 +122,9 @@ class Persona extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		$criteria->with = array('pOrganizacion'=>array('select'=>'pOrganizacion.organizacion_id'));
+		$criteria->together= true;
+		$criteria->compare('pOrganizacion.organizacion',$this->organizacion,true);
 		$criteria->compare('id',$this->id);
 		$criteria->compare('nombre',$this->nombre,true);
 		$criteria->compare('apellido_p',$this->apellido_p,true);

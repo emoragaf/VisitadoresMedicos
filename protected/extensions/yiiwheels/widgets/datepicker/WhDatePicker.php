@@ -32,7 +32,7 @@ class WhDatePicker extends CInputWidget
 
         TbArray::defaultValue('autocomplete', 'off', $this->htmlOptions);
         TbHtml::addCssClass('grd-white', $this->htmlOptions);
-
+        //$this->htmlOptions['data-role'] = 'none';
         $this->initOptions();
     }
 

@@ -62,6 +62,7 @@ class WhDateTimePicker extends CInputWidget
 		$this->attachBehavior('ywplugin', array('class' => 'yiiwheels.behaviors.WhPlugin'));
 		$this->htmlOptions['id'] = TbArray::getValue('id', $this->htmlOptions, $this->getId());
 		$this->htmlOptions['data-format'] = $this->format;
+		$this->htmlOptions['data-role'] = 'none';
 	}
 
 	/**

@@ -34,11 +34,6 @@ $this->menu=array(
 			'filter'=>Chtml::listData(ModoCompra::model()->findAll(),'id','nombre')
 			),
 		array(
-			'name'=>'tipo_financiamiento_id',
-			'value'=>'isset($data->tipoFinanciamiento) ? $data->tipoFinanciamiento->nombre : null',
-			'filter'=>Chtml::listData(TipoFinanciamiento::model()->findAll(),'id','nombre')
-			),
-		array(
 			'name'=>'tipo_condicionpago_id',
 			'value'=>'isset($data->tipoCondicionpago) ? $data->tipoCondicionpago->nombre : null',
 			'filter'=>Chtml::listData(TipoCondicionPago::model()->findAll(),'id','nombre')

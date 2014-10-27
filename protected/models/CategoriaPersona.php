@@ -1,20 +1,21 @@
 <?php
 
 /**
- * This is the model class for table "tipo_condicionpago".
+ * This is the model class for table "categoria_persona".
  *
- * The followings are the available columns in table 'tipo_condicionpago':
+ * The followings are the available columns in table 'categoria_persona':
  * @property integer $id
  * @property string $nombre
+ * @property string $descripcion
  */
-class TipoCondicionPago extends CActiveRecord
+class CategoriaPersona extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'tipo_condicionpago';
+		return 'categoria_persona';
 	}
 
 	/**
@@ -27,9 +28,10 @@ class TipoCondicionPago extends CActiveRecord
 		return array(
 			array('nombre', 'required'),
 			array('nombre', 'length', 'max'=>255),
+			array('descripcion', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre', 'safe', 'on'=>'search'),
+			array('id, nombre, descripcion', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -41,7 +43,6 @@ class TipoCondicionPago extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'Organizaciones' => array(self::HAS_MANY, 'Organizacion', 'tipo_condicionpago_id'),
 		);
 	}
 
@@ -53,6 +54,7 @@ class TipoCondicionPago extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'nombre' => 'Nombre',
+			'descripcion' => 'Descripcion',
 		);
 	}
 
@@ -76,6 +78,7 @@ class TipoCondicionPago extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('nombre',$this->nombre,true);
+		$criteria->compare('descripcion',$this->descripcion,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -86,7 +89,7 @@ class TipoCondicionPago extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return TipoCondicionpago the static model class
+	 * @return CategoriaPersona the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

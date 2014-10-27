@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>CHtml::image(Yii::app()->baseUrl.'/css/images/edit.png','Administrar Clases Terapeuticas',array('width'=>20,'heigth'=>20,'border'=>'0')).' '.Yii::t('app','model.ClaseTerapeutica.admin'),'url'=>array('ClaseTerapeutica/Admin')),
+	array('label'=>CHtml::image(Yii::app()->baseUrl.'/css/images/edit.png','Administrar Clases Terapeuticas',array('width'=>20,'heigth'=>20,'border'=>'0')).' '.Yii::t('app','model.ClaseTerapeutica.admin'),'url'=>array('ClaseTerapeutica/Admin'),'visible'=>Yii::app()->user->checkAccess('ClaseTerapeutica.*')),
 	array('label'=>CHtml::image(Yii::app()->baseUrl.'/css/images/add.png','Agregar Fármaco',array('width'=>20,'heigth'=>20,'border'=>'0')).' '.Yii::t('app','model.Farmaco.create'),'url'=>array('create')),
 );
 

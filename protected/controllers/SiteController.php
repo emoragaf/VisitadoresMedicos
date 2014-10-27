@@ -101,14 +101,19 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$user_id = Yii::app()->user->getId();
-		$fecha_max = date('y-m-d',strtotime('+ 7 day'));
+		$fecha_max = date('y-m-d',strtotime('+ 10 day'));
 		$recordatorios=new CActiveDataProvider('Recordatorio', array(
 		            'criteria'=>array(
 		                'condition'=>'t.destinatario_id=:id AND leido = 0 AND fecha_recordatorio < :fecha_max OR (t.destinatario_id=:id AND importancia = 1 AND leido = 0)',
 		                'order'=>'importancia DESC, fecha_recordatorio',
 		                'params'=>array(':id'=>$user_id,':fecha_max'=>$fecha_max),
 		            ),
+		            'pagination'=>array(
+                        'pageSize'=>4,
+                    ),
 		));
+		//$dependency = new CDbCacheDependency('SELECT MAX(id) FROM organizacion');
+		//$orgs = Organizacion::model()->cache(43200, $dependency)->findAll(array('order'=>'categoria_id desc'));
 		$orgs = Organizacion::model()->findAll(array('order'=>'categoria_id desc'));
 		$organizaciones = array();
 		if(!empty($orgs)){
@@ -131,6 +136,11 @@ class SiteController extends Controller
 			else
 				$this->render('error', $error);
 		}
+	}
+
+	public function actionAdmin()
+	{
+		$this->render('admin');
 	}
 
 	/**

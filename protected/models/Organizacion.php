@@ -44,7 +44,7 @@ class Organizacion extends CActiveRecord
 			array('descripcion', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, direccion, comuna, email, descripcion, created_at, updated_at, categoria_id, modo_compra_id, tipo_financiamiento_id', 'safe', 'on'=>'search'),
+			array('id, nombre, direccion, comuna, email, descripcion, created_at, updated_at, categoria_id, modo_compra_id, tipo_canalcompra_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -197,7 +197,7 @@ class Organizacion extends CActiveRecord
 		$criteria->compare('updated_at',$this->updated_at,true);
 		$criteria->compare('categoria_id',$this->categoria_id);
 		$criteria->compare('modo_compra_id',$this->modo_compra_id);
-		$criteria->compare('tipo_financiamiento_id',$this->tipo_financiamiento_id);
+		$criteria->compare('tipo_canalcompra_id',$this->tipo_canalcompra_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -14,7 +14,7 @@ class RecordatorioController extends Controller
 	public function filters() {
      return array( 
         //it's important to add site/error, so an unpermitted user will get the error.
-        array('auth.filters.AuthFilter - user/login user/logout site/error'),
+        array('auth.filters.AuthFilter'),
             );
         }
 
@@ -69,6 +69,7 @@ class RecordatorioController extends Controller
 
 		if (isset($_POST['Recordatorio'])) {
 			$model->attributes=$_POST['Recordatorio'];
+			$model->fecha_recordatorio = date('c',strtotime($model->fecha_recordatorio));
 			if ($model->save()) {
 				$this->redirect(array('index'));
 			}
@@ -135,6 +136,9 @@ class RecordatorioController extends Controller
 		                'order'=>'importancia DESC,fecha_recordatorio',
 		                'params'=>array(':id'=>$user_id),
 		            ),
+		            'pagination'=>array(
+                        'pageSize'=>4,
+                    ),
 		));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,

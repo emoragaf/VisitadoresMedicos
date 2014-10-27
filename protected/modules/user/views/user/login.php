@@ -41,7 +41,7 @@ $this->pageTitle=Yii::app()->name . ' - '.UserModule::t("Login");
 	</div>
 
 	<div class="row-fluid submit">
-		<?php echo CHtml::submitButton(UserModule::t("Login"),array('class'=>'btn btn-primary')); ?>
+		<button class="ui-btn ui-corner-all">Aceptar</button>
 	</div>
 	
 <?php echo CHtml::endForm(); ?>

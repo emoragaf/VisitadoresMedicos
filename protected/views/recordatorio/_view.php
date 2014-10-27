@@ -22,7 +22,6 @@
 		<?php if($data->autor_id != $data->destinatario_id) 
 			echo '<p><b>De: </b>'.$data->autor->username.'</p>';
 		?>
-		<br>
 		<div class="texto">
 		<?php 
             $this->beginWidget('CMarkdown', array('purifyOutput'=>true));

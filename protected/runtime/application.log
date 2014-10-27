@@ -7155,3 +7155,937 @@ REQUEST_URI=/vitalis/index.php/PersonaOrganizacion/Admin
 in /Applications/MAMP/htdocs/vitalis/protected/views/personaOrganizacion/admin.php (31)
 in /Applications/MAMP/htdocs/vitalis/protected/controllers/PersonaOrganizacionController.php (190)
 in /Applications/MAMP/htdocs/vitalis/index.php (13)
+2014/10/21 21:04:49 [error] [exception.CException] exception 'CException' with message 'La propiedad "WhDateTimePicker"."language" no se encuentra definida.' in /Applications/MAMP/htdocs/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CWidgetFactory.php(161): CComponent->__set('language', 'es')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(VisitaController), 'yiiwheels.widge...', Array)
+#2 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('yiiwheels.widge...', Array)
+#3 /Applications/MAMP/htdocs/vitalis/protected/views/visita/_form.php(92): CBaseController->widget('yiiwheels.widge...', Array)
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require('/Applications/M...')
+#5 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Applications/M...', Array, true)
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): CBaseController->renderFile('/Applications/M...', Array, true)
+#7 /Applications/MAMP/htdocs/vitalis/protected/views/visita/create.php(20): CController->renderPartial('_form', Array)
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require('/Applications/M...')
+#9 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Applications/M...', Array, true)
+#10 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): CBaseController->renderFile('/Applications/M...', Array, true)
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#12 /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php(163): CController->render('create', Array)
+#13 [internal function]: VisitaController->actionCreate('2')
+#14 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(VisitaController), Array)
+#15 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(VisitaController), Object(ReflectionMethod), Array)
+#16 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#20 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#21 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Visita/create')
+#24 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/vitalis/index.php/Visita/create/2
+---
+2014/10/21 21:10:29 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Visita/create')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php/Visita/create/2
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Visita/create/2
+---
+2014/10/21 21:30:29 [error] [exception.CException] exception 'CException' with message 'La propiedad "WhDateTimePicker"."class" no se encuentra definida.' in /Applications/MAMP/htdocs/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CWidgetFactory.php(161): CComponent->__set('class', 'input-append')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(VisitaController), 'yiiwheels.widge...', Array)
+#2 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('yiiwheels.widge...', Array)
+#3 /Applications/MAMP/htdocs/vitalis/protected/views/visita/_form.php(97): CBaseController->widget('yiiwheels.widge...', Array)
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require('/Applications/M...')
+#5 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Applications/M...', Array, true)
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): CBaseController->renderFile('/Applications/M...', Array, true)
+#7 /Applications/MAMP/htdocs/vitalis/protected/views/visita/create.php(20): CController->renderPartial('_form', Array)
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require('/Applications/M...')
+#9 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Applications/M...', Array, true)
+#10 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): CBaseController->renderFile('/Applications/M...', Array, true)
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#12 /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php(163): CController->render('create', Array)
+#13 [internal function]: VisitaController->actionCreate('2')
+#14 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(VisitaController), Array)
+#15 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(VisitaController), Object(ReflectionMethod), Array)
+#16 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#20 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#21 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Visita/create')
+#24 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/vitalis/index.php/Visita/create/2
+---
+2014/10/22 11:11:35 [error] [system.db.CDbCommand] CDbCommand::fetch() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 1' at line 1. La sentencia SQL ejecutada fue: SELECT * FROM `persona_organizacion` `t` WHERE organizacion_id =  2 AND persona_id =  LIMIT 1.
+in /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php (95)
+in /Applications/MAMP/htdocs/vitalis/index.php (13)
+2014/10/22 11:11:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `persona_organizacion` `t` WHERE organizacion_id =  2 AND persona_id =  LIMIT 1' in /Applications/MAMP/htdocs/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Applications/MAMP/htdocs/yii/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /Applications/MAMP/htdocs/yii/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php(95): CActiveRecord->find(Array)
+#4 [internal function]: VisitaController->actionCreate('2')
+#5 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(VisitaController), Array)
+#6 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(VisitaController), Object(ReflectionMethod), Array)
+#7 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Visita/create')
+#15 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/vitalis/index.php/Visita/create/2
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Visita/create/2
+---
+2014/10/22 11:11:50 [error] [system.db.CDbCommand] CDbCommand::fetch() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 1' at line 1. La sentencia SQL ejecutada fue: SELECT * FROM `persona_organizacion` `t` WHERE organizacion_id =  2 AND persona_id =  LIMIT 1.
+in /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php (95)
+in /Applications/MAMP/htdocs/vitalis/index.php (13)
+2014/10/22 11:11:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `persona_organizacion` `t` WHERE organizacion_id =  2 AND persona_id =  LIMIT 1' in /Applications/MAMP/htdocs/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Applications/MAMP/htdocs/yii/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /Applications/MAMP/htdocs/yii/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /Applications/MAMP/htdocs/vitalis/protected/controllers/VisitaController.php(95): CActiveRecord->find(Array)
+#4 [internal function]: VisitaController->actionCreate('2')
+#5 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(VisitaController), Array)
+#6 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(VisitaController), Object(ReflectionMethod), Array)
+#7 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Visita/create')
+#15 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/vitalis/index.php/Visita/create/2
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Visita/create/2
+---
+2014/10/22 12:04:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/b497b248/js/locales/bootstrap-datetimepicker.es-ES.js"' in /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('assets/b497b248...')
+#1 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/vitalis/assets/b497b248/js/locales/bootstrap-datetimepicker.es-ES.js
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Visita/create/2
+---
+2014/10/22 12:31:12 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organizacion"."tipo_financiamiento_id" no se encuentra definida.' in /Applications/MAMP/htdocs/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('tipo_financiami...')
+#1 /Applications/MAMP/htdocs/vitalis/protected/models/Organizacion.php(200): CActiveRecord->__get('tipo_financiami...')
+#2 /Applications/MAMP/htdocs/vitalis/protected/views/organizacion/admin.php(22): Organizacion->search()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require('/Applications/M...')
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Applications/M...', Array, true)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): CBaseController->renderFile('/Applications/M...', Array, true)
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#7 /Applications/MAMP/htdocs/vitalis/protected/controllers/OrganizacionController.php(159): CController->render('admin', Array)
+#8 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): OrganizacionController->actionAdmin()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#16 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Organizacion/ad...')
+#17 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/vitalis/index.php/Organizacion/admin
+---
+2014/10/22 18:24:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Organizacion/admin
+---
+2014/10/22 18:24:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Organizacion/admin
+---
+2014/10/22 18:24:28 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Organizacion/admin
+---
+2014/10/22 18:24:36 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php(53): CWebUser->loginRequired()
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#7 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/vitalis/index.php
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Organizacion/admin
+---
+2014/10/22 18:46:54 [error] [exception.CException] exception 'CException' with message 'Persona y sus behaviors no tienen un método o closure llamado "getFrecuencia".' in /Applications/MAMP/htdocs/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/db/ar/CActiveRecord.php(227): CComponent->__call('getFrecuencia', Array)
+#1 /Applications/MAMP/htdocs/vitalis/protected/views/persona/view.php(28): CActiveRecord->__call('getFrecuencia', Array)
+#2 /Applications/MAMP/htdocs/vitalis/protected/views/persona/view.php(28): Persona->getFrecuencia()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require('/Applications/M...')
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Applications/M...', Array, true)
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): CBaseController->renderFile('/Applications/M...', Array, true)
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#7 /Applications/MAMP/htdocs/vitalis/protected/controllers/PersonaController.php(55): CController->render('view', Array)
+#8 [internal function]: PersonaController->actionView('1')
+#9 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(PersonaController), Array)
+#10 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(PersonaController), Object(ReflectionMethod), Array)
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#16 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#18 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('persona/view')
+#19 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#20 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/vitalis/index.php/persona/1
+---
+2014/10/22 19:23:32 [error] [exception.CException] exception 'CException' with message 'La propiedad "TbDataColumn"."asc" no se encuentra definida.' in /Applications/MAMP/htdocs/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/YiiBase.php(220): CComponent->__set('asc', 'organizacion')
+#1 /Applications/MAMP/htdocs/yii/framework/zii/widgets/grid/CGridView.php(388): YiiBase::createComponent(Array, Object(TbGridView))
+#2 /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php(79): CGridView->initColumns()
+#3 /Applications/MAMP/htdocs/yii/framework/zii/widgets/grid/CGridView.php(359): TbGridView->initColumns()
+#4 /Applications/MAMP/htdocs/vitalis/protected/extensions/bootstrap/widgets/TbGridView.php(48): CGridView->init()
+#5 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(147): TbGridView->init()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#7 /Applications/MAMP/htdocs/vitalis/protected/views/persona/admin.php(56): CBaseController->widget('bootstrap.widge...', Array)
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require('/Applications/M...')
+#9 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Applications/M...', Array, true)
+#10 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): CBaseController->renderFile('/Applications/M...', Array, true)
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#12 /Applications/MAMP/htdocs/vitalis/protected/controllers/PersonaController.php(162): CController->render('admin', Array)
+#13 /Applications/MAMP/htdocs/vitalis/protected/controllers/PersonaController.php(146): PersonaController->actionAdmin()
+#14 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): PersonaController->actionIndex()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#19 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#20 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('Index')
+#22 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Persona/Index')
+#23 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#24 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/vitalis/index.php/Persona/Index
+---
+2014/10/22 22:07:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "user/create"' in /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/create')
+#1 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/vitalis/index.php/user/create
+---
+2014/10/22 22:15:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "auth/admin"' in /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('auth/admin')
+#1 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/vitalis/index.php/auth/admin
+---
+2014/10/22 22:23:17 [error] [php] Illegal string offset 'userId' (/Applications/MAMP/htdocs/yii/framework/web/auth/CDbAuthManager.php:97)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php(815): CachedDbAuthManager->checkAccess()
+#1 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php(63): AuthWebUser->checkAccess()
+#2 /Applications/MAMP/htdocs/vitalis/protected/views/layouts/main.php(46): AuthWebUser->checkAccess()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): LoginController->renderInternal()
+#5 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): LoginController->renderFile()
+#6 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#7 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): LoginController->endWidget()
+#10 /Applications/MAMP/htdocs/vitalis/protected/views/layouts/column1.php(8): LoginController->endContent()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): LoginController->renderInternal()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): LoginController->renderFile()
+#14 /Applications/MAMP/htdocs/vitalis/protected/modules/user/controllers/LoginController.php(28): LoginController->render()
+#15 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): LoginController->actionLogin()
+#16 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#17 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): LoginController->runAction()
+#18 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): LoginController->runActionWithFilters()
+#19 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): LoginController->run()
+#20 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/user/login
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/CachedDbAuthManager.php (56)
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php (63)
+in /Applications/MAMP/htdocs/vitalis/protected/views/layouts/main.php (46)
+2014/10/22 22:23:25 [error] [php] Illegal string offset 'userId' (/Applications/MAMP/htdocs/yii/framework/web/auth/CDbAuthManager.php:97)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php(815): CachedDbAuthManager->checkAccess()
+#1 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php(63): AuthWebUser->checkAccess()
+#2 /Applications/MAMP/htdocs/vitalis/protected/views/layouts/main.php(46): AuthWebUser->checkAccess()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): LoginController->renderInternal()
+#5 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): LoginController->renderFile()
+#6 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#7 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): LoginController->endWidget()
+#10 /Applications/MAMP/htdocs/vitalis/protected/views/layouts/column1.php(8): LoginController->endContent()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): LoginController->renderInternal()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): LoginController->renderFile()
+#14 /Applications/MAMP/htdocs/vitalis/protected/modules/user/controllers/LoginController.php(28): LoginController->render()
+#15 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): LoginController->actionLogin()
+#16 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#17 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): LoginController->runAction()
+#18 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): LoginController->runActionWithFilters()
+#19 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): LoginController->run()
+#20 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/user/login
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/CachedDbAuthManager.php (56)
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php (63)
+in /Applications/MAMP/htdocs/vitalis/protected/views/layouts/main.php (46)
+2014/10/22 22:23:30 [error] [php] Illegal string offset 'userId' (/Applications/MAMP/htdocs/yii/framework/web/auth/CDbAuthManager.php:97)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php(815): CachedDbAuthManager->checkAccess()
+#1 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php(63): AuthWebUser->checkAccess()
+#2 /Applications/MAMP/htdocs/vitalis/protected/views/layouts/main.php(46): AuthWebUser->checkAccess()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): LoginController->renderInternal()
+#5 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): LoginController->renderFile()
+#6 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#7 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): LoginController->endWidget()
+#10 /Applications/MAMP/htdocs/vitalis/protected/views/layouts/column1.php(8): LoginController->endContent()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): LoginController->renderInternal()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): LoginController->renderFile()
+#14 /Applications/MAMP/htdocs/vitalis/protected/modules/user/controllers/LoginController.php(28): LoginController->render()
+#15 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): LoginController->actionLogin()
+#16 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#17 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): LoginController->runAction()
+#18 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): LoginController->runActionWithFilters()
+#19 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): LoginController->run()
+#20 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/user/login
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/CachedDbAuthManager.php (56)
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php (63)
+in /Applications/MAMP/htdocs/vitalis/protected/views/layouts/main.php (46)
+2014/10/22 22:23:37 [error] [php] Illegal string offset 'userId' (/Applications/MAMP/htdocs/yii/framework/web/auth/CDbAuthManager.php:97)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php(815): CachedDbAuthManager->checkAccess()
+#1 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php(63): AuthWebUser->checkAccess()
+#2 /Applications/MAMP/htdocs/vitalis/protected/views/layouts/main.php(46): AuthWebUser->checkAccess()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): LoginController->renderInternal()
+#5 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): LoginController->renderFile()
+#6 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#7 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): LoginController->endWidget()
+#10 /Applications/MAMP/htdocs/vitalis/protected/views/layouts/column1.php(8): LoginController->endContent()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): LoginController->renderInternal()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): LoginController->renderFile()
+#14 /Applications/MAMP/htdocs/vitalis/protected/modules/user/controllers/LoginController.php(28): LoginController->render()
+#15 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): LoginController->actionLogin()
+#16 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#17 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): LoginController->runAction()
+#18 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): LoginController->runActionWithFilters()
+#19 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): LoginController->run()
+#20 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/user/login
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/CachedDbAuthManager.php (56)
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php (63)
+in /Applications/MAMP/htdocs/vitalis/protected/views/layouts/main.php (46)
+2014/10/22 22:25:07 [error] [php] Illegal string offset 'userId' (/Applications/MAMP/htdocs/yii/framework/web/auth/CDbAuthManager.php:97)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php(815): CachedDbAuthManager->checkAccess()
+#1 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php(63): AuthWebUser->checkAccess()
+#2 /Applications/MAMP/htdocs/vitalis/protected/views/layouts/main.php(46): AuthWebUser->checkAccess()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): LoginController->renderInternal()
+#5 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): LoginController->renderFile()
+#6 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#7 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): LoginController->endWidget()
+#10 /Applications/MAMP/htdocs/vitalis/protected/views/layouts/column1.php(8): LoginController->endContent()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): LoginController->renderInternal()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): LoginController->renderFile()
+#14 /Applications/MAMP/htdocs/vitalis/protected/modules/user/controllers/LoginController.php(28): LoginController->render()
+#15 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): LoginController->actionLogin()
+#16 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#17 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): LoginController->runAction()
+#18 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): LoginController->runActionWithFilters()
+#19 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): LoginController->run()
+#20 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/user/login
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/CachedDbAuthManager.php (56)
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php (63)
+in /Applications/MAMP/htdocs/vitalis/protected/views/layouts/main.php (46)
+2014/10/22 22:25:27 [error] [php] Illegal string offset 'userId' (/Applications/MAMP/htdocs/yii/framework/web/auth/CDbAuthManager.php:97)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php(815): CachedDbAuthManager->checkAccess()
+#1 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php(63): AuthWebUser->checkAccess()
+#2 /Applications/MAMP/htdocs/vitalis/protected/views/layouts/main.php(46): AuthWebUser->checkAccess()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): LoginController->renderInternal()
+#5 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): LoginController->renderFile()
+#6 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#7 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): LoginController->endWidget()
+#10 /Applications/MAMP/htdocs/vitalis/protected/views/layouts/column1.php(8): LoginController->endContent()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): LoginController->renderInternal()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): LoginController->renderFile()
+#14 /Applications/MAMP/htdocs/vitalis/protected/modules/user/controllers/LoginController.php(28): LoginController->render()
+#15 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): LoginController->actionLogin()
+#16 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#17 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): LoginController->runAction()
+#18 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): LoginController->runActionWithFilters()
+#19 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): LoginController->run()
+#20 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/user/login
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/CachedDbAuthManager.php (56)
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php (63)
+in /Applications/MAMP/htdocs/vitalis/protected/views/layouts/main.php (46)
+2014/10/22 22:26:02 [error] [php] Illegal string offset 'userId' (/Applications/MAMP/htdocs/yii/framework/web/auth/CDbAuthManager.php:97)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php(815): CachedDbAuthManager->checkAccess()
+#1 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php(63): AuthWebUser->checkAccess()
+#2 /Applications/MAMP/htdocs/vitalis/protected/views/layouts/main.php(46): AuthWebUser->checkAccess()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): LoginController->renderInternal()
+#5 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): LoginController->renderFile()
+#6 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#7 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): LoginController->endWidget()
+#10 /Applications/MAMP/htdocs/vitalis/protected/views/layouts/column1.php(8): LoginController->endContent()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): LoginController->renderInternal()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): LoginController->renderFile()
+#14 /Applications/MAMP/htdocs/vitalis/protected/modules/user/controllers/LoginController.php(28): LoginController->render()
+#15 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): LoginController->actionLogin()
+#16 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#17 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): LoginController->runAction()
+#18 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): LoginController->runActionWithFilters()
+#19 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): LoginController->run()
+#20 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/user/login
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/CachedDbAuthManager.php (56)
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php (63)
+in /Applications/MAMP/htdocs/vitalis/protected/views/layouts/main.php (46)
+2014/10/22 22:29:49 [error] [php] Illegal string offset 'userId' (/Applications/MAMP/htdocs/yii/framework/web/auth/CDbAuthManager.php:97)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php(815): CachedDbAuthManager->checkAccess()
+#1 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php(63): AuthWebUser->checkAccess()
+#2 /Applications/MAMP/htdocs/vitalis/protected/views/layouts/main.php(46): AuthWebUser->checkAccess()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): LoginController->renderInternal()
+#5 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): LoginController->renderFile()
+#6 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#7 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): LoginController->endWidget()
+#10 /Applications/MAMP/htdocs/vitalis/protected/views/layouts/column1.php(8): LoginController->endContent()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): LoginController->renderInternal()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): LoginController->renderFile()
+#14 /Applications/MAMP/htdocs/vitalis/protected/modules/user/controllers/LoginController.php(28): LoginController->render()
+#15 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): LoginController->actionLogin()
+#16 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#17 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): LoginController->runAction()
+#18 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): LoginController->runActionWithFilters()
+#19 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): LoginController->run()
+#20 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/user/login
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/CachedDbAuthManager.php (56)
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php (63)
+in /Applications/MAMP/htdocs/vitalis/protected/views/layouts/main.php (46)
+2014/10/22 22:37:20 [error] [php] Illegal string offset 'userId' (/Applications/MAMP/htdocs/yii/framework/web/auth/CDbAuthManager.php:97)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php(815): CachedDbAuthManager->checkAccess()
+#1 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php(63): AuthWebUser->checkAccess()
+#2 /Applications/MAMP/htdocs/vitalis/protected/views/layouts/main.php(46): AuthWebUser->checkAccess()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): LoginController->renderInternal()
+#5 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): LoginController->renderFile()
+#6 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#7 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): LoginController->endWidget()
+#10 /Applications/MAMP/htdocs/vitalis/protected/views/layouts/column1.php(8): LoginController->endContent()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): LoginController->renderInternal()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): LoginController->renderFile()
+#14 /Applications/MAMP/htdocs/vitalis/protected/modules/user/controllers/LoginController.php(28): LoginController->render()
+#15 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): LoginController->actionLogin()
+#16 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#17 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): LoginController->runAction()
+#18 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): LoginController->runActionWithFilters()
+#19 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): LoginController->run()
+#20 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/user/login
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/CachedDbAuthManager.php (56)
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php (63)
+in /Applications/MAMP/htdocs/vitalis/protected/views/layouts/main.php (46)
+2014/10/22 22:41:11 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php:56
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Organizacion/vi...')
+#6 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/vitalis/index.php/Organizacion/2
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/user/login
+---
+2014/10/22 22:41:17 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php:56
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Organizacion/vi...')
+#6 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/vitalis/index.php/Organizacion/2
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/user/login
+---
+2014/10/22 22:42:47 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Acceso denegado.' in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/AuthModule.php:128
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(263): AuthModule->beforeControllerAction(Object(AssignmentController), Object(CInlineAction))
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('auth')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/vitalis/index.php/auth
+---
+2014/10/22 22:44:33 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(AuthWebUser), 'Usted no se enc...')
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Farmaco/admin')
+#9 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vitalis/index.php/Farmaco/admin
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/user/login
+---
+2014/10/22 22:44:41 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(AuthWebUser), 'Usted no se enc...')
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Farmaco/admin')
+#9 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vitalis/index.php/Farmaco/admin
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/user/login
+---
+2014/10/22 22:44:42 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(AuthWebUser), 'Usted no se enc...')
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Farmaco/admin')
+#9 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vitalis/index.php/Farmaco/admin
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/user/login
+---
+2014/10/22 22:47:05 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(AuthWebUser), 'Usted no se enc...')
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Farmaco/admin')
+#9 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vitalis/index.php/Farmaco/admin
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Recordatorio/index
+---
+2014/10/22 22:47:06 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(AuthWebUser), 'Usted no se enc...')
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Farmaco/admin')
+#9 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vitalis/index.php/Farmaco/admin
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Recordatorio/index
+---
+2014/10/22 22:47:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(AuthWebUser), 'Usted no se enc...')
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Farmaco/admin')
+#9 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vitalis/index.php/Farmaco/admin
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Recordatorio/index
+---
+2014/10/22 22:51:00 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(AuthWebUser), 'Usted no se enc...')
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('Admin')
+#8 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('ClaseTerapeutic...')
+#9 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vitalis/index.php/ClaseTerapeutica/Admin
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Farmaco/admin
+---
+2014/10/22 22:55:07 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php:56
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('FarmacoActualOr...')
+#6 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/vitalis/index.php/FarmacoActualOrganizacion/create/2
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Organizacion/2
+---
+2014/10/22 22:55:12 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/filters/AuthFilter.php:56
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(38): AuthFilter->preFilter(Object(CFilterChain))
+#1 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('FarmacoActualOr...')
+#6 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/vitalis/index.php/FarmacoActualOrganizacion/create/2
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Organizacion/2
+---
+2014/10/22 22:55:29 [error] [exception.CHttpException.401] exception 'CHttpException' with message 'Acceso denegado.' in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/AuthModule.php:128
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(263): AuthModule->beforeControllerAction(Object(TaskController), Object(CInlineAction))
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('auth/task')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/vitalis/index.php/auth/task
+---
+2014/10/22 22:59:44 [error] [php] Illegal string offset 'userId' (/Applications/MAMP/htdocs/yii/framework/web/auth/CDbAuthManager.php:97)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php(815): CachedDbAuthManager->checkAccess()
+#1 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php(63): AuthWebUser->checkAccess()
+#2 /Applications/MAMP/htdocs/vitalis/protected/views/organizacion/view.php(27): AuthWebUser->checkAccess()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): OrganizacionController->renderInternal()
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): OrganizacionController->renderFile()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): OrganizacionController->renderPartial()
+#7 /Applications/MAMP/htdocs/vitalis/protected/controllers/OrganizacionController.php(62): OrganizacionController->render()
+#8 unknown(0): OrganizacionController->actionView()
+#9 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#10 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): OrganizacionController->runAction()
+#13 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): AuthFilter->filter()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#16 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): OrganizacionController->runActionWithFilters()
+#17 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): OrganizacionController->run()
+#18 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#19 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#20 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/Organizacion/2
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/CachedDbAuthManager.php (56)
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php (63)
+in /Applications/MAMP/htdocs/vitalis/protected/views/organizacion/view.php (27)
+2014/10/22 22:59:46 [error] [php] Illegal string offset 'userId' (/Applications/MAMP/htdocs/yii/framework/web/auth/CDbAuthManager.php:97)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/auth/CWebUser.php(815): CachedDbAuthManager->checkAccess()
+#1 /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php(63): AuthWebUser->checkAccess()
+#2 /Applications/MAMP/htdocs/vitalis/protected/views/organizacion/view.php(27): AuthWebUser->checkAccess()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): OrganizacionController->renderInternal()
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): OrganizacionController->renderFile()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): OrganizacionController->renderPartial()
+#7 /Applications/MAMP/htdocs/vitalis/protected/controllers/OrganizacionController.php(62): OrganizacionController->render()
+#8 unknown(0): OrganizacionController->actionView()
+#9 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#10 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): OrganizacionController->runAction()
+#13 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): AuthFilter->filter()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#16 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): OrganizacionController->runActionWithFilters()
+#17 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): OrganizacionController->run()
+#18 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#19 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#20 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/Organizacion/2
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/CachedDbAuthManager.php (56)
+in /Applications/MAMP/htdocs/vitalis/protected/modules/auth/components/AuthWebUser.php (63)
+in /Applications/MAMP/htdocs/vitalis/protected/views/organizacion/view.php (27)
+2014/10/22 23:47:05 [error] [exception.CException] exception 'CException' with message 'CApcCache requiere que la extensión apc de PHP se encuentre cargada.' in /Applications/MAMP/htdocs/yii/framework/caching/CApcCache.php:35
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/base/CModule.php(387): CApcCache->init()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CUrlManager.php(216): CModule->getComponent('cache')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CUrlManager.php(206): CUrlManager->processRules()
+#3 /Applications/MAMP/htdocs/yii/framework/base/CModule.php(387): CUrlManager->init()
+#4 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(522): CModule->getComponent('urlManager')
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(140): CApplication->getUrlManager()
+#6 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/vitalis/
+---
+2014/10/22 23:52:04 [error] [exception.CException] exception 'CException' with message 'CApcCache requiere que la extensión apc de PHP se encuentre cargada.' in /Applications/MAMP/htdocs/yii/framework/caching/CApcCache.php:35
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/base/CModule.php(387): CApcCache->init()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CUrlManager.php(216): CModule->getComponent('cache')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CUrlManager.php(206): CUrlManager->processRules()
+#3 /Applications/MAMP/htdocs/yii/framework/base/CModule.php(387): CUrlManager->init()
+#4 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(522): CModule->getComponent('urlManager')
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(140): CApplication->getUrlManager()
+#6 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/vitalis/
+---
+2014/10/22 23:52:07 [error] [exception.CException] exception 'CException' with message 'CApcCache requiere que la extensión apc de PHP se encuentre cargada.' in /Applications/MAMP/htdocs/yii/framework/caching/CApcCache.php:35
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/base/CModule.php(387): CApcCache->init()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CUrlManager.php(216): CModule->getComponent('cache')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CUrlManager.php(206): CUrlManager->processRules()
+#3 /Applications/MAMP/htdocs/yii/framework/base/CModule.php(387): CUrlManager->init()
+#4 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(522): CModule->getComponent('urlManager')
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(140): CApplication->getUrlManager()
+#6 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/vitalis/
+---
+2014/10/22 23:52:09 [error] [exception.CException] exception 'CException' with message 'CApcCache requiere que la extensión apc de PHP se encuentre cargada.' in /Applications/MAMP/htdocs/yii/framework/caching/CApcCache.php:35
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/base/CModule.php(387): CApcCache->init()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CUrlManager.php(216): CModule->getComponent('cache')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CUrlManager.php(206): CUrlManager->processRules()
+#3 /Applications/MAMP/htdocs/yii/framework/base/CModule.php(387): CUrlManager->init()
+#4 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(522): CModule->getComponent('urlManager')
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(140): CApplication->getUrlManager()
+#6 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/vitalis/
+---
+2014/10/22 23:52:11 [error] [exception.CException] exception 'CException' with message 'CApcCache requiere que la extensión apc de PHP se encuentre cargada.' in /Applications/MAMP/htdocs/yii/framework/caching/CApcCache.php:35
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/base/CModule.php(387): CApcCache->init()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CUrlManager.php(216): CModule->getComponent('cache')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CUrlManager.php(206): CUrlManager->processRules()
+#3 /Applications/MAMP/htdocs/yii/framework/base/CModule.php(387): CUrlManager->init()
+#4 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(522): CModule->getComponent('urlManager')
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(140): CApplication->getUrlManager()
+#6 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/vitalis/
+---
+2014/10/22 23:53:02 [error] [exception.CException] exception 'CException' with message 'CApcCache requiere que la extensión apc de PHP se encuentre cargada.' in /Applications/MAMP/htdocs/yii/framework/caching/CApcCache.php:35
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/base/CModule.php(387): CApcCache->init()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CUrlManager.php(216): CModule->getComponent('cache')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CUrlManager.php(206): CUrlManager->processRules()
+#3 /Applications/MAMP/htdocs/yii/framework/base/CModule.php(387): CUrlManager->init()
+#4 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(522): CModule->getComponent('urlManager')
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(140): CApplication->getUrlManager()
+#6 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/vitalis/
+---
+2014/10/22 23:53:03 [error] [exception.CException] exception 'CException' with message 'CApcCache requiere que la extensión apc de PHP se encuentre cargada.' in /Applications/MAMP/htdocs/yii/framework/caching/CApcCache.php:35
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/base/CModule.php(387): CApcCache->init()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CUrlManager.php(216): CModule->getComponent('cache')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CUrlManager.php(206): CUrlManager->processRules()
+#3 /Applications/MAMP/htdocs/yii/framework/base/CModule.php(387): CUrlManager->init()
+#4 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(522): CModule->getComponent('urlManager')
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(140): CApplication->getUrlManager()
+#6 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/vitalis/
+---
+2014/10/22 23:53:05 [error] [exception.CException] exception 'CException' with message 'CApcCache requiere que la extensión apc de PHP se encuentre cargada.' in /Applications/MAMP/htdocs/yii/framework/caching/CApcCache.php:35
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/base/CModule.php(387): CApcCache->init()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CUrlManager.php(216): CModule->getComponent('cache')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CUrlManager.php(206): CUrlManager->processRules()
+#3 /Applications/MAMP/htdocs/yii/framework/base/CModule.php(387): CUrlManager->init()
+#4 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(522): CModule->getComponent('urlManager')
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(140): CApplication->getUrlManager()
+#6 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/vitalis/
+---
+2014/10/22 23:53:07 [error] [exception.CException] exception 'CException' with message 'CApcCache requiere que la extensión apc de PHP se encuentre cargada.' in /Applications/MAMP/htdocs/yii/framework/caching/CApcCache.php:35
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/base/CModule.php(387): CApcCache->init()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CUrlManager.php(216): CModule->getComponent('cache')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CUrlManager.php(206): CUrlManager->processRules()
+#3 /Applications/MAMP/htdocs/yii/framework/base/CModule.php(387): CUrlManager->init()
+#4 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(522): CModule->getComponent('urlManager')
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(140): CApplication->getUrlManager()
+#6 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/vitalis/
+---
+2014/10/22 23:53:43 [error] [exception.CException] exception 'CException' with message 'CApcCache requiere que la extensión apc de PHP se encuentre cargada.' in /Applications/MAMP/htdocs/yii/framework/caching/CApcCache.php:35
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/base/CModule.php(387): CApcCache->init()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CUrlManager.php(216): CModule->getComponent('cache')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CUrlManager.php(206): CUrlManager->processRules()
+#3 /Applications/MAMP/htdocs/yii/framework/base/CModule.php(387): CUrlManager->init()
+#4 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(522): CModule->getComponent('urlManager')
+#5 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(140): CApplication->getUrlManager()
+#6 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/vitalis/
+---

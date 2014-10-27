@@ -31,7 +31,7 @@
 
 <div id="wrap">
   <header id="navbar">
-	<?php $this->widget('bootstrap.widgets.TbNavbar', array(
+	<?php echo $this->widget('bootstrap.widgets.TbNavbar', array(
 	    'brandLabel' => CHtml::encode(Yii::app()->name),
 	    'display'=>TbHtml::NAVBAR_DISPLAY_STATICTOP,
 	    'collapse' => true, // default is static to top
@@ -42,18 +42,16 @@
 	            'items' => array(
 	                array('label' => 'Recordatorios', 'url' =>array('/Recordatorio/index'), 'visible'=>Yii::app()->user->checkAccess('Recordatorio.*')),
     	            array('label' => 'Planificacion Semanal', 'url' =>array('/agenda/index'), 'visible'=>Yii::app()->user->checkAccess('Agenda.*')),
-    	            array('label' => 'Fármacos', 'url' =>array('/Farmaco/admin'), 'visible'=>Yii::app()->user->checkAccess('Farmaco.*')),
-    	            array('label'=>'Administracion','items'=>array(
-	                	array('label' => 'Personas Institución', 'url' =>array('/PersonaOrganizacion/index')),
-	                	array('label' => 'Personas ', 'url' =>array('/Persona/index')),
-	                	), 'visible'=>Yii::app()->user->checkAccess('Persona.*','PersonaOrganizacion.*')),
+    	            array('label' => 'Productos', 'url' =>array('/Farmaco/admin'), 'visible'=>Yii::app()->user->checkAccess('Farmaco.*')),
+    	            array('label' => 'Contactos', 'url' =>array('/Persona/admin'), 'visible'=>Yii::app()->user->checkAccess('Persona.*')),
+    	            array('label'=>'Administración','url' =>array('/Site/admin'), 'visible'=>Yii::app()->user->checkAccess('Persona.*') && Yii::app()->user->checkAccess('PersonaOrganizacion.*')),
 	                array('label'=>'Login', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
 					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)
 	                //array('label' => 'Link', 'url' => '#'),
 	            ),
 	        ),
 	    ),
-	)); ?>
+	),true); ?>
 	</header>
 
 	<div class="container-fluid" id="page">

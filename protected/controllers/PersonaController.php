@@ -14,7 +14,7 @@ class PersonaController extends Controller
 	public function filters() {
      return array( 
         //it's important to add site/error, so an unpermitted user will get the error.
-        array('auth.filters.AuthFilter - user/login user/logout site/error'),
+        array('auth.filters.AuthFilter'),
             );
         }
 
@@ -68,7 +68,13 @@ class PersonaController extends Controller
 
 		if (isset($_POST['Persona'])) {
 			$model->attributes=$_POST['Persona'];
+			$model->fecha_nacimiento = date('Y-m-d',strtotime($model->fecha_nacimiento));
 			if ($model->save()) {
+				$pOrg = new PersonaOrganizacion;
+				$pOrg->organizacion_id = $model->organizacion;
+				$pOrg->persona_id = $model->id;
+				$pOrg->cargo = $model->cargo;
+				$pOrg->save();
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
@@ -86,13 +92,23 @@ class PersonaController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		if($model->pOrganizacion){
+			$pOrg = $model->pOrganizacion;
+		}
+		else
+			$pOrg = new PersonaOrganizacion;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Persona'])) {
 			$model->attributes=$_POST['Persona'];
+			$model->fecha_nacimiento = date('Y-m-d',strtotime($model->fecha_nacimiento));
 			if ($model->save()) {
+				$pOrg = new PersonaOrganizacion;
+				$pOrg->organizacion_id = $model->organizacion;
+				$pOrg->persona_id = $model->id;
+				$pOrg->cargo = $model->cargo;
+				$pOrg->save();
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}

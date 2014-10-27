@@ -14,7 +14,7 @@ class VisitaController extends Controller
 	public function filters() {
      return array( 
         //it's important to add site/error, so an unpermitted user will get the error.
-        array('auth.filters.AuthFilter - user/login user/logout site/error'),
+        array('auth.filters.AuthFilter'),
             );
         }
 
@@ -116,9 +116,9 @@ class VisitaController extends Controller
 				$recordatorio->fecha_creacion = date('Y-m-d H:i');
 				$recordatorio->texto = $model->notas;
 				if( $_POST['Recordatorio']['fecha_recordatorio'] != '')
-					$recordatorio->fecha_recordatorio = date('Y-m-d H:i',strtotime($recordatorio->fecha_recordatorio));
+					$recordatorio->fecha_recordatorio = date('c',strtotime($recordatorio->fecha_recordatorio));
 				else
-					$recordatorio->fecha_recordatorio = null;
+					$recordatorio->fecha_recordatorio = date('c');
 
 				if ($model->save() && $recordatorio->save()) {
 					$recordatorio->visita_id = $model->id;
@@ -135,9 +135,9 @@ class VisitaController extends Controller
 				$recordatorio->destinatario_id = Yii::app()->user->getId();
 				$recordatorio->fecha_creacion = date('Y-m-d H:i');
 				if( $_POST['Recordatorio']['fecha_recordatorio'] != '')
-					$recordatorio->fecha_recordatorio = date('Y-m-d H:i',strtotime($recordatorio->fecha_recordatorio));
+					$recordatorio->fecha_recordatorio = date('c',strtotime($recordatorio->fecha_recordatorio));
 				else
-					$recordatorio->fecha_recordatorio = null;
+					$recordatorio->fecha_recordatorio = date('c');
 
 				if ($model->save() && $recordatorio->save()) {
 					$recordatorio->visita_id = $model->id;

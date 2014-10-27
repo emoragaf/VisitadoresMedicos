@@ -1,20 +1,20 @@
 <?php
 
 /**
- * This is the model class for table "tipo_condicionpago".
+ * This is the model class for table "situacion_familiar".
  *
- * The followings are the available columns in table 'tipo_condicionpago':
+ * The followings are the available columns in table 'situacion_familiar':
  * @property integer $id
  * @property string $nombre
  */
-class TipoCondicionPago extends CActiveRecord
+class SituacionFamiliar extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'tipo_condicionpago';
+		return 'situacion_familiar';
 	}
 
 	/**
@@ -41,7 +41,6 @@ class TipoCondicionPago extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'Organizaciones' => array(self::HAS_MANY, 'Organizacion', 'tipo_condicionpago_id'),
 		);
 	}
 
@@ -86,7 +85,7 @@ class TipoCondicionPago extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return TipoCondicionpago the static model class
+	 * @return SituacionFamiliar the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

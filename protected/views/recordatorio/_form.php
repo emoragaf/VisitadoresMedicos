@@ -19,9 +19,20 @@
 
     <?php echo $form->errorSummary($model); ?>
 
-            <?php echo $form->dropDownListControlGroup($model, 'destinatario_id', Chtml::listData(User::model()->findAll(),'id','username'), array('empty' => 'Seleccionar Destinatario...')); ?>
+            <?php echo $form->dropDownListControlGroup($model, 'destinatario_id', Chtml::listData(User::model()->findAll(array('condition'=>'id != 1')),'id','username'), array('empty' => 'Seleccionar Destinatario...')); ?>
              <label for="fecha_recordatorio">Fecha Recordatorio</label>
-                <input type="datetime-local" data-clear-btn="false" name="Recordatorio[fecha_recordatorio]" id="Recordatorio[fecha_recordatorio]" value="<?php echo isset($recordatorio->fecha_recordatorio) ?date('Y-m-d\Th:i',strtotime($recordatorio->fecha_recordatorio)) :null; ?>">
+                <?php
+                    $this->widget('yiiwheels.widgets.datetimepicker.WhDateTimePicker', array(
+                        'model'=>$model,
+                        'attribute'=>'fecha_recordatorio',
+                        'pluginOptions' => array(
+                            'format'=>'dd-MM-yyyy hh:mm',
+                            'startDate'=>'+0d',
+                            'language'=>'es',
+                        ),
+                        'htmlOptions' => array('placeholder' => 'Seleccionar Fecha'),                    
+                    ));
+                ?>
                 <?php echo $form->dropDownListControlGroup($model, 'importancia', Recordatorio::model()->getImportancia(true), array('empty' => 'Importancia Recordatorio')); ?>
                  
             <?php echo $form->textAreaControlGroup($model,'texto',array('rows'=>8,'span'=>12,'placeholder'=>'Recordatorio')); ?>

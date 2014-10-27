@@ -80,19 +80,24 @@
              
             </script>
         </div>
-        <div class="span3">
-            <label for="Visita[fecha_programada]">Fecha Programada <span class="required">*</span></label>
-            <input type="date" data-clear-btn="false" name="Visita[fecha_programada]" id="Visita[fecha_programada]" value="<?php echo isset($model->fecha_programada)?date('Y-m-d',strtotime($model->fecha_programada)):null; ?>">
+        <div class="span4">
+            <fieldset>
+                <label for="Visita[fecha_programada]">Fecha Programada <span class="required">*</span></label>
+                <?php $this->widget('yiiwheels.widgets.datepicker.WhDatePicker', array(
+                        'model' => $model,
+                        'attribute'=>'fecha_programada',
+                        'pluginOptions' => array(
+                            'format' => 'dd-mm-yyyy',
+                            'language'=>'es',
+                        ),
+                    ));
+                ?>
+            </fieldset>
         </div>
     </div>
     <div class="row">
         <div class="span8">
             <?php echo $form->textAreaControlGroup($model,'notas',array('rows'=>8,'span'=>12,'placeholder'=>'Notas')); ?>
-            <fieldset data-role="controlgroup">
-                <legend class="ui-hidden-accessible">Hacer recordatorio de Nota</legend>
-                <label for="checkbox-4">Hacer recordatorio de Nota</label>
-                <input type="checkbox" name="checkbox-recordatorio" id="recordatorio">
-            </fieldset>
             <?php echo TbHtml::checkBox('recordatorio', '',array('label' => 'Hacer Recordatorio de Nota')); ?>
             
         </div>
@@ -103,7 +108,7 @@
                 <?php foreach ($recordatorios as $r): ?>
                     <div data-role="collapsible">
                         <h3>Recordatorio <?php echo date('d-m-Y',strtotime($r->fecha_recordatorio)) ?></h3>
-                        <div>
+                        <div class="texto">
                             <?php 
                                 $this->beginWidget('CMarkdown', array('purifyOutput'=>true));
                                     echo $r->texto;
@@ -144,7 +149,17 @@
     </div>
     <div class="span4">
         <label for="fecha_recordatorio">Fecha Recordatorio</label>
-        <input type="datetime-local" data-clear-btn="false" name="Recordatorio[fecha_recordatorio]" id="Recordatorio[fecha_recordatorio]" value="<?php echo isset($recordatorio->fecha_recordatorio) ?date('Y-m-d\Th:i',strtotime($recordatorio->fecha_recordatorio)) :null; ?>">
+         <?php
+            $this->widget('yiiwheels.widgets.datetimepicker.WhDateTimePicker', array(
+                'name'=>'Recordatorio[fecha_recordatorio]',
+                'pluginOptions' => array(
+                    'format'=>'dd-MM-yyyy hh:mm',
+                    'startDate'=>'+0d',
+                    'language'=>'es',
+                ),
+                'htmlOptions' => array('placeholder' => 'Seleccionar Fecha'),                    
+            ));
+        ?>
         <?php echo $form->dropDownListControlGroup($recordatorio, 'importancia', Recordatorio::model()->getImportancia(true), array('empty' => 'Importancia Recordatorio')); ?>
          <?php echo $form->textAreaControlGroup($recordatorio,'texto',array('rows'=>8,'span'=>12,'placeholder'=>'Recordatorio')); ?>
     </div>

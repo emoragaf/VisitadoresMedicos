@@ -14,7 +14,7 @@ class PersonaOrganizacionController extends Controller
 	public function filters() {
      return array( 
         //it's important to add site/error, so an unpermitted user will get the error.
-        array('auth.filters.AuthFilter - user/login user/logout site/error'),
+        array('auth.filters.AuthFilter'),
             );
         }
 
@@ -91,6 +91,7 @@ class PersonaOrganizacionController extends Controller
             if($persona->save())
             {
             	$model->persona_id = $persona->id;
+            	$model->cargo = $persona->cargo;
             	$model->save();
                 if (Yii::app()->request->isAjaxRequest)
                 {

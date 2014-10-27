@@ -24,9 +24,9 @@ $this->menu=array(
 	array('label'=>CHtml::image(Yii::app()->baseUrl.'/css/images/list2.png','Listar Instituciones',array('width'=>20,'heigth'=>20,'border'=>'0')).' '.Yii::t('app','model.Organizacion.index'),'url'=>array('/')),
 	array('label'=>CHtml::image(Yii::app()->baseUrl.'/css/images/add.png','Agregar Institución',array('width'=>20,'heigth'=>20,'border'=>'0')).' '.Yii::t('app','model.Organizacion.create'),'url'=>array('create')),
 	array('label'=>CHtml::image(Yii::app()->baseUrl.'/css/images/edit.png','Editar Institución',array('width'=>20,'heigth'=>20,'border'=>'0')).' '.Yii::t('app','model.Organizacion.update'),'url'=>array('update','id'=>$model->id)),
-	array('label'=>'Fármacos'),
-	array('label'=>CHtml::image(Yii::app()->baseUrl.'/css/images/add.png','Agregar Fármaco Actual',array('width'=>20,'heigth'=>20,'border'=>'0')).' '.'Agregar Fármaco Actual','url'=>array('FarmacoActualOrganizacion/create','id'=>$model->id)),
-	array('label'=>CHtml::image(Yii::app()->baseUrl.'/css/images/add.png','Agregar Fármaco Potencial',array('width'=>20,'heigth'=>20,'border'=>'0')).' '.'Agregar Fármaco Potencial','url'=>array('FarmacoPotencialOrganizacion/create','id'=>$model->id)),
+	array('label'=>'Fármacos','visible'=>Yii::app()->user->checkAccess('FarmacoActualOrganizacion.*') && Yii::app()->user->checkAccess('FarmacoPotencialOrganizacion.*')),
+	array('label'=>CHtml::image(Yii::app()->baseUrl.'/css/images/add.png','Agregar Fármaco Actual',array('width'=>20,'heigth'=>20,'border'=>'0')).' '.'Agregar Fármaco Actual','url'=>array('FarmacoActualOrganizacion/create','id'=>$model->id),'visible'=>Yii::app()->user->checkAccess('FarmacoActualOrganizacion.*')),
+	array('label'=>CHtml::image(Yii::app()->baseUrl.'/css/images/add.png','Agregar Fármaco Potencial',array('width'=>20,'heigth'=>20,'border'=>'0')).' '.'Agregar Fármaco Potencial','url'=>array('FarmacoPotencialOrganizacion/create','id'=>$model->id),'visible'=>Yii::app()->user->checkAccess('FarmacoPotencialOrganizacion.*')),
 );
 ?>
 <h1 style="font-size:30px; color:#00b3af;"><?php echo $model->nombre.' ('.$model->categoria->nombre.')';?></h1>
@@ -93,18 +93,20 @@ $this->menu=array(
 </div>
 	<?php if(!empty($visitas)){ ?>
     <div data-role="collapsible-set">
-    	<div id="searchFilter" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Buscar Visitas..." data-scroll="true" style=" width:90%;height:300px; overflow:scroll;">
+    	<div id="searchFilter" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Buscar Visitas..." data-scroll="true" style=" width:90%;max-height:350px; overflow:scroll;">
         <?php foreach ($visitas as $visita): ?>
 	        <div data-role="collapsible">
 	            <h3>Notas Visita <?php echo date('d-m-Y',strtotime($visita->fecha_programada)) ?></h3>
 	            <div>
 	            		<p>Visitado: <b><?php echo $visita->persona->nombre.' '.$visita->persona->apellido_p ; ?></b></p>
 	            		<br>
+	            		<div class="texto">	
 						<?php 
 							$this->beginWidget('CMarkdown', array('purifyOutput'=>true));
 								echo $visita->notas;
 							$this->endWidget();
 						 ?>
+	            		</div>
 						<br>
 						<?php echo TbHtml::icon(TbHtml::ICON_PENCIL,array('color'=>'blue')).' '.Chtml::link('Editar',array('visita/update','id'=>$visita->id)); ?>
 	            </div>

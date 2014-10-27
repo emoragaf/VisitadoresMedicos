@@ -19,20 +19,27 @@ $this->menu=array(
 ?>
 
 <h1><?php echo Yii::t('app','model.Persona.view');?></h1>
-
+<table class="table table-condensed">
+	<tr>
+		<td>
+			<h4 style="color:#005b97;">Nombre: </h4><?php echo $model->nombre.' '.$model->apellido_p.' '.$model->apellido_m ?>
+		</td>
+		<td>
+			<h4 style="color:#005b97;">Institución:</h4> <?php echo $model->pOrganizacion->Organizacion != null ? $model->pOrganizacion->Organizacion->nombre:'No Asignado'; ?>
+		</td>
+		<td>
+			<h4 style="color:#005b97;">Cargo:</h4> <?php echo $model->pOrganizacion != null ? $model->pOrganizacion->cargo:'No Asignado'; ?>
+		</td>
+	</tr>
+</table>
 <?php $this->widget('zii.widgets.CDetailView',array(
     'htmlOptions' => array(
-        'class' => 'table table-striped table-condensed table-hover',
+        'class' => 'table table-condensed table-hover',
     ),
     'data'=>$model,
     'attributes'=>array(
-		'id',
-		'nombre',
-		'apellido_p',
-		'apellido_m',
-		'fecha_nacimiento',
-		'cargo',
 		'profesion',
+		'fecha_nacimiento',
 		'telefono1',
 		'telefono2',
 		'telefono3',
@@ -40,7 +47,6 @@ $this->menu=array(
 		'twitter',
 		'facebook',
 		'hijos',
-		'estado',
 		'situacion_familiar_id',
 		'categoria_persona_id',
 	),

@@ -10,13 +10,13 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>Yii::t('app','model.Persona.create'),'url'=>array('create')),
-	array('label'=>Yii::t('app','model.PersonaOrganizacion')),
-	array('label'=>Yii::t('app','model.PersonaOrganizacion.admin'),'url'=>array('PersonaOrganizacion/index')),
+	//array('label'=>Yii::t('app','model.PersonaOrganizacion')),
+	//array('label'=>Yii::t('app','model.PersonaOrganizacion.admin'),'url'=>array('PersonaOrganizacion/index')),
 );
 
 ?>
 
-<h1><?php echo Yii::t('app','model.Persona.admin'); ?></h1>
+<h1 style="font-size:30px; color:#00b3af;"><?php echo Yii::t('app','model.Persona.admin'); ?></h1>
 
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'persona-grid',
@@ -25,9 +25,15 @@ $this->menu=array(
 	'columns'=>array(
 		'nombre',
 		'apellido_p',
-		'apellido_m',
 		'fecha_nacimiento',
-		'cargo',
+		array(
+			'name'=>'organizacion',
+			'value'=>'$data->pOrganizacion->Organizacion->nombre',
+			'filter'=>CHtml::listData(Organizacion::model()->findAll(),'id','nombre'),
+		),
+		array(
+			'name'=>'cargo',
+		),
 		/*
 		'profesion',
 		'telefono1',

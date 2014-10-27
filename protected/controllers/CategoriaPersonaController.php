@@ -1,6 +1,6 @@
 <?php
 
-class ClaseTerapeuticaController extends Controller
+class CategoriaPersonaController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -61,13 +61,13 @@ class ClaseTerapeuticaController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new ClaseTerapeutica;
+		$model=new CategoriaPersona;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['ClaseTerapeutica'])) {
-			$model->attributes=$_POST['ClaseTerapeutica'];
+		if (isset($_POST['CategoriaPersona'])) {
+			$model->attributes=$_POST['CategoriaPersona'];
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -90,10 +90,10 @@ class ClaseTerapeuticaController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['ClaseTerapeutica'])) {
-			$model->attributes=$_POST['ClaseTerapeutica'];
+		if (isset($_POST['CategoriaPersona'])) {
+			$model->attributes=$_POST['CategoriaPersona'];
 			if ($model->save()) {
-				$this->redirect(array('admin'));
+				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
 
@@ -127,10 +127,7 @@ class ClaseTerapeuticaController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('ClaseTerapeutica');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->actionAdmin();
 	}
 
 	/**
@@ -138,10 +135,10 @@ class ClaseTerapeuticaController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new ClaseTerapeutica('search');
+		$model=new CategoriaPersona('search');
 		$model->unsetAttributes();  // clear any default values
-		if (isset($_GET['ClaseTerapeutica'])) {
-			$model->attributes=$_GET['ClaseTerapeutica'];
+		if (isset($_GET['CategoriaPersona'])) {
+			$model->attributes=$_GET['CategoriaPersona'];
 		}
 
 		$this->render('admin',array(
@@ -153,12 +150,12 @@ class ClaseTerapeuticaController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return ClaseTerapeutica the loaded model
+	 * @return CategoriaPersona the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=ClaseTerapeutica::model()->findByPk($id);
+		$model=CategoriaPersona::model()->findByPk($id);
 		if ($model===null) {
 			throw new CHttpException(404,'The requested page does not exist.');
 		}
@@ -167,11 +164,11 @@ class ClaseTerapeuticaController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param ClaseTerapeutica $model the model to be validated
+	 * @param CategoriaPersona $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if (isset($_POST['ajax']) && $_POST['ajax']==='clase-terapeutica-form') {
+		if (isset($_POST['ajax']) && $_POST['ajax']==='categoria-persona-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}

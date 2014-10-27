@@ -87,6 +87,9 @@ return array(
 
 	// application components
 	'components'=>array(
+		/*'cache'=>array( 
+		    'class'=>'system.caching.CApcCache'
+		),*/
 		'authManager' => array(
 			'class' => 'auth.components.CachedDbAuthManager',
         	'cachingDuration' => 3600,
