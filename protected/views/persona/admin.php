@@ -28,7 +28,7 @@ $this->menu=array(
 		'fecha_nacimiento',
 		array(
 			'name'=>'organizacion',
-			'value'=>'$data->pOrganizacion->Organizacion->nombre',
+			'value'=>'$data->pOrganizacion != null && $data->pOrganizacion->Organizacion != null ? $data->pOrganizacion->Organizacion->nombre : null',
 			'filter'=>CHtml::listData(Organizacion::model()->findAll(),'id','nombre'),
 		),
 		array(

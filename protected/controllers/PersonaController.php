@@ -127,7 +127,12 @@ class PersonaController extends Controller
 	{
 		if (Yii::app()->request->isPostRequest) {
 			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
+			$model =$this->loadModel($id);
+			$pps = PersonaOrganizacion::model()->findAll(array('condition'=>'persona_id ='.$model->id));
+			foreach ($pps as $key => $value) {
+				$value->delete();
+			}
+			$model->delete();
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if (!isset($_GET['ajax'])) {

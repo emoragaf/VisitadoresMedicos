@@ -14,7 +14,7 @@ $this->menu=array(
 	array('label'=>Yii::t('app','model.Persona.admin'),'url'=>array('admin')),
 	array('label'=>Yii::t('app','model.Persona.create'),'url'=>array('create')),
 	array('label'=>Yii::t('app','model.Persona.update'),'url'=>array('update','id'=>$model->id)),
-	array('label'=>Yii::t('app','model.Persona.delete'),'url'=>'#','linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	//array('label'=>Yii::t('app','model.Persona.delete'),'url'=>'#','linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Seguro que desea eliminar Contacto')),
 );
 ?>
 
@@ -25,7 +25,7 @@ $this->menu=array(
 			<h4 style="color:#005b97;">Nombre: </h4><?php echo $model->nombre.' '.$model->apellido_p.' '.$model->apellido_m ?>
 		</td>
 		<td>
-			<h4 style="color:#005b97;">Institución:</h4> <?php echo $model->pOrganizacion->Organizacion != null ? $model->pOrganizacion->Organizacion->nombre:'No Asignado'; ?>
+			<h4 style="color:#005b97;">Institución:</h4> <?php echo $model->pOrganizacion!= null && $model->pOrganizacion->Organizacion != null ? $model->pOrganizacion->Organizacion->nombre:'No Asignado'; ?>
 		</td>
 		<td>
 			<h4 style="color:#005b97;">Cargo:</h4> <?php echo $model->pOrganizacion != null ? $model->pOrganizacion->cargo:'No Asignado'; ?>

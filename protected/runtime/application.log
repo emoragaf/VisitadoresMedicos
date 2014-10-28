@@ -8089,3 +8089,41 @@ Stack trace:
 #8 {main}
 REQUEST_URI=/vitalis/
 ---
+2014/10/28 12:02:45 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Invalid request. Please do not repeat this request again.' in /Applications/MAMP/htdocs/vitalis/protected/controllers/PersonaController.php:137
+Stack trace:
+#0 [internal function]: PersonaController->actionDelete('5')
+#1 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(PersonaController), Array)
+#2 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(PersonaController), Object(ReflectionMethod), Array)
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#7 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#10 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('persona/delete')
+#11 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /Applications/MAMP/htdocs/vitalis/index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/vitalis/index.php/persona/delete/5
+HTTP_REFERER=http://localhost:8888/vitalis/index.php/Persona/admin
+---
+2014/10/28 12:11:22 [error] [php] include(PersonaPunto.php): failed to open stream: No such file or directory (/Applications/MAMP/htdocs/yii/framework/YiiBase.php:427)
+Stack trace:
+#0 /Applications/MAMP/htdocs/vitalis/protected/controllers/PersonaController.php(131): spl_autoload_call()
+#1 unknown(0): PersonaController->actionDelete()
+#2 /Applications/MAMP/htdocs/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#3 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(133): PersonaController->runAction()
+#6 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Applications/MAMP/htdocs/yii/framework/web/filters/CFilterChain.php(130): AuthFilter->filter()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): PersonaController->runActionWithFilters()
+#10 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): PersonaController->run()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/vitalis/index.php(13): CWebApplication->run()
+REQUEST_URI=/vitalis/index.php/persona/delete/3?ajax=persona-grid
+in /Applications/MAMP/htdocs/vitalis/protected/controllers/PersonaController.php (131)
+in /Applications/MAMP/htdocs/vitalis/index.php (13)
