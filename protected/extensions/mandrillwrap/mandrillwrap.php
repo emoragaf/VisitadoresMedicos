@@ -13,6 +13,7 @@ class mandrillwrap extends CApplicationComponent {
 	public $subject;
 	public $important;
 	public $tags;
+	public $headers;
 	
 	public function init()
 	{
@@ -31,7 +32,7 @@ class mandrillwrap extends CApplicationComponent {
         'from_email' => $this->fromEmail,
         'from_name' => $this->fromName,
         'to' => $this->to,
-        'headers' => array('Reply-To' => $this->fromEmail),
+        'headers' => $this->headers,
         'important' => false,
         'track_opens' => null,
         'track_clicks' => null,

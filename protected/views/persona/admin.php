@@ -25,7 +25,7 @@ $this->menu=array(
 	'columns'=>array(
 		'nombre',
 		'apellido_p',
-		'fecha_nacimiento',
+		'email',
 		array(
 			'name'=>'organizacion',
 			'value'=>'$data->pOrganizacion != null && $data->pOrganizacion->Organizacion != null ? $data->pOrganizacion->Organizacion->nombre : null',

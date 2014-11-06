@@ -19,8 +19,8 @@
 
     <?php echo $form->errorSummary($model); ?>
             <h3 class="ui-bar ui-bar-a">Institución</h3>
-
-            <?php echo $form->dropDownListControlGroup($model, 'organizacion', Chtml::listData(Organizacion::model()->findAll(),'id','nombre'), array('empty' => 'Seleccionar Institución...')); ?>
+    
+            <?php echo CHtml::dropDownList('organizacion','',Chtml::listData(Organizacion::model()->findAll(),'id','nombre'));?>
 
             <?php echo $form->textFieldControlGroup($model,'cargo',array('span'=>5,'maxlength'=>255)); ?>
 

@@ -106,7 +106,6 @@ sub {
 
 img {
   width: auto\9;
-  height: auto;
   max-width: 100%;
   vertical-align: middle;
   border: 0;
@@ -4359,7 +4358,7 @@ input[type="submit"].btn.btn-mini {
 .navbar .brand {
   display: block;
   float: left;
-  padding: 10px 20px 10px;
+  padding: 7px 20px 0px;
   margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
@@ -4542,7 +4541,7 @@ input[type="submit"].btn.btn-mini {
   left: 0;
   display: block;
   float: left;
-  margin: 0 10px 0 0;
+  margin: 6px 10px 0 0;
 }
 
 .navbar .nav.pull-right {

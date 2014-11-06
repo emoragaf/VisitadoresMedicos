@@ -52,14 +52,14 @@ class Persona extends CActiveRecord
 			array('id, nombre, apellido_p, apellido_m, fecha_nacimiento, cargo, profesion, telefono1, telefono2, telefono3, email, twitter, facebook, hijos, estado, situacion_familiar_id, categoria_persona_id', 'safe', 'on'=>'search'),
 		);
 	}
-	public function getorganizacion(){
+	public function getOrga(){
 		if($this->pOrganizacion){
 			return $this->pOrganizacion->organizacion_id;
 		}
 		else
 			return null;
 	}
-	public function setorganizacion($value){
+	public function setOrg($value){
 		$this->organizacion = $value;
 	}
 	/**

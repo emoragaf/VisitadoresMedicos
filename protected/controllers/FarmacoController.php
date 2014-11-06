@@ -58,6 +58,61 @@ class FarmacoController extends Controller
 			'model'=>$model,
 		));
 	}
+	public function actionSelectOrg($id)
+	{
+		if (isset($_POST['organizacion'])) {
+			$this->redirect(array('Send','f'=>$id,'org'=>$_POST['organizacion']));
+			//$this->actionSend($id,$_POST['organizacion']);
+		}
+		$this->render('selectOrg',array(
+			'id'=>$id,
+		));
+	}
+	public function actionSend($f,$org)
+	{
+		$model = $this->loadModel($f);
+		$uploads = $model->uploads;
+		if (isset($_POST['persona']) && isset($_POST['send'])) {
+			$destinatario = PersonaOrganizacion::model()->findByPk($_POST['persona']);
+			$files = array();
+			foreach ($_POST['send'] as $file_id => $foo) {
+				$file = Uploads::model()->findByPk($file_id);
+				$files[] = array(
+					'type'=>'application/'.$file->extension,
+					'name'=>$file->nombre.'.'.$file->extension,
+					'content'=>base64_encode(file_get_contents(Yii::getPathOfAlias('webroot').$file->path.$file->id.'.'.$file->extension))
+				);
+			}
+			if($destinatario && count($files) >0 ){
+				//Enviar email
+				$user = User::model()->findByPk(Yii::app()->user->id);
+				$email = Yii::app()->mandrillwrap;
+				$email->mandrillKey = 'dLsiSqgctG1atlNvHqVdVg';
+				$email->text = "Estimado ".$destinatario->Persona->nombre."\nAdjuntos se encuentran los documentos del producto ".$model->Descripcion.".\n Saludos Cordiales";
+				$email->html = "<h1>Documentos  ".$model->Descripcion."</h1><p>Estimado ".$destinatario->Persona->nombre.", adjuntos se encuentran los documentos del producto: ".$model->Descripcion."</p><p>Saludos Cordiales</p>";
+				$email->subject = "Documentos  ".$model->Descripcion;
+				$email->fromName = "Appvitalis.cl";
+				$email->fromEmail = "noreply@appvitalis.cl";
+				$email->headers = array("Reply-To"=>$user->email);
+				$email->to = array(
+		            array(
+		                'email' => $destinatario->Persona->email,
+		                'name' => $destinatario->Persona->NombreCompleto,
+		                'type' => 'to'
+		            ),
+		        );
+		        $email->tags = array('Docs','Vitalis');
+				$email->attachments = $files;
+				$email->sendEmail();
+				$this->redirect(array('admin'));
+			}
+		}
+		$this->render('enviar',array(
+			'org'=>$org,
+			'uploads'=>$uploads,
+			'model'=>$model,
+		));
+	}
 
 	public function actionUpload($id){
 		$model= $this->loadModel($id);

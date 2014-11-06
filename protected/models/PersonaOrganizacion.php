@@ -49,6 +49,10 @@ class PersonaOrganizacion extends CActiveRecord
 		);
 	}
 
+	public function getNombre(){
+		return $this->Persona->NombreCompleto;
+	}
+
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */

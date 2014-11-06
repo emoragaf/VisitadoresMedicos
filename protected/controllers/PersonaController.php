@@ -70,12 +70,14 @@ class PersonaController extends Controller
 			$model->attributes=$_POST['Persona'];
 			$model->fecha_nacimiento = date('Y-m-d',strtotime($model->fecha_nacimiento));
 			if ($model->save()) {
-				$pOrg = new PersonaOrganizacion;
-				$pOrg->organizacion_id = $model->organizacion;
-				$pOrg->persona_id = $model->id;
-				$pOrg->cargo = $model->cargo;
-				$pOrg->save();
-				$this->redirect(array('view','id'=>$model->id));
+				if(isset($_POST['organizacion']) && !empty($_POST['organizacion'])){
+					$pOrg = new PersonaOrganizacion;
+					$pOrg->organizacion_id = $_POST['organizacion'];
+					$pOrg->persona_id = $model->id;
+					$pOrg->cargo = $model->cargo;
+					$pOrg->save();
+				}
+				$this->redirect(array('admin'));
 			}
 		}
 
@@ -92,11 +94,6 @@ class PersonaController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		if($model->pOrganizacion){
-			$pOrg = $model->pOrganizacion;
-		}
-		else
-			$pOrg = new PersonaOrganizacion;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -104,12 +101,18 @@ class PersonaController extends Controller
 			$model->attributes=$_POST['Persona'];
 			$model->fecha_nacimiento = date('Y-m-d',strtotime($model->fecha_nacimiento));
 			if ($model->save()) {
-				$pOrg = new PersonaOrganizacion;
-				$pOrg->organizacion_id = $model->organizacion;
-				$pOrg->persona_id = $model->id;
-				$pOrg->cargo = $model->cargo;
-				$pOrg->save();
-				$this->redirect(array('view','id'=>$model->id));
+				if(isset($_POST['organizacion']) && !empty($_POST['organizacion'])){
+					if($model->pOrganizacion){
+						$pOrg = $model->pOrganizacion;
+					}
+					else
+						$pOrg = new PersonaOrganizacion;
+					$pOrg->organizacion_id = $_POST['organizacion'];
+					$pOrg->persona_id = $model->id;
+					$pOrg->cargo = $model->cargo;
+					$pOrg->save();
+				}
+				$this->redirect(array('admin'));
 			}
 		}
 

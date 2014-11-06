@@ -90,6 +90,10 @@ return array(
 		/*'cache'=>array( 
 		    'class'=>'system.caching.CApcCache'
 		),*/
+		'mandrillwrap' => array(
+	         'class' => 'ext.mandrillwrap.mandrillwrap',
+	         //'options' => array(/.. additional curl options ../)
+	    ),
 		'authManager' => array(
 			'class' => 'auth.components.CachedDbAuthManager',
         	'cachingDuration' => 3600,

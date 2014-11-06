@@ -32,7 +32,8 @@
 <div id="wrap">
   <header id="navbar">
 	<?php echo $this->widget('bootstrap.widgets.TbNavbar', array(
-	    'brandLabel' => CHtml::encode(Yii::app()->name),
+	    //'brandLabel' => ,
+	    'brandLabel'=>CHtml::image(Yii::app()->getBaseUrl().'/images/logo-vitalis.png',CHtml::encode(Yii::app()->name),array('height'=>'35px')),
 	    'display'=>TbHtml::NAVBAR_DISPLAY_STATICTOP,
 	    'collapse' => true, // default is static to top
 	    'fluid'=>true,

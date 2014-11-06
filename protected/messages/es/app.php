@@ -70,9 +70,11 @@ return array(
     'model.Farmaco.create'=>'Agregar Producto',
     'model.Farmaco.update'=>'Actualizar Producto',
     'model.Farmaco.view'=>'Detalles Producto',
-    'model.Farmaco.delete'=>'Elminar Producto',
+    'model.Farmaco.delete'=>'Eliminar Producto',
     'model.Farmaco.admin'=>'Administrar Productos',
     'model.Farmaco.upload'=>'Adjuntar Documento',
+    'model.Farmaco.send'=>'Enviar Documento',
+    'model.Farmaco.selectOrg'=>'Seleccionar Institución',
 
     'model.ClaseTerapeutica'=>'Clases Terapeuticas',
     'model.ClaseTerapeutica.create'=>'Agregar Clase Terapeutica',
