@@ -29,7 +29,7 @@ $this->menu=array(
 		array(
 			'name'=>'organizacion',
 			'value'=>'$data->pOrganizacion != null && $data->pOrganizacion->Organizacion != null ? $data->pOrganizacion->Organizacion->nombre : null',
-			'filter'=>CHtml::listData(Organizacion::model()->findAll(),'id','nombre'),
+			'filter'=>CHtml::listData(Organizacion::model()->findAll(array('condition'=>'user_visible is NULL OR user_visible ='.Yii::app()->user->id)),'id','nombre'),
 		),
 		array(
 			'name'=>'cargo',

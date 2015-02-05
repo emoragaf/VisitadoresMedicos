@@ -11,7 +11,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','model.Farmaco.index'),'url'=>array('index')),
+	//array('label'=>Yii::t('app','model.Farmaco.index'),'url'=>array('index')),
 	array('label'=>Yii::t('app','model.Farmaco.create'),'url'=>array('create')),
 	array('label'=>Yii::t('app','model.Farmaco.view'),'url'=>array('view','id'=>$model->id)),
 	array('label'=>Yii::t('app','model.Farmaco.admin'),'url'=>array('admin')),

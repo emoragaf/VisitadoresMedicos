@@ -91,7 +91,7 @@ class FarmacoController extends Controller
 				$email->text = "Estimado ".$destinatario->Persona->nombre."\nAdjuntos se encuentran los documentos del producto ".$model->Descripcion.".\n Saludos Cordiales";
 				$email->html = "<h1>Documentos  ".$model->Descripcion."</h1><p>Estimado ".$destinatario->Persona->nombre.", adjuntos se encuentran los documentos del producto: ".$model->Descripcion."</p><p>Saludos Cordiales</p>";
 				$email->subject = "Documentos  ".$model->Descripcion;
-				$email->fromName = "Appvitalis.cl";
+				$email->fromName = "Laboratorio Vitalis";
 				$email->fromEmail = "noreply@appvitalis.cl";
 				$email->headers = array("Reply-To"=>$user->email);
 				$email->to = array(

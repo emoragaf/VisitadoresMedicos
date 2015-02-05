@@ -76,7 +76,7 @@ class OrganizacionController extends Controller
 		if (isset($_POST['Organizacion'])) {
 			$model->attributes=$_POST['Organizacion'];
 			$model->cantidad_camas = $model->cant_camas_maternidad + $model->cant_camas_quirurgicos +$model->cant_camas_pediatria + $model->cant_camas_criticas;
-
+			$model->user_visible = Yii::app()->user->id;
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -84,6 +84,27 @@ class OrganizacionController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+		));
+	}
+
+	public function actionAccesoUser()
+	{
+		$orgs= Organizacion::model()->findAll();
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if (isset($_POST['visible'])) {
+			foreach ($_POST['visible'] as $key => $value) {
+				$org = Organizacion::model()->findByPk($key);
+				$org->user_visible = $value;
+				$org->save();
+			}
+			$this->redirect(array('Site/admin'));
+		}
+
+		$this->render('accesoUser',array(
+			'organizaciones'=>$orgs,
 		));
 	}
 

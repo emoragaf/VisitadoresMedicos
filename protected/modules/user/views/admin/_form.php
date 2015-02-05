@@ -2,7 +2,7 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'user-form',
-	'enableAjaxValidation'=>true,
+	'enableAjaxValidation'=>false,
 	'htmlOptions' => array('enctype'=>'multipart/form-data'),
 ));
 ?>
@@ -27,12 +27,6 @@
 		<?php echo $form->labelEx($model,'email'); ?>
 		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>128)); ?>
 		<?php echo $form->error($model,'email'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'superuser'); ?>
-		<?php echo $form->dropDownList($model,'superuser',User::itemAlias('AdminStatus')); ?>
-		<?php echo $form->error($model,'superuser'); ?>
 	</div>
 
 	<div class="row">

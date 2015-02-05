@@ -76,6 +76,7 @@ class AdminController extends Controller
 	public function actionCreate()
 	{
 		$model=new User;
+		$model->superuser = 0;
 		$profile=new Profile;
 		$this->performAjaxValidation(array($model,$profile));
 		if(isset($_POST['User']))
@@ -107,6 +108,7 @@ class AdminController extends Controller
 	public function actionUpdate()
 	{
 		$model=$this->loadModel();
+		$model->superuser = 0;
 		$profile=$model->profile;
 		$this->performAjaxValidation(array($model,$profile));
 		if(isset($_POST['User']))

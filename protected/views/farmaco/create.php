@@ -5,7 +5,7 @@
 
 <?php
 $this->breadcrumbs=array(
-	Yii::t('app','model.Farmaco')=>array('index'),
+	Yii::t('app','model.Farmaco')=>array('admin'),
 	'Crear',
 );
 

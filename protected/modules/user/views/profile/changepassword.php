@@ -4,10 +4,10 @@ $this->breadcrumbs=array(
 	UserModule::t("Change Password"),
 );
 $this->menu=array(
-	((UserModule::isAdmin())
-		?array('label'=>UserModule::t('Manage Users'), 'url'=>array('/user/admin'))
-		:array()),
-    array('label'=>UserModule::t('List User'), 'url'=>array('/user')),
+	//((UserModule::isAdmin())
+	//	?array('label'=>UserModule::t('Manage Users'), 'url'=>array('/user/admin'))
+	//	:array()),
+    //array('label'=>UserModule::t('List User'), 'url'=>array('/user')),
     array('label'=>UserModule::t('Profile'), 'url'=>array('/user/profile')),
     array('label'=>UserModule::t('Edit'), 'url'=>array('edit')),
     array('label'=>UserModule::t('Logout'), 'url'=>array('/user/logout')),
@@ -19,7 +19,7 @@ $this->menu=array(
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'changepassword-form',
-	'enableAjaxValidation'=>true,
+	'enableAjaxValidation'=>false,
 	'clientOptions'=>array(
 		'validateOnSubmit'=>true,
 	),

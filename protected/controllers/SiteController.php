@@ -118,7 +118,7 @@ class SiteController extends Controller
 		$organizaciones = array();
 		if(!empty($orgs)){
 			foreach ($orgs as $org) {
-				$organizaciones[] = array('label' => $org->nombre.' ('.$org->categoria->nombre.')', 'url' => array('/Organizacion/view','id'=>$org->id));
+				$organizaciones[] = array('label' => $org->nombre.' ('.$org->categoria->nombre.')', 'url' => array('/Organizacion/view','id'=>$org->id),'user_visible'=>$org->user_visible);
 			}
 		}
 		$this->render('index',array('organizaciones'=>$organizaciones,'recordatorios'=>$recordatorios));

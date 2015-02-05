@@ -4,6 +4,14 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="es" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="icon" sizes="192x192" href="<?php echo Yii::app()->getBaseUrl().'/images/vitalis192.png' ?>">
+	<link rel="icon" sizes="128x128" href="<?php echo Yii::app()->getBaseUrl().'/images/vitalis128.png' ?>">
+	<link rel="shortcut icon" href="<?php echo Yii::app()->getBaseUrl().'/imagesfavicon-1.ico' ?>" />
+	<link rel="apple-touch-icon" href="<?php echo Yii::app()->getBaseUrl().'/images/vitalis60.png' ?>">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo Yii::app()->getBaseUrl().'/images/vitalis76.png' ?>">
+	<link rel="apple-touch-icon" sizes="120x120" href="<?php echo Yii::app()->getBaseUrl().'/images/vitalis120.png' ?>">
+	<link rel="apple-touch-icon" sizes="152x152" href="<?php echo Yii::app()->getBaseUrl().'/images/vitalis152.png' ?>">
+
 
 	<?php Yii::app()->bootstrap->register(); ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
@@ -47,8 +55,9 @@
     	            array('label' => 'Contactos', 'url' =>array('/Persona/admin'), 'visible'=>Yii::app()->user->checkAccess('Persona.*')),
     	            array('label'=>'Administración','url' =>array('/Site/admin'), 'visible'=>Yii::app()->user->checkAccess('Persona.*') && Yii::app()->user->checkAccess('PersonaOrganizacion.*')),
 	                array('label'=>'Login', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
-					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest)
-	                //array('label' => 'Link', 'url' => '#'),
+					array('label'=>'Logout', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest),
+	                array('label'=>'('.Yii::app()->user->name.')', 'url'=>array('/user/profile'), 'visible'=>!Yii::app()->user->isGuest)
+
 	            ),
 	        ),
 	    ),

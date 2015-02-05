@@ -49,7 +49,7 @@ class Persona extends CActiveRecord
 			array('fecha_nacimiento', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, apellido_p, apellido_m, fecha_nacimiento, cargo, profesion, telefono1, telefono2, telefono3, email, twitter, facebook, hijos, estado, situacion_familiar_id, categoria_persona_id', 'safe', 'on'=>'search'),
+			array('id, nombre, apellido_p, apellido_m, fecha_nacimiento, cargo, profesion, organizacion, telefono1, telefono2, telefono3, email, twitter, facebook, hijos, estado, situacion_familiar_id, categoria_persona_id', 'safe', 'on'=>'search'),
 		);
 	}
 	public function getOrga(){
@@ -122,9 +122,12 @@ class Persona extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-		$criteria->with = array('pOrganizacion'=>array('select'=>'pOrganizacion.organizacion_id'));
+		$criteria->with = array('pOrganizacion'=>array('select'=>'pOrganizacion.organizacion_id'),'pOrganizacion.Organizacion');
 		$criteria->together= true;
-		$criteria->compare('pOrganizacion.organizacion',$this->organizacion,true);
+		if(Yii::app()->user->id!=1 && !Yii::app()->user->checkAccess('admin')){
+			$criteria->addCondition('Organizacion.user_visible is NULL OR Organizacion.user_visible ='.Yii::app()->user->id);
+		}
+		$criteria->compare('pOrganizacion.organizacion_id',$this->organizacion,true);
 		$criteria->compare('id',$this->id);
 		$criteria->compare('nombre',$this->nombre,true);
 		$criteria->compare('apellido_p',$this->apellido_p,true);
